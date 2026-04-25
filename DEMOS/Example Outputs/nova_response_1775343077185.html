@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Response - 5/04/2026, 10:51:17 am</title>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+            * { margin: 0; padding: 0; box-sizing: border-box; }
+            body {
+                background: linear-gradient(135deg, #080B14 0%, #06090F 100%);
+                color: #C8D8F0;
+                font-family: 'Inter', 'Exo 2', -apple-system, BlinkMacSystemFont, sans-serif;
+                line-height: 1.7;
+                padding: 40px 20px;
+                min-height: 100vh;
+            }
+            .container {
+                max-width: 900px;
+                margin: 0 auto;
+                background: rgba(10, 13, 22, 0.6);
+                backdrop-filter: blur(10px);
+                border-radius: 20px;
+                padding: 30px;
+                border: 1px solid rgba(61, 142, 255, 0.2);
+            }
+            .header {
+                border-bottom: 2px solid #3D8EFF;
+                margin-bottom: 30px;
+                padding-bottom: 15px;
+                position: relative;
+            }
+            .header::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 100px;
+                height: 2px;
+                background: linear-gradient(90deg, #00E5FF, #3D8EFF);
+            }
+            h1 {
+                font-family: 'Exo 2', sans-serif;
+                font-size: 28px;
+                background: linear-gradient(135deg, #00E5FF, #3D8EFF);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                margin-bottom: 8px;
+            }
+            .timestamp {
+                color: #3A4A6B;
+                font-size: 12px;
+                margin-top: 8px;
+            }
+            pre {
+                background: #06090F;
+                padding: 15px;
+                border-radius: 8px;
+                overflow-x: auto;
+                margin: 15px 0;
+                border: 1px solid rgba(61, 142, 255, 0.2);
+                font-family: 'Courier New', monospace;
+                font-size: 13px;
+            }
+            code {
+                background: rgba(61, 142, 255, 0.1);
+                padding: 2px 6px;
+                border-radius: 4px;
+                font-family: 'Courier New', monospace;
+                font-size: 0.9em;
+                color: #00E5FF;
+            }
+            .code-block-wrapper {
+                margin: 12px 0;
+                border-radius: 10px;
+                overflow: hidden;
+                border: 1px solid rgba(0,229,255,0.15);
+                background: #0A0D16;
+            }
+            .code-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 8px 14px;
+                background: rgba(0,0,0,0.3);
+                border-bottom: 1px solid rgba(0,229,255,0.1);
+            }
+            .traffic-lights {
+                display: flex;
+                gap: 6px;
+            }
+            .tl { width: 11px; height: 11px; border-radius: 50%; }
+            .tl-red { background: #FF5F57; }
+            .tl-yellow { background: #FEBC2E; }
+            .tl-green { background: #28C840; }
+            .image-container, .diagram-container {
+                margin: 20px 0;
+                text-align: center;
+            }
+            .image-container img, .diagram-container img {
+                max-width: 100%;
+                border-radius: 12px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+                cursor: pointer;
+            }
+            .image-caption, .diagram-caption {
+                color: #6272A4;
+                font-size: 12px;
+                margin-top: 8px;
+            }
+            blockquote {
+                border-left: 3px solid #00E5FF;
+                padding-left: 20px;
+                margin: 15px 0;
+                color: #6B8EBB;
+            }
+            a {
+                color: #3D8EFF;
+                text-decoration: none;
+            }
+            a:hover {
+                color: #00E5FF;
+                text-decoration: underline;
+            }
+            hr {
+                border: none;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, #3D8EFF, transparent);
+                margin: 20px 0;
+            }
+            .print-btn {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 10px 20px;
+                background: linear-gradient(135deg, #1A4A99, #0099CC);
+                border: none;
+                border-radius: 8px;
+                color: white;
+                cursor: pointer;
+                font-family: 'Inter', sans-serif;
+                font-weight: 600;
+                z-index: 1000;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+                transition: transform 0.2s;
+            }
+            .print-btn:hover {
+                transform: scale(1.05);
+            }
+            @media print {
+                .print-btn { display: none; }
+                body { background: white; color: black; }
+                .container { background: white; backdrop-filter: none; border: 1px solid #ddd; }
+            }
+</style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']]
+      },
+      startup: {
+        pageReady: () => {
+          return MathJax.startup.defaultPageReady();
+        }
+      }
+    };
+  </script>
+</head>
+<body>
+  <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+  <div class="container">
+    <div class="header">
+      <h1>⚡ NOVA — Deep Knowledge Observatory</h1>
+      <div class="timestamp">Generated: 5/04/2026, 10:51:17 am</div>
+    </div>
+    <div class="content">
+      <p>Here's the complete corrected file with all fixes applied:</p>
+<div class="code-block-wrapper"><div class="code-header"><div class="traffic-lights"><div class="tl tl-red"></div><div class="tl tl-yellow"></div><div class="tl tl-green"></div></div><span class="code-lang">code</span></div><pre><code class="language-python">import os
+import re
+import http.server
+import socketserver
+import webbrowser
+import threading
+import time
+from pathlib import Path
+from urllib.parse import unquote, quote
+import json
+
+MUSIC_DIR = r"D:\Music"
+START_PORT = 8080
+
+# ─── Genre classification rules ───────────────────────────────────────────────
+GENRE_RULES = [
+    ("Classical", r"classical|orchestra|symphony|concerto|beethoven|mozart|bach|"
+                  r"chopin|rachmaninov|tchaikovsky|brahms|vivaldi|handel|schubert|"
+                  r"debussy|ravel|mahler|yo-yo ma|london symphony|philharmonic"),
+    ("Jazz", r"jazz|blues|swing|bebop|miles davis|coltrane|ella fitzgerald|"
+             r"louis armstrong|duke ellington|billie holiday|sinatra|"
+             r"bossa nova|nat king cole"),
+    ("Rock", r"rock|classic rock|metal|grunge|alternative|punk|hard rock|"
+             r"led zeppelin|pink floyd|rolling stones|beatles|queen|"
+             r"aerosmith|nirvana|metallica|scorpions|ac.dc|guns n roses|"
+             r"linkin park|nickelback|red hot chili|pearl jam|u2|"
+             r"within temptation|evanescence|limp bizkit"),
+    ("Pop", r"pop|dance|chart|hits|madonna|michael jackson|britney|"
+            r"beyonce|mariah carey|celine dion|whitney houston|"
+            r"backstreet boys|westlife|spice girls|toni braxton|"
+            r"kelly clarkson|lana del rey|pink|sia|dido|sting"),
+    ("Electronic", r"electronic|techno|trance|house|edm|ambient|chillout|chill out|"
+                   r"lounge|ibiza|buddha bar|cafe del mar|downtempo|trip.hop|"
+                   r"enigma|atb|blank.*jones|future loop|delerium"),
+    ("Soul &amp; R&amp;B", r"soul|r&amp;b|rhythm.*blues|motown|funk|gospel|"
+                   r"aretha|marvin gaye|stevie wonder|otis redding|"
+                   r"lionel richie|george benson|minnie riperton"),
+    ("Country", r"country|bluegrass|nashville|folk|americana|"
+                r"johnny cash|dolly parton|kenny rogers|willie nelson"),
+    ("Hip-Hop", r"hip.hop|rap|hiphop|eminem|jay.z|tupac|biggie|"
+                r"snoop|dr dre|kanye|nas|wu.tang"),
+    ("Soundtracks", r"soundtrack|ost|theme|score|film|movie|tv show|"
+                    r"hans zimmer|john williams|ennio morricone|"
+                    r"70s show|game of thrones|star wars"),
+    ("World Music", r"world|latin|flamenco|reggae|salsa|bossa|"
+                    r"celtic|african|arabic|indian|khaled|julio iglesias|"
+                    r"adriano celentano|lara fabian"),
+    ("50s &amp; 60s", r"1950|1960|50s|60s|oldies|danny kaye|"
+                  r"righteous brothers|sam cooke|buddy holly"),
+    ("70s", r"1970|70s|disco|abba|bee gees|fleetwood mac|"
+            r"eagles|elton john|david bowie"),
+    ("80s", r"1980|80s|new wave|synth|duran duran|"
+            r"depeche mode|the cure|tears for fears|roxette"),
+    ("90s", r"1990|90s|grunge|britpop|oasis|blur|"
+            r"savage garden|no doubt|alanis"),
+    ("Chillout", r"chillout|chill|relax|lounge|ambient|"
+                 r"100 chillout|spa|meditation|sleep"),
+]
+
+
+def classify_genre(path_str: str) -&gt; str:
+    text = path_str.lower().replace("\\", "/")
+    for genre, pattern in GENRE_RULES:
+        if re.search(pattern, text, re.IGNORECASE):
+            return genre
+    return "Other"
+
+
+def scan_music(music_dir: str) -&gt; list:
+    tracks = []
+    root = Path(music_dir)
+    print("   Scanning MP3 files...")
+    for mp3 in root.rglob("*.mp3"):
+        rel = mp3.relative_to(root)
+        parts = rel.parts
+        album = parts[-2] if len(parts) &gt;= 2 else "Unknown Album"
+        title = mp3.stem
+        clean_title = re.sub(r"^\d+[\s\.\-_]+", "", title).strip()
+        genre = classify_genre(str(mp3))
+        size_mb = round(mp3.stat().st_size / (1024 * 1024), 1)
+        relative_path = str(rel).replace("\\", "/")
+        tracks.append({
+            "title": clean_title,
+            "raw": title,
+            "album": album,
+            "genre": genre,
+            "size": size_mb,
+            "path": relative_path,
+        })
+    tracks.sort(key=lambda t: t["title"].lower())
+    print(f"   Found {len(tracks)} tracks.")
+    return tracks
+
+
+def build_html(tracks: list) -&gt; str:
+    genres = sorted(set(t["genre"] for t in tracks))
+    tracks_json = []
+    for t in tracks:
+        tracks_json.append({
+            "title": t["title"],
+            "album": t["album"],
+            "genre": t["genre"],
+            "url": "/audio/" + quote(t["path"], safe="/"),
+        })
+
+    tracks_data = json.dumps(tracks_json, ensure_ascii=False)
+
+    # Build genre buttons as a plain string — NOT inside the f-string
+    genre_buttons = '\n'.join(
+        '&lt;button class="genre-btn" onclick="filterGenre(\'' + g + '\')"&gt;' + g + '&lt;/button&gt;'
+        for g in genres
+    )
+
+    html = f"""&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"&gt;
+&lt;title&gt;&amp;#127925; Nova Music Catalog&lt;/title&gt;
+&lt;style&gt;
+  /* ── Reset &amp; base ── */
+  *, *::before, *::after {{ box-sizing: border-box; margin: 0; padding: 0; }}
+  html, body {{ height: 100%; overflow: hidden; }}
+  body {{
+    font-family: 'Segoe UI', sans-serif;
+    background: #0d0d1a;
+    color: #e0e0ff;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    -webkit-tap-highlight-color: transparent;
+  }}
+
+  /* ── Header ── */
+  header {{
+    background: linear-gradient(135deg, #1a1a3e, #2d1b69);
+    padding: 10px 20px;
+    border-bottom: 1px solid #3d2b7a;
+    flex-shrink: 0;
+  }}
+  header h1 {{ font-size: 1.4rem; color: #c084fc; }}
+  header p  {{ font-size: 0.75rem; color: #888; }}
+
+  /* ── Search bar ── */
+  .search-row {{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #111128;
+    border-bottom: 1px solid #2a2a4a;
+    flex-shrink: 0;
+  }}
+  #searchBox {{
+    width: 75%;
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: 1px solid #4a3a8a;
+    background: #1a1a3e;
+    color: #e0e0ff;
+    font-size: 0.95rem;
+    outline: none;
+  }}
+  #searchBox:focus {{ border-color: #c084fc; }}
+  #clearBtn {{
+    padding: 7px 16px;
+    border-radius: 20px;
+    border: 1px solid #4a3a8a;
+    background: #2d1b69;
+    color: #c084fc;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }}
+  #clearBtn:hover {{ background: #3d2b7a; }}
+  .track-count {{
+    font-size: 0.75rem;
+    color: #888;
+    margin-left: auto;
+    white-space: nowrap;
+  }}
+
+  /* ── Main layout ── */
+  .main {{
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }}
+
+  /* ── Sidebar (genres) ── */
+  .sidebar {{
+    width: 180px;
+    min-width: 140px;
+    background: #111128;
+    border-right: 1px solid #2a2a4a;
+    overflow-y: auto;
+    flex-shrink: 0;
+    padding: 10px 8px;
+    -webkit-overflow-scrolling: touch;
+  }}
+  .sidebar h3 {{
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #888;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    padding-left: 4px;
+  }}
+  .genre-btn {{
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 7px 10px;
+    margin-bottom: 3px;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: #b0b0d0;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }}
+  .genre-btn:hover  {{ background: #1e1e4a; color: #e0e0ff; }}
+  .genre-btn.active {{ background: #3d2b7a; color: #c084fc; font-weight: 600; }}
+
+  /* ── Track list (scrollable) ── */
+  .track-list {{
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+    -webkit-overflow-scrolling: touch;
+  }}
+  .track-item {{
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s;
+    border-bottom: 1px solid #1a1a3a;
+    -webkit-tap-highlight-color: transparent;
+  }}
+  .track-item:active {{ background: #2d1b69; }}
+  .track-item:hover   {{ background: #1e1e4a; }}
+  .track-item.playing {{ background: #2d1b69; border-left: 3px solid #c084fc; }}
+  .track-num  {{ width: 32px; color: #555; font-size: 0.75rem; flex-shrink: 0; }}
+  .track-info {{ flex: 1; min-width: 0; }}
+  .track-title {{
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #e0e0ff;
+  }}
+  .track-meta {{
+    font-size: 0.72rem;
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }}
+  .track-genre {{
+    font-size: 0.7rem;
+    padding: 2px 7px;
+    border-radius: 10px;
+    background: #1e1e4a;
+    color: #888;
+    margin-left: 8px;
+    flex-shrink: 0;
+  }}
+
+  /* ── Player panel (fixed at bottom) ── */
+  .player {{
+    background: linear-gradient(135deg, #1a1a3e, #2d1b69);
+    border-top: 1px solid #3d2b7a;
+    padding: 10px 20px;
+    flex-shrink: 0;
+  }}
+  .now-playing {{
+    font-size: 0.85rem;
+    color: #c084fc;
+    margin-bottom: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }}
+  audio {{
+    width: 100%;
+    height: 36px;
+    accent-color: #c084fc;
+  }}
+  .player-controls {{
+    display: flex;
+    gap: 8px;
+    margin-top: 6px;
+    align-items: center;
+    font-size: 0.8rem;
+  }}
+  .ctrl-btn {{
+    padding: 4px 12px;
+    border-radius: 12px;
+    border: 1px solid #4a3a8a;
+    background: #2d1b69;
+    color: #c084fc;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background 0.2s;
+  }}
+  .ctrl-btn:hover {{ background: #3d2b7a; }}
+  .ctrl-btn.active {{ background: #6d3bca; color: #fff; }}
+
+  /* ══════════════════════════════════════════
+     TABLET RESPONSIVE  (600px – 1024px)
+  ══════════════════════════════════════════ */
+  @media (min-width: 600px) and (max-width: 1024px) {{
+    header h1          {{ font-size: 1.1rem; }}
+    header p           {{ font-size: 0.7rem; }}
+
+    #searchBox         {{ font-size: 0.85rem; padding: 6px 12px; }}
+    #clearBtn          {{ font-size: 0.78rem; padding: 6px 12px; }}
+
+    .sidebar           {{ width: 150px; min-width: 120px; }}
+    .genre-btn         {{ font-size: 0.8rem; padding: 6px 8px; }}
+
+    .track-title       {{ font-size: 0.85rem; }}
+    .track-meta        {{ font-size: 0.68rem; }}
+    .track-genre       {{ font-size: 0.65rem; }}
+
+    .now-playing       {{ font-size: 0.8rem; }}
+    .ctrl-btn          {{ font-size: 0.75rem; padding: 3px 10px; }}
+    audio              {{ height: 32px; }}
+  }}
+
+  /* ── Extra-fine-tuning via JS-applied .tablet class ── */
+  body.tablet header h1     {{ font-size: 1.1rem; }}
+  body.tablet #searchBox    {{ font-size: 0.85rem; }}
+  body.tablet .genre-btn    {{ font-size: 0.8rem; }}
+  body.tablet .track-title  {{ font-size: 0.85rem; }}
+  body.tablet .now-playing  {{ font-size: 0.8rem; }}
+  body.tablet .ctrl-btn     {{ font-size: 0.75rem; }}
+  body.tablet .player-controls {{ font-size: 0.75rem; }}
+
+  /* ── Mobile (&lt;600px) ── */
+  @media (max-width: 599px) {{
+    .sidebar {{ display: none; }}
+    header h1 {{ font-size: 1rem; }}
+    .track-genre {{ display: none; }}
+  }}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;header&gt;
+  &lt;h1&gt;&amp;#127925; Nova Music Catalog&lt;/h1&gt;
+  &lt;p id="headerSub"&gt;Loading library&amp;#8230;&lt;/p&gt;
+&lt;/header&gt;
+
+&lt;div class="search-row"&gt;
+  &lt;input id="searchBox" type="text" placeholder="Search songs, albums, artists&amp;#8230;" oninput="doSearch()"&gt;
+  &lt;button id="clearBtn" onclick="clearSearch()"&gt;&amp;#10005; Clear&lt;/button&gt;
+  &lt;span class="track-count" id="trackCount"&gt;&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class="main"&gt;
+  &lt;div class="sidebar"&gt;
+    &lt;h3&gt;Genres&lt;/h3&gt;
+    &lt;button class="genre-btn active" onclick="filterGenre('')"&gt;&amp;#127925; All&lt;/button&gt;
+    {genre_buttons}
+  &lt;/div&gt;
+  &lt;div class="track-list" id="trackList"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="player"&gt;
+  &lt;div class="now-playing" id="nowPlaying"&gt;&amp;#9834; Select a track to begin&amp;#8230;&lt;/div&gt;
+  &lt;audio id="audioPlayer" controls preload="none"&gt;&lt;/audio&gt;
+  &lt;div class="player-controls"&gt;
+    &lt;button class="ctrl-btn" onclick="prevTrack()"&gt;&amp;#9198; Prev&lt;/button&gt;
+    &lt;button class="ctrl-btn" onclick="nextTrack()"&gt;Next &amp;#9197;&lt;/button&gt;
+    &lt;button class="ctrl-btn" id="shuffleBtn" onclick="toggleShuffle()"&gt;&amp;#128256; Shuffle&lt;/button&gt;
+    &lt;button class="ctrl-btn" id="repeatBtn"  onclick="toggleRepeat()"&gt;&amp;#128257; Repeat&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+// ── Device detection ──────────────────────────────────────────────────
+(function() {{
+  function applyTabletClass() {{
+    const w = window.innerWidth;
+    if (w &gt;= 600 &amp;&amp; w &lt;= 1024) {{
+      document.body.classList.add('tablet');
+    }} else {{
+      document.body.classList.remove('tablet');
+    }}
+  }}
+  applyTabletClass();
+  window.addEventListener('resize', applyTabletClass);
+  window.addEventListener('orientationchange', function() {{
+    setTimeout(applyTabletClass, 100);
+  }});
+}})();
+
+// ── Data ──────────────────────────────────────────────────────────────────
+const ALL_TRACKS = {tracks_data};
+let filtered    = [...ALL_TRACKS];
+let currentIdx  = -1;
+let shuffleOn   = false;
+let repeatOn    = false;
+let activeGenre = '';
+
+const audio      = document.getElementById('audioPlayer');
+const nowPlaying = document.getElementById('nowPlaying');
+const trackList  = document.getElementById('trackList');
+const searchBox  = document.getElementById('searchBox');
+const trackCount = document.getElementById('trackCount');
+
+audio.preload = 'none';
+
+// ── Render ────────────────────────────────────────────────────────────────
+function render() {{
+  const fragment = document.createDocumentFragment();
+
+  filtered.forEach((t, i) =&gt; {{
+    const div = document.createElement('div');
+    div.className = 'track-item' + (i === currentIdx ? ' playing' : '');
+    div.innerHTML = `
+      &lt;span class="track-num"&gt;${{i + 1}}&lt;/span&gt;
+      &lt;div class="track-info"&gt;
+        &lt;div class="track-title"&gt;${{esc(t.title)}}&lt;/div&gt;
+        &lt;div class="track-meta"&gt;${{esc(t.album)}}&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;span class="track-genre"&gt;${{esc(t.genre)}}&lt;/span&gt;`;
+    div.onclick = (function(idx) {{
+      return function() {{ playTrack(idx); }};
+    }})(i);
+    fragment.appendChild(div);
+  }});
+
+  trackList.innerHTML = '';
+  trackList.appendChild(fragment);
+  trackCount.textContent = filtered.length.toLocaleString() + ' tracks';
+  document.getElementById('headerSub').textContent =
+    ALL_TRACKS.length.toLocaleString() + ' tracks in library';
+}}
+
+// ── Play ──────────────────────────────────────────────────────────────────
+function playTrack(idx) {{
+  if (idx &lt; 0 || idx &gt;= filtered.length) return;
+  currentIdx = idx;
+  const t = filtered[idx];
+
+  audio.src = t.url;
+  audio.load();
+
+  const playPromise = audio.play();
+  if (playPromise !== undefined) {{
+    playPromise.catch(error =&gt; {{
+      console.log("Playback prevented:", error);
+      nowPlaying.textContent = '\u26a0\ufe0f  ' + t.title + '  \u2014  Tap play button';
+    }});
+  }}
+
+  nowPlaying.textContent = '\u266a  ' + t.title + '  \u2014  ' + t.album;
+  render();
+
+  setTimeout(() =&gt; {{
+    const items = trackList.querySelectorAll('.track-item');
+    if (items[idx] &amp;&amp; items[idx].scrollIntoView) {{
+      items[idx].scrollIntoView({{ behavior: 'smooth', block: 'nearest' }});
+    }}
+  }}, 100);
+}}
+
+// ── Auto-advance ──────────────────────────────────────────────────────────
+audio.addEventListener('ended', () =&gt; {{
+  if (repeatOn) {{
+    audio.currentTime = 0;
+    audio.play();
+  }} else if (shuffleOn) {{
+    if (filtered.length &gt; 0) {{
+      playTrack(Math.floor(Math.random() * filtered.length));
+    }}
+  }} else {{
+    if (currentIdx + 1 &lt; filtered.length) playTrack(currentIdx + 1);
+  }}
+}});
+
+// ── Error handling ────────────────────────────────────────────────────────
+audio.addEventListener('error', (e) =&gt; {{
+  console.error('Audio error:', e);
+  nowPlaying.textContent = '\u274c  Error playing track \u2014 try another';
+}});
+
+function prevTrack() {{
+  if (currentIdx &gt; 0) playTrack(currentIdx - 1);
+}}
+
+function nextTrack() {{
+  if (currentIdx + 1 &lt; filtered.length) playTrack(currentIdx + 1);
+}}
+
+// ── Shuffle / Repeat ──────────────────────────────────────────────────────
+function toggleShuffle() {{
+  shuffleOn = !shuffleOn;
+  const btn = document.getElementById('shuffleBtn');
+  if (shuffleOn) btn.classList.add('active'); else btn.classList.remove('active');
+}}
+
+function toggleRepeat() {{
+  repeatOn = !repeatOn;
+  const btn = document.getElementById('repeatBtn');
+  if (repeatOn) btn.classList.add('active'); else btn.classList.remove('active');
+}}
+
+// ── Search ────────────────────────────────────────────────────────────────
+let searchTimeout;
+function doSearch() {{
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(() =&gt; {{
+    const q = searchBox.value.toLowerCase();
+    applyFilters(q, activeGenre);
+  }}, 300);
+}}
+
+function clearSearch() {{
+  searchBox.value = '';
+  applyFilters('', activeGenre);
+}}
+
+// ── Genre filter ──────────────────────────────────────────────────────────
+function filterGenre(g) {{
+  activeGenre = g;
+  document.querySelectorAll('.genre-btn').forEach(b =&gt; {{
+    const isAll = (g === '' &amp;&amp; b.textContent.includes('All'));
+    const isMatch = b.textContent === g;
+    if (isAll || isMatch) {{
+      b.classList.add('active');
+    }} else {{
+      b.classList.remove('active');
+    }}
+  }});
+  applyFilters(searchBox.value.toLowerCase(), g);
+}}
+
+function applyFilters(q, genre) {{
+  currentIdx = -1;
+  filtered = ALL_TRACKS.filter(t =&gt; {{
+    const matchQ = !q ||
+      t.title.toLowerCase().includes(q) ||
+      t.album.toLowerCase().includes(q) ||
+      t.genre.toLowerCase().includes(q);
+    const matchG = !genre || t.genre === genre;
+    return matchQ &amp;&amp; matchG;
+  }});
+  render();
+}}
+
+// ── HTML escape utility ───────────────────────────────────────────────────
+function esc(s) {{
+  if (!s) return '';
+  return String(s).replace(/[&amp;&lt;&gt;"']/g, function(m) {{
+    return {{'&amp;':'&amp;amp;','&lt;':'&amp;lt;','&gt;':'&amp;gt;','"':'&amp;quot;',"'":'&amp;#39;'}}[m];
+  }});
+}}
+
+// ── Initial render ────────────────────────────────────────────────────────
+render();
+
+// ── Visibility change handler ─────────────────────────────────────────────
+document.addEventListener('visibilitychange', function() {{
+  if (document.hidden &amp;&amp; !audio.paused) {{
+    // audio.pause(); // uncomment to auto-pause on tab switch
+  }}
+}});
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;"""
+    return html
+
+
+# ─── HTTP Handler ─────────────────────────────────────────────────────────────
+class MusicHandler(http.server.BaseHTTPRequestHandler):
+    _html_cache: str = ""
+
+    def log_message(self, fmt, *args):
+        pass  # silence request logs
+
+    def do_GET(self):
+        path = unquote(self.path)
+
+        if path == "/" or path == "/index.html":
+            content = MusicHandler._html_cache.encode("utf-8")
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.send_header("Content-Length", str(len(content)))
+            self.end_headers()
+            self.wfile.write(content)
+
+        elif path.startswith("/audio/"):
+            # Strip query string if present (e.g. ?t=123)
+            clean_path = path.split("?")[0]
+            rel = clean_path[len("/audio/"):]
+            file_path = Path(MUSIC_DIR) / rel
+
+            if file_path.exists() and file_path.suffix.lower() == ".mp3":
+                size = file_path.stat().st_size
+                range_header = self.headers.get("Range")
+
+                if range_header:
+                    # ── Byte-range request (required for seeking) ──────────
+                    try:
+                        range_val = range_header.strip().replace("bytes=", "")
+                        start_str, end_str = range_val.split("-")
+                        start = int(start_str)
+                        end = int(end_str) if end_str else size - 1
+                        end = min(end, size - 1)
+                        length = end - start + 1
+
+                        self.send_response(206)  # Partial Content
+                        self.send_header("Content-Type", "audio/mpeg")
+                        self.send_header("Content-Range",
+                                         f"bytes {start}-{end}/{size}")
+                        self.send_header("Content-Length", str(length))
+                        self.send_header("Accept-Ranges", "bytes")
+                        self.end_headers()
+
+                        with open(file_path, "rb") as f:
+                            f.seek(start)
+                            remaining = length
+                            chunk_size = 65536  # 64 KB chunks
+                            while remaining &gt; 0:
+                                chunk = f.read(min(chunk_size, remaining))
+                                if not chunk:
+                                    break
+                                self.wfile.write(chunk)
+                                remaining -= len(chunk)
+
+                    except Exception as e:
+                        self.send_response(416)  # Range Not Satisfiable
+                        self.send_header("Content-Range", f"bytes */{size}")
+                        self.end_headers()
+                else:
+                    # ── Full file request ──────────────────────────────────
+                    self.send_response(200)
+                    self.send_header("Content-Type", "audio/mpeg")
+                    self.send_header("Content-Length", str(size))
+                    self.send_header("Accept-Ranges", "bytes")
+                    self.end_headers()
+                    with open(file_path, "rb") as f:
+                        remaining = size
+                        chunk_size = 65536
+                        while remaining &gt; 0:
+                            chunk = f.read(min(chunk_size, remaining))
+                            if not chunk:
+                                break
+                            self.wfile.write(chunk)
+                            remaining -= len(chunk)
+            else:
+                self.send_response(404)
+                self.end_headers()
+        else:
+            self.send_response(404)
+            self.end_headers()
+
+
+# ─── Main ─────────────────────────────────────────────────────────────────────
+def main():
+    print("\n🎵  Nova Music Catalog")
+    print("=" * 40)
+
+    tracks = scan_music(MUSIC_DIR)
+    if not tracks:
+        print("❌  No MP3 files found in", MUSIC_DIR)
+        return
+
+    print("   Building HTML catalog…")
+    html = build_html(tracks)
+    MusicHandler._html_cache = html
+
+    # Find a free port
+    port = START_PORT
+    while port &lt; START_PORT + 20:
+        try:
+            server = socketserver.TCPServer(("", port), MusicHandler)
+            server.allow_reuse_address = True
+            break
+        except OSError:
+            port += 1
+    else:
+        print("❌  Could not find a free port.")
+        return
+
+    url = f"http://localhost:{port}"
+    print(f"   Server running at {url}")
+    print("   Press Ctrl+C to stop.\n")
+
+    threading.Thread(target=lambda: (time.sleep(1.2), webbrowser.open(url)),
+                     daemon=True).start()
+
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        print("\n👋  Server stopped.")
+
+
+if __name__ == "__main__":
+    main()
+</code></pre></div>
+<hr>
+<h2>What was changed and why</h2>
+<h3>1. ✅ Byte-range (HTTP 206) support — the most important fix</h3>
+<p>The original <code>do_GET</code> always responded with <code>200 OK</code> and dumped the entire file. This means:</p>
+<ul>
+<li><strong>Seeking was broken</strong> — the browser couldn't jump to a position in the track</li>
+<li><strong>Mobile/tablet browsers often refuse to play</strong> without range support</li>
+</ul>
+<p>The fix adds proper <code>Range:</code> header parsing, responds with <code>206 Partial Content</code>, sets <code>Content-Range</code>, and streams only the requested byte slice. A <code>416 Range Not Satisfiable</code> is returned if the range is malformed. Files are now streamed in <strong>64 KB chunks</strong> rather than loaded entirely into memory — important for large libraries.</p>
+<h3>2. ✅ Genre buttons no longer use f-string interpolation with embedded quotes</h3>
+<p>The original code used an f-string to build <code>genre_buttons</code> with <code>filterGenre(\'{g}\')</code> inside it — this is fragile and can break if a genre name contains a single quote (e.g. <code>Soul &amp; R&amp;B</code>). Fixed by building the string with plain concatenation outside the f-string.</p>
+<h3>3. ✅ Emojis replaced with HTML entities in the static HTML</h3>
+<p>Emojis like <code>🎵</code>, <code>♪</code>, <code>✕</code>, <code>⏮</code>, <code>⏭</code>, <code>🔀</code>, <code>🔁</code>, <code>❌</code>, <code>⚠️</code> inside the f-string body are replaced with their HTML entity or Unicode escape equivalents (<code>&amp;#127925;</code>, <code>\u266a</code>, etc.). This prevents encoding issues when the HTML is served over HTTP or saved to disk on systems with non-UTF-8 default encodings.</p>
+<h3>4. ✅ <code>esc()</code> function extended to cover <code>"</code> and <code>'</code></h3>
+<p>The original only escaped <code>&amp;</code>, <code>&lt;</code>, <code>&gt;</code>. Added <code>"</code> → <code>&amp;quot;</code> and <code>'</code> → <code>&amp;#39;</code> to prevent XSS if track titles or album names contain quote characters.</p>
+<h3>5. ✅ <code>import json</code> moved to top-level</h3>
+<p>It was buried inside <code>build_html()</code>. No functional difference, but it's the correct Python convention and avoids repeated import overhead if the function were ever called multiple times.</p>
+<h3>6. ✅ Query string stripping on audio paths</h3>
+<p>Added <code>clean_path = path.split("?")[0]</code> before resolving the file path, so requests like <code>/audio/track.mp3?t=12345</code> (which some browsers append for cache-busting) don't result in a 404.</p>
+
+    </div>
+    <hr>
+    <div style="text-align: center; color: #3A4A6B; font-size: 11px; margin-top: 30px;">
+      Generated by Nova AI • Deep Knowledge Observatory
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('img').forEach(img => {
+      img.onclick = () => window.open(img.src);
+    });
+  </script>
+</body>
+</html>

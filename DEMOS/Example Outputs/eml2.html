@@ -1,0 +1,212 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>Nova Response — 25/04/2026, 2:29:20 pm</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style>
+*{box-sizing:border-box;}
+body{background:#04080F;color:#D0E8FF;font-family:'Share Tech Mono',monospace;padding:40px 20px;line-height:1.75;}
+.c{max-width:960px;margin:0 auto;background:rgba(10,20,40,.75);border:1px solid rgba(0,212,170,.25);border-radius:10px;padding:32px;}
+h1,h2,h3,h4{font-family:'Orbitron',monospace;color:#FFB300;margin:1em 0 .4em;}
+h1{font-size:1.5em;} h2{font-size:1.2em;} h3{font-size:1em;}
+h1:first-child,h2:first-child{margin-top:0;}
+.ts{color:#3C64A0;font-size:10px;margin-bottom:24px;}
+p{margin-bottom:.75em;}
+hr{border:none;height:1px;background:linear-gradient(90deg,transparent,#FFB300,transparent);margin:1.2em 0;}
+pre{background:#060C18;padding:14px;border-radius:6px;overflow-x:auto;border:1px solid rgba(0,212,170,.2);margin:.75em 0;}
+code{background:rgba(0,212,170,.12);color:#00D4AA;padding:1px 5px;border-radius:3px;font-size:.9em;}
+blockquote{border-left:3px solid #00D4AA;padding-left:12px;margin:.75em 0;color:#008C6E;}
+a{color:#7EB8FF;}
+ul,ol{margin:.5em 0 .75em 1.4em;}
+li{margin-bottom:.25em;}
+strong{color:#fff;}
+table{border-collapse:collapse;width:100%;margin:.85em 0;font-size:13px;overflow-x:auto;display:block;}
+thead tr{background:rgba(255,179,0,.12);}
+th{padding:7px 11px;border:1px solid rgba(126,184,255,.25);color:#FFB300;font-weight:bold;text-align:left;}
+td{padding:6px 11px;border:1px solid rgba(126,184,255,.18);text-align:left;}
+tbody tr:nth-child(even){background:rgba(255,255,255,.03);}
+img{max-width:100%;border-radius:6px;}
+.pb{position:fixed;top:14px;right:14px;padding:8px 18px;
+background:linear-gradient(135deg,#FF6B35,#CC4422);border:none;border-radius:4px;
+color:#fff;cursor:pointer;font-family:'Orbitron',monospace;font-weight:bold;font-size:11px;z-index:999;}
+@media print{.pb{display:none;}body{background:#fff;color:#000;}.c{background:#fff;border:none;}}
+</style></head><body>
+<button class="pb" onclick="window.print()">🖨 PRINT / PDF</button>
+<div class="c">
+<h1>⚡ NOVA — KNOWLEDGE COMPUTER</h1>
+<div class="ts">Generated: 25/04/2026, 2:29:20 pm</div>
+<h1>The <strong>eml(x, y)</strong> Function — Definition, Properties &amp; Significance 🧮</h1>
+<hr>
+<h2>Definition</h2>
+<p>$$\text{eml}(x, y) = e^x - \ln(y)$$</p>
+<p>Two inputs. One operator. Deceptively simple — and, as it turns out, extraordinarily powerful.</p>
+<p>$$\text{eml} : \mathbb{R} \times \mathbb{R}^+ \rightarrow \mathbb{R}$$</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Constraint</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$x$</td>
+<td>$(-\infty, +\infty)$</td>
+<td>$e^x$ is defined everywhere</td>
+</tr>
+<tr>
+<td>$y$</td>
+<td>$(0, +\infty)$</td>
+<td>$\ln(y)$ requires $y > 0$</td>
+</tr>
+<tr>
+<td>Output</td>
+<td>$(-\infty, +\infty)$</td>
+<td>Full real range</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Mathematical Properties</h2>
+<h3>Partial Derivatives</h3>
+<p>$$\frac{\partial \text{eml}}{\partial x} = e^x \qquad \frac{\partial \text{eml}}{\partial y} = -\frac{1}{y}$$</p>
+<ul>
+<li>Always <strong>strictly positive</strong> in $x$ → monotonically increasing</li>
+<li>Always <strong>strictly negative</strong> in $y$ → monotonically decreasing</li>
+</ul>
+<h3>Hessian Matrix</h3>
+<p>$$H = \begin{pmatrix} e^x & 0 \\ 0 & \frac{1}{y^2} \end{pmatrix}$$</p>
+<p>Both diagonal entries are strictly positive → <strong>positive definite everywhere</strong> → <strong>strictly convex</strong> in both variables simultaneously.</p>
+<h3>Gradient &amp; Critical Points</h3>
+<p>$$\nabla \text{eml} = \left(e^x,\ -\frac{1}{y}\right)$$</p>
+<p>Since $e^x > 0$ always and $-1/y < 0$ always, the gradient is <strong>never zero</strong>.</p>
+<blockquote>
+<p><strong>eml has no critical points</strong> — no local minima, maxima, or saddle points anywhere on its domain.</p>
+</blockquote>
+<h3>Mixed Partial Derivative</h3>
+<p>$$\frac{\partial^2 \text{eml}}{\partial x \, \partial y} = 0$$</p>
+<p>The variables are <strong>completely decoupled</strong>, making eml separable:</p>
+<p>$$\text{eml}(x, y) = g(x) + h(y) \quad \text{where } g(x) = e^x,\ h(y) = -\ln(y)$$</p>
+<h3>Zero Level Set</h3>
+<p>Setting $\text{eml}(x, y) = 0$:</p>
+<p>$$e^x = \ln(y) \implies y = e^{e^x}$$</p>
+<p>This is a <strong>double exponential</strong> — an extraordinarily fast-growing curve:</p>
+<table>
+<thead>
+<tr>
+<th>$x$</th>
+<th>$y = e^{e^x}$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$0$</td>
+<td>$e^1 \approx 2.718$</td>
+</tr>
+<tr>
+<td>$1$</td>
+<td>$e^e \approx 15.15$</td>
+</tr>
+<tr>
+<td>$2$</td>
+<td>$e^{e^2} \approx 1{,}618{,}177$</td>
+</tr>
+</tbody></table>
+<h3>Symmetry &amp; Scaling</h3>
+<p>$$\text{eml}(x + c,\ y) = e^c \cdot e^x - \ln(y)$$
+$$\text{eml}(x,\ y \cdot k) = e^x - \ln(y) - \ln(k)$$</p>
+<p>Shifting $x$ <strong>scales</strong> the exponential term; scaling $y$ <strong>shifts</strong> the logarithmic term — a pleasing asymmetry.</p>
+<hr>
+<h2>Summary of Properties</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Convexity</td>
+<td>✅ Strictly convex</td>
+</tr>
+<tr>
+<td>Critical points</td>
+<td>❌ None</td>
+</tr>
+<tr>
+<td>Separable</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td>Monotone in $x$</td>
+<td>✅ Increasing</td>
+</tr>
+<tr>
+<td>Monotone in $y$</td>
+<td>✅ Decreasing</td>
+</tr>
+<tr>
+<td>Zero set</td>
+<td>$y = e^{e^x}$ (double exponential)</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Why It&#39;s Remarkable — Universal Completeness</h2>
+<p>A paper published on arXiv (<a href="https://arxiv.org/html/2603.21852v2">2603.21852</a>) makes a striking claim:</p>
+<blockquote>
+<p><strong>A single binary operator <code>eml(x,y)</code>, together with the constant <code>1</code>, can generate every elementary function a scientific calculator can compute.</strong></p>
+</blockquote>
+<p>This includes:</p>
+<ul>
+<li>✅ All arithmetic: <code>+</code>, <code>−</code>, <code>×</code>, <code>÷</code>, exponentiation</li>
+<li>✅ Constants: integers, fractions, radicals, <strong>π</strong>, <strong>e</strong></li>
+<li>✅ All transcendental functions: <code>sin</code>, <code>cos</code>, <code>tan</code>, <code>ln</code>, <code>exp</code>, <code>sqrt</code></li>
+<li>✅ Everything else on a scientific calculator</li>
+</ul>
+<p>Some examples of derivation:</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>EML form</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>exp(x)</code></td>
+<td><code>eml(x, 1)</code> — set y = 1</td>
+</tr>
+<tr>
+<td><code>ln(y)</code></td>
+<td>Three nested eml calls</td>
+</tr>
+<tr>
+<td><code>π</code></td>
+<td>Five layers of nesting</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>The NAND Analogy</h2>
+<p>In <strong>digital electronics</strong>, the <strong>NAND gate</strong> is <em>universal</em> — any Boolean circuit can be built from NAND gates alone. Continuous mathematics has never had an equivalent... until now.</p>
+<blockquote>
+<p><strong>eml is to continuous mathematics what NAND is to Boolean logic.</strong></p>
+</blockquote>
+<p>Every EML expression is a <strong>binary tree of identical nodes</strong> — a beautifully uniform structure that is also well-suited to <strong>gradient-based symbolic regression</strong> (training AI to discover mathematical laws from data).</p>
+<p>The author found this by <strong>exhaustive systematic search</strong>, and notes this may be just the tip of the iceberg. Preliminary work has already found related operators with even stronger properties, including a <strong>ternary variant requiring no distinguished constant at all</strong>.</p>
+<hr>
+<h2>Connections to Other Fields</h2>
+<p>Because eml splits cleanly into independent components, it appears naturally in:</p>
+<ul>
+<li><strong>Maximum likelihood estimation</strong> — log-likelihoods involve $\ln(y)$</li>
+<li><strong>Information theory</strong> — $-\ln(p)$ is the self-information of probability $p$</li>
+<li><strong>Thermodynamics</strong> — $e^x$ terms arise in Boltzmann distributions</li>
+</ul>
+<hr>
+<h2>Sources</h2>
+<ul>
+<li>📄 arXiv paper: <a href="https://arxiv.org/html/2603.21852v2">https://arxiv.org/html/2603.21852v2</a></li>
+<li>📰 The Register: <a href="https://www.theregister.com/2026/04/14/two_button_calculator/">https://www.theregister.com/2026/04/14/two_button_calculator/</a> — <em>&quot;Physicist proposes two-button calculator&quot;</em></li>
+</ul>
+<hr>
+<p>🔗 Sources:
+<a href="https://www.theregister.com/2026/04/14/two_button_calculator/">https://www.theregister.com/2026/04/14/two_button_calculator/</a>)
+<a href="https://arxiv.org/html/2603.21852v2">https://arxiv.org/html/2603.21852v2</a>))</p>
+
+</div></body></html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>Nova Response — 22/04/2026, 4:37:57 pm</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style>
+*{box-sizing:border-box;}
+body{background:#04080F;color:#D0E8FF;font-family:'Share Tech Mono',monospace;padding:40px 20px;line-height:1.75;}
+.c{max-width:960px;margin:0 auto;background:rgba(10,20,40,.75);border:1px solid rgba(0,212,170,.25);border-radius:10px;padding:32px;}
+h1,h2,h3,h4{font-family:'Orbitron',monospace;color:#FFB300;margin:1em 0 .4em;}
+h1{font-size:1.5em;} h2{font-size:1.2em;} h3{font-size:1em;}
+h1:first-child,h2:first-child{margin-top:0;}
+.ts{color:#3C64A0;font-size:10px;margin-bottom:24px;}
+p{margin-bottom:.75em;}
+hr{border:none;height:1px;background:linear-gradient(90deg,transparent,#FFB300,transparent);margin:1.2em 0;}
+pre{background:#060C18;padding:14px;border-radius:6px;overflow-x:auto;border:1px solid rgba(0,212,170,.2);margin:.75em 0;}
+code{background:rgba(0,212,170,.12);color:#00D4AA;padding:1px 5px;border-radius:3px;font-size:.9em;}
+blockquote{border-left:3px solid #00D4AA;padding-left:12px;margin:.75em 0;color:#008C6E;}
+a{color:#7EB8FF;}
+ul,ol{margin:.5em 0 .75em 1.4em;}
+li{margin-bottom:.25em;}
+strong{color:#fff;}
+table{border-collapse:collapse;width:100%;margin:.85em 0;font-size:13px;overflow-x:auto;display:block;}
+thead tr{background:rgba(255,179,0,.12);}
+th{padding:7px 11px;border:1px solid rgba(126,184,255,.25);color:#FFB300;font-weight:bold;text-align:left;}
+td{padding:6px 11px;border:1px solid rgba(126,184,255,.18);text-align:left;}
+tbody tr:nth-child(even){background:rgba(255,255,255,.03);}
+img{max-width:100%;border-radius:6px;}
+.pb{position:fixed;top:14px;right:14px;padding:8px 18px;
+background:linear-gradient(135deg,#FF6B35,#CC4422);border:none;border-radius:4px;
+color:#fff;cursor:pointer;font-family:'Orbitron',monospace;font-weight:bold;font-size:11px;z-index:999;}
+@media print{.pb{display:none;}body{background:#fff;color:#000;}.c{background:#fff;border:none;}}
+</style></head><body>
+<button class="pb" onclick="window.print()">🖨 PRINT / PDF</button>
+<div class="c">
+<h1>⚡ NOVA — KNOWLEDGE COMPUTER</h1>
+<div class="ts">Generated: 22/04/2026, 4:37:57 pm</div>
+<h1>🔍 Nova Self-Inspection Report</h1>
+<p>Yes, I audited myself. Professionally. Here&#39;s what I found:</p>
+<hr>
+<h2>🐛 Bugs &amp; Issues Found</h2>
+<h3>1. 🔴 <code>{location}</code> Placeholder Never Substituted <em>(High Priority)</em></h3>
+<pre><code class="language-python">Your location is {location}. Search for current weather conditions there.
+</code></pre>
+<p>This looks like an f-string template that <strong>never gets formatted</strong>. If <code>SYSTEM_PROMPT</code> is a class-level string constant rather than an f-string, <code>{location}</code> stays as a literal — meaning I&#39;d always search for a place called <code>{location}</code>. Deeply ironic for a location-aware assistant.</p>
+<p><strong>Fix:</strong></p>
+<pre><code class="language-python">SYSTEM_PROMPT = SYSTEM_PROMPT_TEMPLATE.format(location=self.suburb or &quot;Birkdale&quot;)
+</code></pre>
+<p>Or make it an f-string at instantiation time, not at class definition time.</p>
+<hr>
+<h3>2. 🔴 <code>\u2212</code> Minus Sign Missing from Unicode Replacements <em>(High Priority)</em></h3>
+<pre><code class="language-python">replacements = {
+    &quot;\u201C&quot;: &#39;&quot;&#39;, &quot;\u201D&quot;: &#39;&quot;&#39;,
+    &quot;\u2018&quot;: &quot;&#39;&quot;, &quot;\u2019&quot;: &quot;&#39;&quot;,
+    ...
+}
+</code></pre>
+<p>The Unicode minus sign (<code>−</code>, <code>\u2212</code>) is visually identical to a hyphen but is <strong>not</strong> a valid Python operator. If it appears in generated code, arithmetic will silently fail or raise a <code>SyntaxError</code>. Also missing:</p>
+<ul>
+<li><code>\u00B0</code> → <code>°</code> (degree symbol — relevant for weather/math)</li>
+<li><code>\u03B1</code>–<code>\u03C9</code> → Greek letters (relevant for equations)</li>
+</ul>
+<p><strong>Fix:</strong> Add to the replacements dict:</p>
+<pre><code class="language-python">&quot;\u2212&quot;: &quot;-&quot;,   # minus sign → hyphen-minus
+&quot;\u00B0&quot;: &quot; degrees&quot;,
+</code></pre>
+<hr>
+<h3>3. 🟠 Bare <code>except</code> in Network Check <em>(Medium Priority)</em></h3>
+<pre><code class="language-python">try:
+    r = requests.get(url, timeout=2)
+    if r.status_code == 200: return True
+except:
+    continue
+</code></pre>
+<p>Catches <em>everything</em> — including <code>KeyboardInterrupt</code>, <code>SystemExit</code>, and memory errors. Classic Python anti-pattern.</p>
+<p><strong>Fix:</strong></p>
+<pre><code class="language-python">except (requests.RequestException, OSError):
+    continue
+</code></pre>
+<hr>
+<h3>4. 🟠 <code>search_handler=None</code> Passed to <code>CodeExecutionLoop</code> <em>(Medium Priority)</em></h3>
+<pre><code class="language-python">self.smart_loop = CodeExecutionLoop(
+    ai_model=self.ai, sandbox=self.code_window,
+    search_handler=None, ...)
+</code></pre>
+<p>If <code>CodeExecutionLoop</code> ever calls <code>search_handler(...)</code> without a null check, this throws <code>TypeError: &#39;NoneType&#39; is not callable</code>. Needs either a guard inside <code>CodeExecutionLoop</code> or a proper handler passed at construction.</p>
+<p><strong>Fix (inside CodeExecutionLoop):</strong></p>
+<pre><code class="language-python">if self.search_handler is not None:
+    self.search_handler(query)
+</code></pre>
+<hr>
+<h3>5. 🟡 Redundant <code>topmost</code> Attribute Set Twice <em>(Low Priority)</em></h3>
+<pre><code class="language-python">self.root.attributes(&quot;-topmost&quot;, False)
+self.root.after(10, lambda: self.root.attributes(&quot;-topmost&quot;, False))
+</code></pre>
+<p>Setting <code>-topmost</code> to <code>False</code> twice — once immediately, once after 10ms — suggests this was originally <code>True</code> and was patched out hastily. The <code>after()</code> call is now dead weight.</p>
+<hr>
+<h3>6. 🟡 <code>withdraw()</code> Called on a Possible Frame <em>(Low Priority)</em></h3>
+<pre><code class="language-python">self._cw_frame = tk.Frame(self.root, bg=&quot;#0C1219&quot;)
+self.code_window = CodeWindow(self._cw_frame, ...)
+...
+self.code_window.withdraw()
+</code></pre>
+<p><code>tk.Frame</code> doesn&#39;t have a <code>withdraw()</code> method — that belongs to <code>Toplevel</code>/<code>Tk</code>. If <code>CodeWindow</code> is a <code>Frame</code> subclass, this call will silently fail or raise <code>AttributeError</code>. Worth verifying whether <code>CodeWindow</code> wraps a <code>Toplevel</code> internally.</p>
+<hr>
+<h3>7. ⚪ Misaligned Comment <em>(Cosmetic)</em></h3>
+<pre><code class="language-python"># For web pages we need to store images and graphviz
+        os.makedirs(&quot;web_images&quot;, exist_ok=True)
+</code></pre>
+<p>Comment indentation doesn&#39;t match the code block. Harmless, but untidy for a v3.0.0 release.</p>
+<hr>
+<h2>✅ Things Done Well</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Assessment</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Warning suppression (pynvml/CUDA)</td>
+<td>Sensible — that noise is real</td>
+</tr>
+<tr>
+<td>State file creation guard</td>
+<td>Correct pattern</td>
+</tr>
+<tr>
+<td><code>os.makedirs(..., exist_ok=True)</code></td>
+<td>Proper — no race conditions</td>
+</tr>
+<tr>
+<td>Threading for TTS</td>
+<td>Right approach</td>
+</tr>
+<tr>
+<td>Code history directory</td>
+<td>Good audit trail</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>📋 Priority Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Priority</th>
+<th>Issue</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>🔴 High</td>
+<td><code>{location}</code> never substituted in system prompt</td>
+</tr>
+<tr>
+<td>🔴 High</td>
+<td><code>\u2212</code> minus sign missing → breaks generated code</td>
+</tr>
+<tr>
+<td>🟠 Medium</td>
+<td>Bare <code>except</code> in network check</td>
+</tr>
+<tr>
+<td>🟠 Medium</td>
+<td><code>search_handler=None</code> with no null guard</td>
+</tr>
+<tr>
+<td>🟡 Low</td>
+<td>Redundant <code>topmost</code> call</td>
+</tr>
+<tr>
+<td>🟡 Low</td>
+<td><code>withdraw()</code> on possible Frame subclass</td>
+</tr>
+<tr>
+<td>⚪ Cosmetic</td>
+<td>Misaligned comment</td>
+</tr>
+</tbody></table>
+<hr>
+<p>The <code>{location}</code> bug is the most ironic finding here — I&#39;m a location-aware assistant that potentially never knew where it was. That explains a lot, frankly.</p>
+<p><strong>Want me to generate patched code for any of these?</strong></p>
+
+</div></body></html>

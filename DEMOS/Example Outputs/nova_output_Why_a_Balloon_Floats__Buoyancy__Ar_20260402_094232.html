@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+    <html><head><meta charset="utf-8">
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+    body { background:#0D0F14; color:#C8D6E5; font-family:Georgia,serif;
+           max-width:900px; margin:40px auto; padding:20px; line-height:1.7; }
+    h1,h2,h3 { color:#4A9EFF; }
+    code { background:#1A1F2E; padding:2px 6px; border-radius:3px; color:#39FF14; }
+    pre { background:#1A1F2E; padding:16px; border-radius:6px; overflow-x:auto; }
+    table { border-collapse:collapse; width:100%; }
+    th,td { border:1px solid #2A4A7F; padding:8px 12px; }
+    th { background:#1A2035; color:#4A9EFF; }
+    a { color:#4A9EFF; }
+    </style></head><body><h1>🎈 Why a Balloon Floats — Buoyancy &amp; Archimedes' Principle</h1>
+<h2>The Core Idea</h2>
+<p>Archimedes' principle states:</p>
+<blockquote>
+<p><strong>"Any object immersed in a fluid experiences an upward buoyant force equal to the weight of the fluid it displaces."</strong></p>
+</blockquote>
+<p>Air is a fluid. A balloon is immersed in it. The same physics that keeps a ship afloat in water applies to a balloon floating in the atmosphere.</p>
+<hr />
+<h2>The Forces at Play</h2>
+<p>A balloon has <strong>two competing forces</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Force</th>
+<th>Direction</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Weight</strong></td>
+<td>⬇️ Down</td>
+<td>Mass of balloon skin + gas inside × gravity</td>
+</tr>
+<tr>
+<td><strong>Buoyancy</strong></td>
+<td>⬆️ Up</td>
+<td>Weight of the air displaced by the balloon's volume</td>
+</tr>
+</tbody>
+</table>
+<p>The balloon floats when:</p>
+<p>$$F_{buoyancy} > F_{weight}$$</p>
+<p>$$\rho_{air} \times V \times g > (\rho_{gas} \times V + m_{skin}) \times g$$</p>
+<p>Where:
+- <strong>ρ_air</strong> = density of surrounding air (~1.225 kg/m³ at sea level)
+- <strong>ρ_gas</strong> = density of the gas inside the balloon
+- <strong>V</strong> = volume of the balloon
+- <strong>m_skin</strong> = mass of the balloon material</p>
+<hr />
+<h2>Why the Gas Inside Matters</h2>
+<p>The trick is filling the balloon with a gas <strong>less dense than air</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Gas</th>
+<th>Density (kg/m³)</th>
+<th>Lift?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Air</td>
+<td>1.225</td>
+<td>❌ Neutral</td>
+</tr>
+<tr>
+<td>CO₂</td>
+<td>1.96</td>
+<td>❌ Sinks</td>
+</tr>
+<tr>
+<td><strong>Helium</strong></td>
+<td><strong>0.164</strong></td>
+<td>✅ Floats</td>
+</tr>
+<tr>
+<td><strong>Hot Air</strong></td>
+<td><strong>~0.9</strong></td>
+<td>✅ Floats</td>
+</tr>
+<tr>
+<td><strong>Hydrogen</strong></td>
+<td><strong>0.082</strong></td>
+<td>✅ Floats (but... 🔥)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Two Types of Floating Balloons</h2>
+<h3>🎈 Helium Balloon</h3>
+<ul>
+<li>Helium is ~7× less dense than air</li>
+<li>The buoyant force (weight of displaced air) <strong>easily exceeds</strong> the weight of helium + rubber skin</li>
+<li>Net upward force → it rises</li>
+</ul>
+<h3>🔥 Hot Air Balloon</h3>
+<ul>
+<li>Uses the same air, but <strong>heated</strong></li>
+<li>Hot air expands → fewer molecules per m³ → lower density</li>
+<li>A balloon heated to ~100°C has air dense enough to generate meaningful lift</li>
+<li>The burner keeps air hot; when it cools, the balloon descends — elegant and controllable</li>
+</ul>
+<hr />
+<h2>The Equilibrium Point</h2>
+<p>A free helium balloon doesn't rise forever. As it climbs:</p>
+<ul>
+<li>Atmospheric pressure <strong>drops</strong></li>
+<li>Surrounding air becomes <strong>less dense</strong></li>
+<li>The buoyant force <strong>decreases</strong></li>
+<li>Eventually buoyancy = weight → the balloon <strong>stops rising</strong></li>
+</ul>
+<p>This is why weather balloons expand dramatically and eventually <strong>burst</strong> at high altitude — the external pressure drops so much the balloon over-inflates.</p>
+<hr />
+<h2>The One-Line Summary</h2>
+<blockquote>
+<p>A balloon floats because the air it pushes aside <strong>weighs more</strong> than the balloon itself — Archimedes figured this out in a bathtub around 250 BC, and we've been filling things with helium ever since.</p>
+</blockquote></body></html>

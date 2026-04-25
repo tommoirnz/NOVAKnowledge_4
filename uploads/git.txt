@@ -1,0 +1,24 @@
+Step 1: Create backup branch FIRST (before any destructive action)
+bash
+git checkout -b backup-my-work     # Creates AND switches to backup branch
+Or in PyCharm: Git → Branches → New Branch
+
+This saves everything you currently have.
+
+Step 2: Push the backup to remote (optional but recommended for extra safety)
+bash
+git push origin backup-my-work
+Now your work is safely stored remotely as backup-my-work.
+
+Step 3: Switch back to your original branch
+bash
+git checkout master                 # Or your original branch name
+Step 4: NOW you can do your force push (if you still want to)
+bash
+git add .
+git commit -m "Update"
+git push -f origin master
+
+
+Important: Don't do the backup AFTER your destructive command
+❌ Wrong order:

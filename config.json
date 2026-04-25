@@ -1,0 +1,26 @@
+{
+  "cache_directory": "C:\\code_cache",
+  "error_cache_file": "error_search_cache.json",
+  "cache_max_age_days": 300,
+  "cache_max_entries": 1000,
+  "default_model": "anthropic/claude-sonnet-4-6",
+  "max_tokens":32000,
+
+  "cloud_models": {
+    "provider": "openrouter",
+    "api_key": "",
+    "base_url": "https://openrouter.ai/api/v1",
+    "models": [
+      {"display": "Qwen3-235B-A22B (Coder)",   "id": "qwen/qwen3-235b-a22b"},
+      {"display": "Qwen2.5-Coder-72B",          "id": "qwen/qwen2.5-coder-72b-instruct"},
+      {"display": "DeepSeek-R1",                "id": "deepseek/deepseek-r1"},
+      {"display": "DeepSeek-V3",                "id": "deepseek/deepseek-chat-v3-0324"},
+      {"display": "Qwen3.5-122B-A10B (paid)", "id": "qwen/qwen3.5-122b-a10b"},
+      {"display": "Qwen3-Coder-480B (paid)", "id": "qwen/qwen3-coder"},
+      {"display": "Qwen3-Coder-480B (free)", "id": "qwen/qwen3-coder:free"},
+      {"display": "Claude Sonnet 4.6",  "id": "anthropic/claude-sonnet-4-6"},
+      {"display": "Claude Opus 4.6",    "id": "anthropic/claude-opus-4-6"}
+
+    ]
+  }
+}

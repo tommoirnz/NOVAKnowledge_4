@@ -1,0 +1,10 @@
+write code to make a scientific calculator. make sure it is aesthetically pleasing. Use Tkinter windows for the UI
+
+use Newtons method to find the cubed root of 27 iterately and write the code in Python 
+
+show code as to how a Butterworth filter works. Use a sine wave as an example. 
+
+Show Python code to find  the dB frequency response of a second order system with a variety of damping factors from 0.5 to 1.8 and undamped natural frequency of 100rad/s 
+
+write python code to simulate the unit step response of the second order system with dc gain 10, damping factor 0.4 and undamped natural frequency 100 rad/s.
+

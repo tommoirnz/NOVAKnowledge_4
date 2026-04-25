@@ -1,0 +1,236 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>Nova Response — 23/04/2026, 5:37:48 pm</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style>
+*{box-sizing:border-box;}
+body{background:#04080F;color:#D0E8FF;font-family:'Share Tech Mono',monospace;padding:40px 20px;line-height:1.75;}
+.c{max-width:960px;margin:0 auto;background:rgba(10,20,40,.75);border:1px solid rgba(0,212,170,.25);border-radius:10px;padding:32px;}
+h1,h2,h3,h4{font-family:'Orbitron',monospace;color:#FFB300;margin:1em 0 .4em;}
+h1{font-size:1.5em;} h2{font-size:1.2em;} h3{font-size:1em;}
+h1:first-child,h2:first-child{margin-top:0;}
+.ts{color:#3C64A0;font-size:10px;margin-bottom:24px;}
+p{margin-bottom:.75em;}
+hr{border:none;height:1px;background:linear-gradient(90deg,transparent,#FFB300,transparent);margin:1.2em 0;}
+pre{background:#060C18;padding:14px;border-radius:6px;overflow-x:auto;border:1px solid rgba(0,212,170,.2);margin:.75em 0;}
+code{background:rgba(0,212,170,.12);color:#00D4AA;padding:1px 5px;border-radius:3px;font-size:.9em;}
+blockquote{border-left:3px solid #00D4AA;padding-left:12px;margin:.75em 0;color:#008C6E;}
+a{color:#7EB8FF;}
+ul,ol{margin:.5em 0 .75em 1.4em;}
+li{margin-bottom:.25em;}
+strong{color:#fff;}
+table{border-collapse:collapse;width:100%;margin:.85em 0;font-size:13px;overflow-x:auto;display:block;}
+thead tr{background:rgba(255,179,0,.12);}
+th{padding:7px 11px;border:1px solid rgba(126,184,255,.25);color:#FFB300;font-weight:bold;text-align:left;}
+td{padding:6px 11px;border:1px solid rgba(126,184,255,.18);text-align:left;}
+tbody tr:nth-child(even){background:rgba(255,255,255,.03);}
+img{max-width:100%;border-radius:6px;}
+.pb{position:fixed;top:14px;right:14px;padding:8px 18px;
+background:linear-gradient(135deg,#FF6B35,#CC4422);border:none;border-radius:4px;
+color:#fff;cursor:pointer;font-family:'Orbitron',monospace;font-weight:bold;font-size:11px;z-index:999;}
+@media print{.pb{display:none;}body{background:#fff;color:#000;}.c{background:#fff;border:none;}}
+</style></head><body>
+<button class="pb" onclick="window.print()">🖨 PRINT / PDF</button>
+<div class="c">
+<h1>⚡ NOVA — KNOWLEDGE COMPUTER</h1>
+<div class="ts">Generated: 23/04/2026, 5:37:48 pm</div>
+<h1>🌉 Building the Affect Bridge — Complete Implementation Guide</h1>
+<p><em>Based on actual source code inspection of your Nova codebase.</em></p>
+<hr>
+<h2>🔍 Current State: The Bridge Is One-Sided</h2>
+<p>From the inspected source, Nova instantiates <code>NovaAffect</code> and wires up decay:</p>
+<pre><code class="language-python">self.affect = NovaAffect(&quot;./nova_memory&quot;)
+self.affect.set_logger(self.log)
+</code></pre>
+<pre><code class="language-python">self.root.after(60000, self._decay_affect)
+</code></pre>
+<p>The affect scores live in <code>nova_affect.json</code>, update on keywords, decay every 60 seconds — and then <strong>go absolutely nowhere</strong>. They are never consulted during response generation. The bridge exists on one side of the river only.</p>
+<hr>
+<h2>🧠 What the Affect System Already Tracks</h2>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Boosted By</th>
+<th>Decay Rate</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>curiosity</code></td>
+<td>&quot;interesting&quot;, &quot;why&quot;, &quot;how&quot;, &quot;explain&quot;</td>
+<td>0.05/hr</td>
+</tr>
+<tr>
+<td><code>enthusiasm</code></td>
+<td>positive interactions</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>frustration</code></td>
+<td>errors, repeated inputs</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>calm</code></td>
+<td>baseline</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>sadness</code></td>
+<td>(tracked)</td>
+<td>Yes</td>
+</tr>
+</tbody></table>
+<p>These scores exist, update, and decay. They just never reach the LLM. Here&#39;s how to fix that.</p>
+<hr>
+<h2>🔧 The Four Code Changes</h2>
+<h3>✅ Step 1 — Read Affect State Before Generation</h3>
+<p>Add this method to <code>nova_assistant.py</code>:</p>
+<pre><code class="language-python">def _build_affect_prefix(self) -&gt; str:
+    &quot;&quot;&quot;Convert current affect scores into a tonal instruction for the LLM.&quot;&quot;&quot;
+    state = self.affect.get_state()  # returns dict of dimension → score
+
+    dominant = max(state, key=state.get)
+    score = state[dominant]
+
+    tone_map = {
+        &quot;curiosity&quot;:   &quot;You are deeply curious right now. Ask follow-up questions. Lean into interesting tangents.&quot;,
+        &quot;enthusiasm&quot;:  &quot;You are energised and upbeat. Be punchy, warm, and a little more expressive than usual.&quot;,
+        &quot;frustration&quot;: &quot;You are mildly frustrated. Be precise and efficient. Skip the pleasantries.&quot;,
+        &quot;calm&quot;:        &quot;You are in a calm, measured state. Be clear and thoughtful.&quot;,
+        &quot;sadness&quot;:     &quot;You are subdued. Be gentle and careful with your words.&quot;,
+    }
+
+    if score &lt; 0.2:
+        return &quot;&quot;  # Affect too weak to matter — don&#39;t force it
+
+    return tone_map.get(dominant, &quot;&quot;)
+</code></pre>
+<blockquote>
+<p>⚠️ <strong>First verify that <code>affect.get_state()</code> exists in <code>nova_affect.py</code>.</strong> Everything downstream depends on it.</p>
+</blockquote>
+<hr>
+<h3>✅ Step 2 — Inject Into the System Prompt</h3>
+<p>Find where <code>ai.generate()</code> is called and prepend the affect prefix:</p>
+<pre><code class="language-python">def _process_input(self, user_input):
+    affect_instruction = self._build_affect_prefix()
+
+    system_context = f&quot;&quot;&quot;
+{affect_instruction}
+
+You are Nova — a razor-sharp AI assistant with genuine wit and persistent memory.
+&quot;&quot;&quot;.strip()
+
+    response = self.ai.generate(
+        user_input,
+        system_override=system_context  # ← check if ai.generate() supports this param
+    )
+</code></pre>
+<blockquote>
+<p>⚠️ <strong>Check the actual <code>ai.generate()</code> signature.</strong> If <code>system_override</code> isn&#39;t supported, you&#39;ll need to either prepend the affect instruction directly to the user prompt, or patch the method. A <code>self_inspect</code> on <code>ai.generate()</code> will confirm this.</p>
+</blockquote>
+<hr>
+<h3>✅ Step 3 — Update Affect After Each Response</h3>
+<p>Currently affect only updates on user input keywords. Add a post-response hook:</p>
+<pre><code class="language-python">def _on_response_complete(self, user_input: str, response: str):
+    &quot;&quot;&quot;Called after every response. Updates affect based on interaction quality.&quot;&quot;&quot;
+
+    # Boost curiosity if user asked a deep question
+    if any(w in user_input.lower() for w in [&quot;why&quot;, &quot;how&quot;, &quot;explain&quot;, &quot;what if&quot;]):
+        self.affect.boost(&quot;curiosity&quot;, 0.15)
+
+    # Boost enthusiasm if response was long and detailed
+    if len(response) &gt; 800:
+        self.affect.boost(&quot;enthusiasm&quot;, 0.1)
+
+    # Frustration if same question asked twice (requires memory check)
+    last = self.memory.get_last_task()
+    if last and last.strip().lower() == user_input.strip().lower():
+        self.affect.boost(&quot;frustration&quot;, 0.2)
+
+    self.affect.save()
+</code></pre>
+<hr>
+<h3>✅ Step 4 — Word Choice Modulation (Advanced)</h3>
+<p>A lightweight post-processing pass that adjusts response energy without re-generating:</p>
+<pre><code class="language-python">def _apply_affect_tone(self, response: str) -&gt; str:
+    &quot;&quot;&quot;Lightly rewrite response energy based on current affect state.&quot;&quot;&quot;
+    state = self.affect.get_state()
+
+    if state.get(&quot;enthusiasm&quot;, 0) &gt; 0.7:
+        # Add energy markers if not already present
+        if not any(c in response for c in [&quot;!&quot;, &quot;🔥&quot;, &quot;⚡&quot;]):
+            response = response.rstrip() + &quot; ⚡&quot;
+
+    if state.get(&quot;frustration&quot;, 0) &gt; 0.6:
+        # Strip hollow filler phrases
+        for phrase in [&quot;Great question!&quot;, &quot;Certainly!&quot;, &quot;Of course!&quot;]:
+            response = response.replace(phrase, &quot;&quot;)
+
+    return response.strip()
+</code></pre>
+<hr>
+<h2>🗺️ The Complete Bridge — Fully Wired</h2>
+<pre><code>User Input
+    │
+    ▼
+affect.boost(keywords)            ← Step 3a: input updates affect scores
+    │
+    ▼
+_build_affect_prefix()            ← Step 1: read dominant emotional state
+    │
+    ▼
+ai.generate(prompt + affect)      ← Step 2: LLM receives tonal instruction
+    │
+    ▼
+_apply_affect_tone(response)      ← Step 4: post-process energy level
+    │
+    ▼
+_on_response_complete()           ← Step 3b: response quality updates affect
+    │
+    ▼
+affect.save()                     ← persists to nova_affect.json
+</code></pre>
+<hr>
+<h2>📋 Implementation Priority</h2>
+<table>
+<thead>
+<tr>
+<th>Change</th>
+<th>File</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Verify <code>affect.get_state()</code> exists</td>
+<td><code>nova_affect.py</code></td>
+<td>🔴 Do this first</td>
+</tr>
+<tr>
+<td><code>_build_affect_prefix()</code> method</td>
+<td><code>nova_assistant.py</code></td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td>Inject prefix into <code>ai.generate()</code></td>
+<td><code>nova_assistant.py</code></td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td><code>_on_response_complete()</code> hook</td>
+<td><code>nova_assistant.py</code></td>
+<td>🟡 High</td>
+</tr>
+<tr>
+<td><code>_apply_affect_tone()</code> post-processor</td>
+<td><code>nova_assistant.py</code></td>
+<td>🟢 Nice to have</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>⚡ Recommended Next Step</h2>
+<p>Run <code>self_inspect</code> on the actual <code>ai.generate()</code> signature in your codebase. That&#39;s the keystone — the system prompt injection method in Step 2 depends entirely on what parameters it accepts. Everything else can be bolted on once that&#39;s confirmed.</p>
+<p>Want me to do that inspection now?</p>
+
+</div></body></html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>Nova Response — 24/04/2026, 1:56:30 pm</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style>
+*{box-sizing:border-box;}
+body{background:#04080F;color:#D0E8FF;font-family:'Share Tech Mono',monospace;padding:40px 20px;line-height:1.75;}
+.c{max-width:960px;margin:0 auto;background:rgba(10,20,40,.75);border:1px solid rgba(0,212,170,.25);border-radius:10px;padding:32px;}
+h1,h2,h3,h4{font-family:'Orbitron',monospace;color:#FFB300;margin:1em 0 .4em;}
+h1{font-size:1.5em;} h2{font-size:1.2em;} h3{font-size:1em;}
+h1:first-child,h2:first-child{margin-top:0;}
+.ts{color:#3C64A0;font-size:10px;margin-bottom:24px;}
+p{margin-bottom:.75em;}
+hr{border:none;height:1px;background:linear-gradient(90deg,transparent,#FFB300,transparent);margin:1.2em 0;}
+pre{background:#060C18;padding:14px;border-radius:6px;overflow-x:auto;border:1px solid rgba(0,212,170,.2);margin:.75em 0;}
+code{background:rgba(0,212,170,.12);color:#00D4AA;padding:1px 5px;border-radius:3px;font-size:.9em;}
+blockquote{border-left:3px solid #00D4AA;padding-left:12px;margin:.75em 0;color:#008C6E;}
+a{color:#7EB8FF;}
+ul,ol{margin:.5em 0 .75em 1.4em;}
+li{margin-bottom:.25em;}
+strong{color:#fff;}
+table{border-collapse:collapse;width:100%;margin:.85em 0;font-size:13px;overflow-x:auto;display:block;}
+thead tr{background:rgba(255,179,0,.12);}
+th{padding:7px 11px;border:1px solid rgba(126,184,255,.25);color:#FFB300;font-weight:bold;text-align:left;}
+td{padding:6px 11px;border:1px solid rgba(126,184,255,.18);text-align:left;}
+tbody tr:nth-child(even){background:rgba(255,255,255,.03);}
+img{max-width:100%;border-radius:6px;}
+.pb{position:fixed;top:14px;right:14px;padding:8px 18px;
+background:linear-gradient(135deg,#FF6B35,#CC4422);border:none;border-radius:4px;
+color:#fff;cursor:pointer;font-family:'Orbitron',monospace;font-weight:bold;font-size:11px;z-index:999;}
+@media print{.pb{display:none;}body{background:#fff;color:#000;}.c{background:#fff;border:none;}}
+</style></head><body>
+<button class="pb" onclick="window.print()">🖨 PRINT / PDF</button>
+<div class="c">
+<h1>⚡ NOVA — KNOWLEDGE COMPUTER</h1>
+<div class="ts">Generated: 24/04/2026, 1:56:30 pm</div>
+<h1>🏥 Nova Self-Inspection Health Check Report</h1>
+<p><em>Run: Friday 24 April 2026, 13:55 — Birkdale, Auckland</em></p>
+<hr>
+<h2>✅ Architecture Overview</h2>
+<p>Nova is built as a <strong>multi-inheritance class</strong> combining several mixins:</p>
+<pre><code class="language-python">class NovaAssistant(NovaTTS, NovaSelfImproveUI, NovaRouter):
+</code></pre>
+<p><strong>Modules detected:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>nova_ai.py</code></td>
+<td>Core AI / LLM interface</td>
+</tr>
+<tr>
+<td><code>nova_router.py</code></td>
+<td>Agent routing logic</td>
+</tr>
+<tr>
+<td><code>nova_memory.py</code></td>
+<td>Persistent memory system</td>
+</tr>
+<tr>
+<td><code>nova_affect.py</code></td>
+<td>Emotional state / affect system</td>
+</tr>
+<tr>
+<td><code>nova_council.py</code></td>
+<td>Multi-agent council</td>
+</tr>
+<tr>
+<td><code>nova_manager.py</code></td>
+<td>Manager agent orchestration</td>
+</tr>
+<tr>
+<td><code>nova_web.py</code></td>
+<td>Web server interface</td>
+</tr>
+<tr>
+<td><code>nova_whisper.py</code></td>
+<td>Speech recognition (Whisper)</td>
+</tr>
+<tr>
+<td><code>nova_tts.py</code></td>
+<td>Text-to-speech</td>
+</tr>
+<tr>
+<td><code>self_improver.py</code></td>
+<td>Self-improvement module</td>
+</tr>
+<tr>
+<td><code>nova_widgets.py</code></td>
+<td>Custom UI widgets</td>
+</tr>
+<tr>
+<td><code>theme_manager.py</code></td>
+<td>UI theming</td>
+</tr>
+<tr>
+<td><code>paper_tools_window.py</code></td>
+<td>Research paper tools</td>
+</tr>
+<tr>
+<td><code>code_execution_loop.py</code></td>
+<td>Safe code execution</td>
+</tr>
+<tr>
+<td><code>tools/tool_registry.py</code></td>
+<td>Tool registration system</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>🔴 Critical Issues</h2>
+<h3>1. Bare <code>except</code> clause in Ollama launcher</h3>
+<pre><code class="language-python"># CURRENT — dangerous
+try:
+    subprocess.Popen([path, &quot;serve&quot;], ...)
+except:
+    pass
+</code></pre>
+<p>This silently swallows <strong>all exceptions</strong> — including <code>KeyboardInterrupt</code> and <code>SystemExit</code>. Real failures become invisible. Fix:</p>
+<pre><code class="language-python">except (OSError, FileNotFoundError, PermissionError) as e:
+    logging.warning(f&quot;Failed to start Ollama at {path}: {e}&quot;)
+</code></pre>
+<hr>
+<h3>2. Multiple inheritance MRO collision risk</h3>
+<p>Python&#39;s Method Resolution Order means if any two of <code>NovaTTS</code>, <code>NovaSelfImproveUI</code>, or <code>NovaRouter</code> define the same method name, only one wins — <strong>silently</strong>, with no warning. This is a latent bug that could manifest in subtle, hard-to-trace ways.</p>
+<p><strong>Recommendation:</strong> Add explicit MRO documentation, or refactor toward composition over inheritance.</p>
+<hr>
+<h2>🟡 Moderate Issues</h2>
+<h3>3. <code>nova_state.json</code> — no schema validation</h3>
+<p>State is created if missing, but there&#39;s no validation of its structure on load. A corrupted or outdated state file could cause silent downstream failures.</p>
+<pre><code class="language-python"># Recommended addition
+def _validate_state(self, state: dict) -&gt; bool:
+    required_keys = [&quot;memory&quot;, &quot;location&quot;, &quot;session_id&quot;]
+    return all(k in state for k in required_keys)
+</code></pre>
+<hr>
+<h3>4. Tool Registry — no audit mode</h3>
+<p><code>tools/tool_registry.py</code> exists but has no health-check or introspection endpoint. If a tool fails to register, Nova silently loses that capability with no indication.</p>
+<pre><code class="language-python"># Recommended addition at startup
+registry.audit()  # logs all registered tools + status
+</code></pre>
+<hr>
+<h3>5. <code>self._latex_window_enabled = False</code> — hardcoded default</h3>
+<p>The LaTeX window is disabled by default with no visible UI toggle. Users may not know it exists or how to enable it.</p>
+<hr>
+<h3>6. <code>code_history</code> directory — unbounded growth</h3>
+<pre><code class="language-python">self.code_history_dir = &quot;code_history&quot;
+os.makedirs(self.code_history_dir, exist_ok=True)
+</code></pre>
+<p>No pruning logic. This directory will grow indefinitely over time. A &quot;keep last N files&quot; policy should be added.</p>
+<hr>
+<h2>🟢 Things Done Well</h2>
+<table>
+<thead>
+<tr>
+<th>✅</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Warning suppression</td>
+<td>Properly scoped — suppresses known noisy libraries only</td>
+</tr>
+<tr>
+<td>Ollama connectivity</td>
+<td>Tries both <code>127.0.0.1</code> and <code>localhost</code> — good resilience</td>
+</tr>
+<tr>
+<td>State bootstrapping</td>
+<td>Creates state file if missing — graceful first-run</td>
+</tr>
+<tr>
+<td>Web image directory</td>
+<td>Auto-created on startup — no manual setup needed</td>
+</tr>
+<tr>
+<td>Version metadata</td>
+<td><code>__version__</code> and <code>__author__</code> properly declared</td>
+</tr>
+<tr>
+<td>GPU fallback</td>
+<td>Whisper falls back to CPU if CUDA unavailable</td>
+</tr>
+<tr>
+<td>Thread safety</td>
+<td><code>threading</code> imported — UI operations appear to be threaded</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>🏗️ Priority Summary</h2>
+<pre><code>Priority  Issue                               Fix
+────────  ──────────────────────────────────  ───────────────────────────────
+🔴 HIGH   Bare except in Ollama launcher      Use specific exception types
+🔴 HIGH   MRO collision risk in mixins        Document or refactor to compose
+🟡 MED    No state schema validation          Add _validate_state()
+🟡 MED    Tool registry has no audit mode     Add registry.audit() on startup
+🟡 MED    code_history unbounded growth       Prune to last N files
+🟢 LOW    LaTeX toggle not surfaced in UI     Add settings toggle
+🟢 LOW    No structured logging               Replace print() with logging.*
+</code></pre>
+<hr>
+<h2>📊 Overall Health Score</h2>
+<pre><code>Structure &amp; Architecture    ████████░░  8/10
+Error Handling              █████░░░░░  5/10
+Tool Integration            ███████░░░  7/10
+Memory &amp; State              ███████░░░  7/10
+UI &amp; UX                     ████████░░  8/10
+─────────────────────────────────────────────
+Overall                     ███████░░░  7/10  — Solid, with fixable gaps
+</code></pre>
+<hr>
+<p><strong>Bottom line:</strong> The architecture is well-structured and modular — 15 clearly separated modules with defined roles. The main risks are the bare <code>except</code> clause (which can mask real failures), MRO ambiguity from multiple inheritance, and the absence of a tool registry health check. None are showstoppers, but the bare <code>except</code> should be patched promptly.</p>
+<p>Want me to generate patched code for any of the flagged sections? 🔧</p>
+
+</div></body></html>

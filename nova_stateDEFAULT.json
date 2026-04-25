@@ -1,0 +1,24 @@
+{
+  "last_result": "",
+  "last_task": "",
+  "last_type": "final",
+  "history": [],
+  "lessons": [],
+  "memory": {
+    "semantic": {},
+    "procedural": {},
+    "prospective": [],
+    "preferences": {},
+    "episodic_index": {},
+    "affect": {
+      "curiosity": 0.72,
+      "enthusiasm": 0.68,
+      "frustration": 0.05,
+      "satisfaction": 0.7,
+      "playfulness": 0.55,
+      "formality": 0.35,
+      "empathy": 0.65,
+      "focus": 0.8
+    }
+  }
+}

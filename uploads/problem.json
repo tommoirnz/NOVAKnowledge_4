@@ -1,0 +1,65 @@
+{
+  "version": "1.0",
+  "timestamp": "2025-11-27T14:59:51.142738",
+  "scene": {
+    "prompt": "A group of problem servers must integrate x^2/(x^2+3) showing two different methods and verify the answer. Use LaTex at all time with double dollar delimeters.",
+    "mood": "Casual"
+  },
+  "settings": {
+    "audio_enabled": true,
+    "uncensor": true,
+    "echo_enabled": false,
+    "echo_delay_ms": 144.0,
+    "echo_intensity": 0.47,
+    "simulation_speed": 1.0,
+    "human_response_prob": 0.65,
+    "barge_in_prob": 0.0
+  },
+  "speakers": [
+    {
+      "index": 0,
+      "active": true,
+      "character": "Scientist",
+      "model": "qwen2.5:7b-instruct",
+      "speed": 7,
+      "temperature": 0.3,
+      "voice": "Microsoft David Desktop - English (United States)"
+    },
+    {
+      "index": 1,
+      "active": true,
+      "character": "Mathematician",
+      "model": "qwen2.5:7b",
+      "speed": 6,
+      "temperature": 0.2,
+      "voice": "Microsoft James - English (Australia)"
+    },
+    {
+      "index": 2,
+      "active": true,
+      "character": "Visionary",
+      "model": "mistral:7b-instruct-v0.2-q4_K_M",
+      "speed": 7,
+      "temperature": 1.0,
+      "voice": "Microsoft Susan - English (United Kingdom)"
+    },
+    {
+      "index": 3,
+      "active": true,
+      "character": "Referee",
+      "model": "mistral:7b-instruct-v0.2-q4_K_M",
+      "speed": 7,
+      "temperature": 0.7,
+      "voice": "Microsoft Sean - English (Ireland)"
+    },
+    {
+      "index": 4,
+      "active": true,
+      "character": "Human",
+      "model": "human-proxy",
+      "speed": 5,
+      "temperature": 0.7,
+      "voice": "Microsoft David - English (United States)"
+    }
+  ]
+}

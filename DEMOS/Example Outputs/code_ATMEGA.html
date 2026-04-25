@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Response - 31/03/2026, 4:19:38 pm</title>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+            * { margin: 0; padding: 0; box-sizing: border-box; }
+            body {
+                background: linear-gradient(135deg, #080B14 0%, #06090F 100%);
+                color: #C8D8F0;
+                font-family: 'Inter', 'Exo 2', -apple-system, BlinkMacSystemFont, sans-serif;
+                line-height: 1.7;
+                padding: 40px 20px;
+                min-height: 100vh;
+            }
+            .container {
+                max-width: 900px;
+                margin: 0 auto;
+                background: rgba(10, 13, 22, 0.6);
+                backdrop-filter: blur(10px);
+                border-radius: 20px;
+                padding: 30px;
+                border: 1px solid rgba(61, 142, 255, 0.2);
+            }
+            .header {
+                border-bottom: 2px solid #3D8EFF;
+                margin-bottom: 30px;
+                padding-bottom: 15px;
+                position: relative;
+            }
+            .header::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 100px;
+                height: 2px;
+                background: linear-gradient(90deg, #00E5FF, #3D8EFF);
+            }
+            h1 {
+                font-family: 'Exo 2', sans-serif;
+                font-size: 28px;
+                background: linear-gradient(135deg, #00E5FF, #3D8EFF);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                margin-bottom: 8px;
+            }
+            .timestamp {
+                color: #3A4A6B;
+                font-size: 12px;
+                margin-top: 8px;
+            }
+            pre {
+                background: #06090F;
+                padding: 15px;
+                border-radius: 8px;
+                overflow-x: auto;
+                margin: 15px 0;
+                border: 1px solid rgba(61, 142, 255, 0.2);
+                font-family: 'Courier New', monospace;
+                font-size: 13px;
+            }
+            code {
+                background: rgba(61, 142, 255, 0.1);
+                padding: 2px 6px;
+                border-radius: 4px;
+                font-family: 'Courier New', monospace;
+                font-size: 0.9em;
+                color: #00E5FF;
+            }
+            .code-block-wrapper {
+                margin: 12px 0;
+                border-radius: 10px;
+                overflow: hidden;
+                border: 1px solid rgba(0,229,255,0.15);
+                background: #0A0D16;
+            }
+            .code-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 8px 14px;
+                background: rgba(0,0,0,0.3);
+                border-bottom: 1px solid rgba(0,229,255,0.1);
+            }
+            .traffic-lights {
+                display: flex;
+                gap: 6px;
+            }
+            .tl { width: 11px; height: 11px; border-radius: 50%; }
+            .tl-red { background: #FF5F57; }
+            .tl-yellow { background: #FEBC2E; }
+            .tl-green { background: #28C840; }
+            .image-container, .diagram-container {
+                margin: 20px 0;
+                text-align: center;
+            }
+            .image-container img, .diagram-container img {
+                max-width: 100%;
+                border-radius: 12px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+                cursor: pointer;
+            }
+            .image-caption, .diagram-caption {
+                color: #6272A4;
+                font-size: 12px;
+                margin-top: 8px;
+            }
+            blockquote {
+                border-left: 3px solid #00E5FF;
+                padding-left: 20px;
+                margin: 15px 0;
+                color: #6B8EBB;
+            }
+            a {
+                color: #3D8EFF;
+                text-decoration: none;
+            }
+            a:hover {
+                color: #00E5FF;
+                text-decoration: underline;
+            }
+            hr {
+                border: none;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, #3D8EFF, transparent);
+                margin: 20px 0;
+            }
+            .print-btn {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 10px 20px;
+                background: linear-gradient(135deg, #1A4A99, #0099CC);
+                border: none;
+                border-radius: 8px;
+                color: white;
+                cursor: pointer;
+                font-family: 'Inter', sans-serif;
+                font-weight: 600;
+                z-index: 1000;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+                transition: transform 0.2s;
+            }
+            .print-btn:hover {
+                transform: scale(1.05);
+            }
+            @media print {
+                .print-btn { display: none; }
+                body { background: white; color: black; }
+                .container { background: white; backdrop-filter: none; border: 1px solid #ddd; }
+            }
+</style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']]
+      },
+      startup: {
+        pageReady: () => {
+          return MathJax.startup.defaultPageReady();
+        }
+      }
+    };
+  </script>
+</head>
+<body>
+  <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+  <div class="container">
+    <div class="header">
+      <h1>⚡ NOVA — Deep Knowledge Observatory</h1>
+      <div class="timestamp">Generated: 31/03/2026, 4:19:38 pm</div>
+    </div>
+    <div class="content">
+      <h1>ATmega Rotary Encoder → PWM H-Bridge Control</h1>
+<h2>Complete Annotated C Code</h2>
+<hr>
+<div class="code-block-wrapper"><div class="code-header"><div class="traffic-lights"><div class="tl tl-red"></div><div class="tl tl-yellow"></div><div class="tl tl-green"></div></div><span class="code-lang">code</span></div><pre><code class="language-c">/*
+ * ============================================================
+ * ATmega Quadrature Rotary Encoder + PWM H-Bridge Controller
+ * ============================================================
+ * Hardware:
+ *   - ATmega328P (Arduino Uno compatible, 16MHz)
+ *   - Rotary encoder: Channel A → PD2 (INT0), Channel B → PD3 (INT1)
+ *   - H-Bridge (e.g. L298N):
+ *       IN1 → PB1 (OC1A) — PWM output for forward
+ *       IN2 → PB2 (OC1B) — PWM output for reverse
+ *       ENA → tied HIGH (or use separate enable pin)
+ *
+ * Theory:
+ *   Quadrature encoding uses two signals (A, B) phase-shifted 90°.
+ *   By reading both on each edge, we determine direction AND speed.
+ *   The encoder position drives a target speed/duty cycle for the motor.
+ * ============================================================
+ */
+
+#include &lt;avr/io.h&gt;
+#include &lt;avr/interrupt.h&gt;
+#include &lt;util/delay.h&gt;
+#include &lt;stdlib.h&gt;      /* abs() */
+
+/* ============================================================
+ * CONFIGURATION CONSTANTS
+ * Tune these for your hardware setup
+ * ============================================================ */
+
+#define F_CPU           16000000UL  /* 16 MHz crystal — must match fuse bits */
+#define PWM_MAX         1023        /* 10-bit PWM top value (Timer1 ICR1) */
+#define PWM_MIN         0           /* Minimum duty cycle */
+#define ENCODER_MAX     200         /* Max encoder count (sets speed ceiling) */
+#define ENCODER_MIN    -200         /* Min encoder count (reverse ceiling) */
+#define DEADBAND        5           /* Counts near zero where motor stops */
+                                    /* Prevents jitter at rest position */
+
+/* ============================================================
+ * PIN DEFINITIONS
+ * Using direct port manipulation — faster than Arduino digitalWrite()
+ * ============================================================ */
+
+/* Encoder inputs — must be interrupt-capable pins */
+#define ENC_PORT        PORTD
+#define ENC_DDR         DDRD
+#define ENC_PIN         PIND
+#define ENC_A           PD2         /* INT0 — triggers on any edge */
+#define ENC_B           PD3         /* INT1 — triggers on any edge */
+
+/* H-Bridge PWM outputs — Timer1 OC1A and OC1B */
+#define MOTOR_DDR       DDRB
+#define MOTOR_IN1       PB1         /* OC1A — forward PWM */
+#define MOTOR_IN2       PB2         /* OC1B — reverse PWM */
+
+/* ============================================================
+ * GLOBAL STATE VARIABLES
+ * volatile = tells compiler "this can change outside normal flow"
+ * (i.e. inside an ISR — interrupt service routine)
+ * Without volatile, the compiler may optimise these away — BAD.
+ * ============================================================ */
+
+volatile int16_t encoder_count = 0; /* Signed: positive=forward, negative=reverse */
+volatile uint8_t last_AB = 0;       /* Previous state of A+B for direction decode */
+
+/* ============================================================
+ * QUADRATURE DECODE LOOKUP TABLE
+ *
+ * This is the clever bit. Instead of if/else chains,
+ * we use a 16-entry lookup table indexed by:
+ *   [last_A, last_B, current_A, current_B] packed into 4 bits
+ *
+ * Values:
+ *   +1 = clockwise step
+ *   -1 = counter-clockwise step
+ *    0 = no movement or invalid transition
+ *
+ * The table encodes all valid Gray code transitions.
+ * Invalid transitions (e.g. both channels changed) return 0.
+ * ============================================================ */
+
+static const int8_t QEM[16] = {
+/*  curr: 00  01  10  11  */
+/*  prev 00 */  0, -1, +1,  0,
+/*  prev 01 */ +1,  0,  0, -1,
+/*  prev 10 */ -1,  0,  0, +1,
+/*  prev 11 */  0, +1, -1,  0
+};
+/*
+ * Index calculation:
+ *   index = (last_AB &lt;&lt; 2) | current_AB
+ *   last_AB  = previous (A&lt;&lt;1 | B)
+ *   current  = current  (A&lt;&lt;1 | B)
+ * This gives a 4-bit index into QEM[].
+ */
+
+/* ============================================================
+ * INTERRUPT SERVICE ROUTINE — INT0 (Encoder Channel A)
+ *
+ * Fires on ANY edge of channel A (rising or falling).
+ * We also read channel B here to determine direction.
+ *
+ * Why interrupt-driven?
+ *   Polling would miss pulses at high rotation speeds.
+ *   ISRs guarantee every edge is caught.
+ * ============================================================ */
+
+ISR(INT0_vect)
+{
+    /* Read current state of both encoder channels */
+    uint8_t current_A = (ENC_PIN &gt;&gt; ENC_A) &amp; 0x01;  /* Extract bit for A */
+    uint8_t current_B = (ENC_PIN &gt;&gt; ENC_B) &amp; 0x01;  /* Extract bit for B */
+
+    /* Pack current state into 2 bits: [A, B] */
+    uint8_t current_AB = (current_A &lt;&lt; 1) | current_B;
+
+    /* Build 4-bit index: upper 2 = previous state, lower 2 = current state */
+    uint8_t index = (last_AB &lt;&lt; 2) | current_AB;
+
+    /* Look up direction from table and update count */
+    encoder_count += QEM[index];
+
+    /* Clamp to defined limits — prevents runaway accumulation */
+    if (encoder_count &gt; ENCODER_MAX) encoder_count = ENCODER_MAX;
+    if (encoder_count &lt; ENCODER_MIN) encoder_count = ENCODER_MIN;
+
+    /* Save current state for next interrupt */
+    last_AB = current_AB;
+}
+
+/* ============================================================
+ * INTERRUPT SERVICE ROUTINE — INT1 (Encoder Channel B)
+ *
+ * Identical logic to INT0 but fires on channel B edges.
+ * Using BOTH interrupts gives 4x resolution (quadrature decoding).
+ * A single interrupt gives only 2x resolution.
+ * ============================================================ */
+
+ISR(INT1_vect)
+{
+    uint8_t current_A = (ENC_PIN &gt;&gt; ENC_A) &amp; 0x01;
+    uint8_t current_B = (ENC_PIN &gt;&gt; ENC_B) &amp; 0x01;
+    uint8_t current_AB = (current_A &lt;&lt; 1) | current_B;
+    uint8_t index = (last_AB &lt;&lt; 2) | current_AB;
+
+    encoder_count += QEM[index];
+
+    if (encoder_count &gt; ENCODER_MAX) encoder_count = ENCODER_MAX;
+    if (encoder_count &lt; ENCODER_MIN) encoder_count = ENCODER_MIN;
+
+    last_AB = current_AB;
+}
+
+/* ============================================================
+ * TIMER1 SETUP — Fast PWM, 10-bit, Phase Correct
+ *
+ * Timer1 is a 16-bit timer — ideal for motor PWM.
+ * We use Phase-Correct PWM (mode 10) with ICR1 as TOP.
+ *
+ * Phase-correct PWM:
+ *   Counter counts UP to ICR1, then DOWN to 0.
+ *   This produces symmetric pulses — better for motors
+ *   (less torque ripple vs Fast PWM).
+ *
+ * Frequency calculation:
+ *   f_PWM = F_CPU / (2 × prescaler × ICR1)
+ *   f_PWM = 16MHz / (2 × 8 × 1023) ≈ 980 Hz
+ *   (audible but fine for most DC motors)
+ *
+ *   For 20kHz (inaudible):
+ *   ICR1 = 16MHz / (2 × 1 × 20000) = 400
+ *   Change prescaler to CS10 (no prescale) and ICR1=400
+ * ============================================================ */
+
+void timer1_pwm_init(void)
+{
+    /* Set OC1A (PB1) and OC1B (PB2) as outputs */
+    MOTOR_DDR |= (1 &lt;&lt; MOTOR_IN1) | (1 &lt;&lt; MOTOR_IN2);
+
+    /*
+     * TCCR1A — Timer/Counter1 Control Register A
+     *
+     * COM1A1:0 = 10 → Clear OC1A on compare match (non-inverting)
+     * COM1B1:0 = 10 → Clear OC1B on compare match (non-inverting)
+     * WGM11    = 1  → Part of Mode 14 (Fast PWM, ICR1 as TOP)
+     *
+     * Mode 14 = Fast PWM with ICR1 as TOP:
+     *   WGM13:WGM12:WGM11:WGM10 = 1:1:1:0
+     */
+    TCCR1A = (1 &lt;&lt; COM1A1) | (1 &lt;&lt; COM1B1) | (1 &lt;&lt; WGM11);
+
+    /*
+     * TCCR1B — Timer/Counter1 Control Register B
+     *
+     * WGM13, WGM12 = 1 → Complete Mode 14 (Fast PWM, ICR1 TOP)
+     * CS11         = 1 → Prescaler = 8
+     *
+     * Prescaler options:
+     *   CS10 only      = /1   → 15.6 kHz PWM (with ICR1=1023)
+     *   CS11 only      = /8   → 1.96 kHz PWM
+     *   CS11+CS10      = /64  → 245 Hz PWM
+     *   CS12 only      = /256 → 61 Hz (too slow, visible flicker)
+     */
+    TCCR1B = (1 &lt;&lt; WGM13) | (1 &lt;&lt; WGM12) | (1 &lt;&lt; CS11);
+
+    /* ICR1 = TOP value = sets PWM resolution and frequency */
+    ICR1 = PWM_MAX;   /* 1023 = 10-bit resolution */
+
+    /* Initialise both channels to 0% duty cycle (motor stopped) */
+    OCR1A = 0;
+    OCR1B = 0;
+}
+
+/* ============================================================
+ * EXTERNAL INTERRUPT SETUP
+ *
+ * Configure INT0 and INT1 to fire on ANY logic change.
+ * "Any change" = both rising AND falling edges.
+ * This is essential for quadrature decoding — we need every edge.
+ * ============================================================ */
+
+void encoder_init(void)
+{
+    /* Set encoder pins as inputs */
+    ENC_DDR &amp;= ~((1 &lt;&lt; ENC_A) | (1 &lt;&lt; ENC_B));
+
+    /* Enable internal pull-up resistors */
+    /* Encoder outputs are open-collector — need pull-ups */
+    ENC_PORT |= (1 &lt;&lt; ENC_A) | (1 &lt;&lt; ENC_B);
+
+    /*
+     * EICRA — External Interrupt Control Register A
+     *
+     * ISC00, ISC01 control INT0 trigger:
+     *   00 = low level trigger
+     *   01 = ANY logic change  ← we want this
+     *   10 = falling edge
+     *   11 = rising edge
+     *
+     * ISC10, ISC11 control INT1 (same options)
+     *
+     * Setting ISCx0=1, ISCx1=0 → trigger on any change
+     */
+    EICRA = (1 &lt;&lt; ISC00) | (1 &lt;&lt; ISC10);  /* Any change on INT0 and INT1 */
+
+    /* EIMSK — Enable INT0 and INT1 in the interrupt mask register */
+    EIMSK = (1 &lt;&lt; INT0) | (1 &lt;&lt; INT1);
+
+    /* Capture initial encoder state to avoid phantom step on first interrupt */
+    uint8_t init_A = (ENC_PIN &gt;&gt; ENC_A) &amp; 0x01;
+    uint8_t init_B = (ENC_PIN &gt;&gt; ENC_B) &amp; 0x01;
+    last_AB = (init_A &lt;&lt; 1) | init_B;
+}
+
+/* ============================================================
+ * SET MOTOR PWM
+ *
+ * Takes a signed duty value (-PWM_MAX to +PWM_MAX):
+ *   Positive → forward  (OC1A active, OC1B = 0)
+ *   Negative → reverse  (OC1B active, OC1A = 0)
+ *   Zero     → coast    (both = 0, motor freewheels)
+ *
+ * H-Bridge truth table (L298N example):
+ *   IN1 PWM, IN2 LOW → Forward
+ *   IN1 LOW, IN2 PWM → Reverse
+ *   IN1 LOW, IN2 LOW → Coast (free-wheel)
+ *   IN1 HIGH,IN2 HIGH → Brake (short circuit — avoid!)
+ * ============================================================ */
+
+void motor_set(int16_t duty)
+{
+    if (duty &gt; 0)
+    {
+        /* Forward: apply PWM to IN1, hold IN2 low */
+        OCR1A = (uint16_t)duty;   /* Forward channel */
+        OCR1B = 0;                /* Reverse channel off */
+    }
+    else if (duty &lt; 0)
+    {
+        /* Reverse: hold IN1 low, apply PWM to IN2 */
+        OCR1A = 0;                        /* Forward channel off */
+        OCR1B = (uint16_t)(-duty);        /* Reverse channel — negate to get magnitude */
+    }
+    else
+    {
+        /* Zero: coast — both channels off */
+        OCR1A = 0;
+        OCR1B = 0;
+    }
+}
+
+/* ============================================================
+ * MAP ENCODER COUNT → PWM DUTY CYCLE
+ *
+ * Scales encoder_count (±ENCODER_MAX) to PWM range (0 to PWM_MAX)
+ * using integer arithmetic (no floating point — saves flash/RAM).
+ *
+ * Formula:
+ *   duty = (encoder_count × PWM_MAX) / ENCODER_MAX
+ *
+ * Example:
+ *   encoder_count = 100, ENCODER_MAX = 200, PWM_MAX = 1023
+ *   duty = (100 × 1023) / 200 = 511  (≈50% duty cycle)
+ * ============================================================ */
+
+int16_t encoder_to_pwm(int16_t count)
+{
+    /* Apply deadband — stops motor jittering near zero */
+    if (count &gt; -DEADBAND &amp;&amp; count &lt; DEADBAND)
+        return 0;
+
+    /* Scale: multiply first to preserve precision, then divide */
+    return (int16_t)((int32_t)count * PWM_MAX / ENCODER_MAX);
+    /*
+     * Why cast to int32_t first?
+     * count × PWM_MAX could be up to 200 × 1023 = 204,600
+     * That overflows int16_t (max 32,767) — so we widen first.
+     */
+}
+
+/* ============================================================
+ * MAIN — Initialise hardware, then loop forever
+ * ============================================================ */
+
+int main(void)
+{
+    /* Initialise subsystems */
+    encoder_init();     /* Configure encoder pins and interrupts */
+    timer1_pwm_init();  /* Configure Timer1 for PWM output */
+
+    /* Enable global interrupts — ISRs won't fire without this! */
+    sei();
+
+    /* --------------------------------------------------------
+     * Main control loop
+     *
+     * Reads encoder count (set by ISRs asynchronously),
+     * maps it to a PWM duty cycle, and drives the H-bridge.
+     *
+     * The ISRs update encoder_count independently of this loop.
+     * This is a simple open-loop speed control:
+     *   "Encoder position → motor speed"
+     *
+     * For closed-loop (PID), you'd add:
+     *   - A tachometer or second encoder for feedback
+     *   - PID error calculation here
+     *   - See our earlier PID discussion!
+     * -------------------------------------------------------- */
+
+    while (1)
+    {
+        /* Safely read volatile encoder_count */
+        /* Disable interrupts briefly to get atomic 16-bit read */
+        cli();                              /* Disable interrupts */
+        int16_t count = encoder_count;     /* Atomic copy */
+        sei();                              /* Re-enable interrupts */
+        /*
+         * Why atomic read?
+         * encoder_count is 16-bit. On an 8-bit AVR, reading 16 bits
+         * takes two instructions. An ISR could fire between them,
+         * corrupting the value. cli/sei brackets prevent this.
+         */
+
+        /* Map encoder position to PWM duty */
+        int16_t duty = encoder_to_pwm(count);
+
+        /* Drive the H-bridge */
+        motor_set(duty);
+
+        /* Small delay — tune to taste */
+        /* Shorter = more responsive, longer = smoother */
+        _delay_ms(10);
+    }
+
+    return 0;  /* Never reached, but good practice */
+}
+</code></pre></div>
+<hr>
+<h2>📋 Key Sections Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>QEM[16]</code> lookup table</td>
+<td>Decodes quadrature Gray code → direction without if/else chains</td>
+</tr>
+<tr>
+<td><code>ISR(INT0_vect)</code> / <code>ISR(INT1_vect)</code></td>
+<td>Catches every encoder edge — 4× resolution</td>
+</tr>
+<tr>
+<td><code>timer1_pwm_init()</code></td>
+<td>Sets up 10-bit phase-correct PWM on Timer1</td>
+</tr>
+<tr>
+<td><code>encoder_to_pwm()</code></td>
+<td>Scales ±200 counts → ±1023 PWM with deadband</td>
+</tr>
+<tr>
+<td><code>motor_set()</code></td>
+<td>Drives H-bridge IN1/IN2 for forward/reverse/coast</td>
+</tr>
+<tr>
+<td><code>cli()/sei()</code> bracket</td>
+<td>Atomic 16-bit read — prevents ISR corruption</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>🔧 Quick Tuning Guide</h2>
+<table>
+<thead>
+<tr>
+<th>Want...</th>
+<th>Change this</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Higher PWM frequency</td>
+<td>Reduce <code>ICR1</code> + use no prescaler (<code>CS10</code>)</td>
+</tr>
+<tr>
+<td>More encoder sensitivity</td>
+<td>Reduce <code>ENCODER_MAX</code></td>
+</tr>
+<tr>
+<td>Wider deadband</td>
+<td>Increase <code>DEADBAND</code></td>
+</tr>
+<tr>
+<td>Add PID closed-loop</td>
+<td>Replace <code>encoder_to_pwm()</code> with PID error calculation</td>
+</tr>
+</tbody></table>
+<hr>
+<blockquote>
+<p>💡 <strong>Tie this to our earlier PID session</strong> — replace the open-loop <code>encoder_to_pwm()</code> with a PID controller where the encoder sets the <strong>setpoint</strong> and a tachometer provides <strong>feedback</strong>. That's the full closed-loop motor controller. Want that next?</p>
+</blockquote>
+
+    </div>
+    <hr>
+    <div style="text-align: center; color: #3A4A6B; font-size: 11px; margin-top: 30px;">
+      Generated by Nova AI • Deep Knowledge Observatory
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('img').forEach(img => {
+      img.onclick = () => window.open(img.src);
+    });
+  </script>
+</body>
+</html>

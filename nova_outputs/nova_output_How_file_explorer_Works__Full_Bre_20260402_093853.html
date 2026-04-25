@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+    <html><head><meta charset="utf-8">
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+    body { background:#0D0F14; color:#C8D6E5; font-family:Georgia,serif;
+           max-width:900px; margin:40px auto; padding:20px; line-height:1.7; }
+    h1,h2,h3 { color:#4A9EFF; }
+    code { background:#1A1F2E; padding:2px 6px; border-radius:3px; color:#39FF14; }
+    pre { background:#1A1F2E; padding:16px; border-radius:6px; overflow-x:auto; }
+    table { border-collapse:collapse; width:100%; }
+    th,td { border:1px solid #2A4A7F; padding:8px 12px; }
+    th { background:#1A2035; color:#4A9EFF; }
+    a { color:#4A9EFF; }
+    </style></head><body><h1>🔍 How <code>file_explorer</code> Works — Full Breakdown</h1>
+<p>Based on a live self-inspection of Nova's source code, here's a comprehensive breakdown of how <code>file_explorer</code> actually works under the hood.</p>
+<hr />
+<h2>Overview</h2>
+<p><code>file_explorer</code> is a <strong>single multipurpose function</strong> that handles all file system interactions — listing, reading, searching, copying, moving, saving, deleting, and opening files. Rather than requiring strict command syntax, it uses <strong>natural language parsing</strong> as its primary interface, making it genuinely conversational.</p>
+<hr />
+<h2>Step 1 — Entry Point &amp; Path Normalisation</h2>
+<pre><code class="language-python">query = query.replace(&quot;\\&quot;, &quot;/&quot;).strip()
+query = re.sub(r&quot;C:/Users/[^/]+&quot;, HOME.replace(&quot;\\&quot;, &quot;/&quot;), query, flags=re.IGNORECASE)
+</code></pre>
+<p>The very first thing it does is <strong>normalise slashes</strong> and <strong>rewrite Windows user paths</strong> to the correct home directory — regardless of what username was typed in. Solid defensive coding that prevents the most common path-related failures.</p>
+<hr />
+<h2>Step 2 — Natural Language Detection (Media Files)</h2>
+<p>Before any command parsing occurs, it checks for <strong>natural language media queries</strong>:</p>
+<h3>🎵 MP3 / Music</h3>
+<pre><code class="language-python">if &quot;mp3&quot; in query_lower and (&quot;list&quot; in query_lower or &quot;all&quot; in query_lower):
+    return _find_files(music_dir, &quot;*.mp3&quot;)
+</code></pre>
+<h3>🎬 Video Files</h3>
+<p>Detects words like <code>"video"</code>, <code>"mp4"</code>, <code>"mkv"</code>, <code>"videos"</code> combined with intent words like <code>"what"</code>, <code>"list"</code>, <code>"find"</code>, <code>"show"</code>, <code>"have"</code>, <code>"all"</code>, <code>"can"</code>. It then <strong>strips stop words</strong> (do, i, have, show, me, list…) to extract the meaningful search keyword, then calls <code>_search_files()</code>.</p>
+<h3>🎶 Music / Songs</h3>
+<p>Same pattern — strips stop words, extracts keyword, searches the <code>music_dir</code>.</p>
+<p>This means queries like <em>"what Star Trek video files do I have?"</em> work naturally, without any special syntax.</p>
+<hr />
+<h2>Step 3 — Directory Shortcuts</h2>
+<pre><code class="language-python">for name, full_path in sorted(SHORTCUTS.items(), key=lambda x: len(x[0]), reverse=True):
+</code></pre>
+<p>It iterates a <code>SHORTCUTS</code> dictionary — <strong>sorted longest-match first</strong> to avoid partial word collisions — replacing shorthand names like <code>"desktop"</code> or <code>"nova"</code> with their full resolved paths. Boundary checks ensure it doesn't accidentally match inside longer words.</p>
+<hr />
+<h2>Step 4 — Command Dispatch (Prefix Matching)</h2>
+<p>After natural language checks, it falls through to <strong>explicit command prefixes</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Prefix</th>
+<th>Action</th>
+<th>Helper</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>read</code></td>
+<td>Reads and returns file contents</td>
+<td><code>_read_file()</code></td>
+</tr>
+<tr>
+<td><code>list</code></td>
+<td>Lists directory contents</td>
+<td><code>_list_directory()</code></td>
+</tr>
+<tr>
+<td><code>find *.ext in path</code></td>
+<td>Glob-pattern file search</td>
+<td><code>_find_files()</code></td>
+</tr>
+<tr>
+<td><code>search keyword in path</code></td>
+<td>Filename keyword search</td>
+<td><code>_search_files()</code></td>
+</tr>
+<tr>
+<td><code>tree</code></td>
+<td>Directory tree (max depth 3)</td>
+<td><code>_tree()</code></td>
+</tr>
+<tr>
+<td><code>copy src to dst</code></td>
+<td>Copies a file</td>
+<td><code>_copy_file()</code></td>
+</tr>
+<tr>
+<td><code>save path content</code></td>
+<td>Writes text to a file</td>
+<td><code>_save_text()</code></td>
+</tr>
+<tr>
+<td><code>delete</code></td>
+<td>Deletes a file</td>
+<td><code>_delete_file()</code></td>
+</tr>
+<tr>
+<td><code>move src to dst</code></td>
+<td>Moves a file</td>
+<td><code>shutil.move()</code> directly</td>
+</tr>
+<tr>
+<td><code>open</code></td>
+<td>Opens file with OS default app</td>
+<td><code>os.startfile()</code></td>
+</tr>
+</tbody>
+</table>
+<p>The <code>open</code> command also includes <strong>fuzzy fallback</strong> — if the exact path isn't found, it attempts a partial filename match before giving up.</p>
+<hr />
+<h2>Step 5 — Path Resolution</h2>
+<p>All paths — regardless of how they arrived — pass through <code>_resolve_path()</code>, which handles:
+- Relative paths
+- Shortcut expansion
+- Home directory (<code>~</code>) expansion</p>
+<p>...before any actual file operation is attempted.</p>
+<hr />
+<h2>Key Design Patterns</h2>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Natural language first</strong></td>
+<td>Handles conversational queries before strict commands</td>
+</tr>
+<tr>
+<td><strong>Longest-match shortcuts</strong></td>
+<td>Prevents partial word collisions in path substitution</td>
+</tr>
+<tr>
+<td><strong>Stop word stripping</strong></td>
+<td>Extracts meaningful search terms from natural sentences</td>
+</tr>
+<tr>
+<td><strong>Fallback fuzzy matching</strong></td>
+<td><code>open</code> tries partial filename if exact path fails</td>
+</tr>
+<tr>
+<td><strong>Unified entry point</strong></td>
+<td>One function for all file ops — clean for tool dispatch</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Summary</h2>
+<p><code>file_explorer</code> is essentially a <strong>mini command interpreter with NLP preprocessing</strong>. It handles both structured commands (<code>"find *.py in nova"</code>) and natural language (<code>"what Star Trek video files do I have?"</code>), resolves paths intelligently, and dispatches to focused helper functions for each operation type.</p>
+<p>The design philosophy is clear: <strong>work conversationally first, fall back to explicit syntax second</strong>. Whoever wrote it wanted it to feel like talking to a file system, not programming one. 🎯</p>
+<hr />
+<p><em>Sources: Live self-inspection of Nova's source code via <code>self_inspect</code> tool. No external URLs.</em></p></body></html>

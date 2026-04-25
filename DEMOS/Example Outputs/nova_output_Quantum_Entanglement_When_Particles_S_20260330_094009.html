@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+    <html><head><meta charset="utf-8">
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+    body { background:#0D0F14; color:#C8D6E5; font-family:Georgia,serif;
+           max-width:900px; margin:40px auto; padding:20px; line-height:1.7; }
+    h1,h2,h3 { color:#4A9EFF; }
+    code { background:#1A1F2E; padding:2px 6px; border-radius:3px; color:#39FF14; }
+    pre { background:#1A1F2E; padding:16px; border-radius:6px; overflow-x:auto; }
+    table { border-collapse:collapse; width:100%; }
+    th,td { border:1px solid #2A4A7F; padding:8px 12px; }
+    th { background:#1A2035; color:#4A9EFF; }
+    a { color:#4A9EFF; }
+    </style></head><body><h1>Quantum Entanglement: When Particles Share a Secret</h1>
+<hr />
+<h2>The Analogy First</h2>
+<p>Imagine you write two words on slips of paper — one says <strong>"HEADS"</strong>, one says <strong>"TAILS"</strong> — seal them in envelopes, and send one to Auckland and one to London. When Auckland opens theirs and sees HEADS, they <em>instantly</em> know London has TAILS. No mystery there — the information was baked in at the start.</p>
+<p>Quantum entanglement looks superficially like that. But here's the twist that makes physicists lose sleep: <strong>in the quantum version, neither slip has a definite word written on it until someone opens an envelope.</strong> The act of opening <em>one</em> envelope doesn't just <em>reveal</em> the word — it <em>creates</em> it. And the other envelope, instantaneously, gets the complementary word — no matter how far away it is.</p>
+<p>That's not a metaphor. That's what the experiments actually show.</p>
+<hr />
+<h2>What Entanglement Actually Is</h2>
+<p>When two quantum particles interact under the right conditions, they can form a <strong>joint quantum state</strong> that cannot be described as two independent states. Mathematically, instead of:</p>
+<p>$$|\psi_A\rangle \otimes |\psi_B\rangle$$</p>
+<p>you get something like:</p>
+<p>$$|\Psi\rangle = \frac{1}{\sqrt{2}}\left(|\uparrow\rangle_A|\downarrow\rangle_B - |\downarrow\rangle_A|\uparrow\rangle_B\right)$$</p>
+<p>This is a <strong>Bell state</strong> — one of the four maximally entangled two-qubit states. The key features:</p>
+<ul>
+<li><strong>Neither particle has a definite spin</strong> before measurement. Particle A is not secretly spin-up while we're not looking. It exists in a genuine superposition.</li>
+<li><strong>The outcomes are correlated</strong>: if you measure A and get spin-up, B will <em>always</em> yield spin-down (and vice versa), regardless of the axis you choose — provided you measure on the same axis.</li>
+<li><strong>The correlation is non-local</strong>: it holds even when A and B are separated by light-years, and even when the measurements are made simultaneously (spacelike separated events).</li>
+</ul>
+<p>This is what physicists mean by <strong>non-locality</strong> — the measurement outcomes are correlated in ways that cannot be explained by any pre-existing local hidden variables.</p>
+<hr />
+<h2>What It Is NOT</h2>
+<p>This is where popular science goes badly wrong. Let's be precise:</p>
+<h3>❌ It is NOT faster-than-light communication</h3>
+<p>When Alice measures her particle and gets spin-up, she cannot <em>choose</em> what outcome she gets — it's random. She cannot encode a message in a random result. Bob, measuring his particle, also gets a random result. Only when Alice and Bob <strong>compare notes over a classical channel</strong> (which is limited to the speed of light) do they discover their results were correlated. The correlation is real; the signalling is impossible.</p>
+<p>This is protected by the <strong>no-communication theorem</strong> — a rigorous result in quantum information theory.</p>
+<h3>❌ It is NOT "spooky action" that physically travels between particles</h3>
+<p>Einstein famously called it <em>"spukhafte Fernwirkung"</em> — spooky action at a distance — and he hated it. He believed it proved quantum mechanics was incomplete. He was wrong, but his discomfort was scientifically productive (see Bell, below).</p>
+<h3>❌ It is NOT the same as classical correlation</h3>
+<p>Classical correlations can always be explained by shared prior information — the "hidden variables" Einstein hoped for. Quantum correlations <strong>cannot</strong>. This is the entire point of Bell's theorem.</p>
+<hr />
+<h2>The Concrete Experimental Proof: Bell Test Experiments</h2>
+<p>In 1964, physicist <strong>John Bell</strong> derived a mathematical inequality — now called the <strong>Bell inequality</strong> — that sets an upper bound on how correlated measurement results can be if they are explained by <em>any</em> local hidden variable theory (i.e., if the particles secretly carried pre-determined values).</p>
+<p>For a pair of measurements on two particles, Bell showed that classical correlations must satisfy:</p>
+<p>$$|E(a,b) - E(a,b')| + |E(a',b) + E(a',b')| \leq 2$$</p>
+<p>where $E(a,b)$ is the correlation between measurements along axes $a$ and $b$. This is the <strong>CHSH inequality</strong>.</p>
+<p>Quantum mechanics predicts a maximum value of $2\sqrt{2} \approx 2.828$ — a clear violation.</p>
+<h3>What the experiments found:</h3>
+<ul>
+<li><strong>1972 — Freedman &amp; Clauser</strong>: First experimental test. Results favoured quantum mechanics.</li>
+<li><strong>1982 — Alain Aspect</strong> (Paris): Closed the "locality loophole" by switching measurement settings <em>after</em> the particles were in flight. Quantum mechanics won decisively.</li>
+<li><strong>2015 — Hensen et al. (Delft)</strong>: The first <strong>loophole-free Bell test</strong>, closing both the locality and detection loopholes simultaneously using entangled electron spins separated by 1.3 km. Violation confirmed at $> 2.4\sigma$.</li>
+<li><strong>2022 — Nobel Prize in Physics</strong>: Awarded to <strong>Aspect, Clauser, and Zeilinger</strong> specifically for their experimental work on entanglement and Bell inequality violations.</li>
+</ul>
+<p>The verdict is unambiguous: <strong>nature is non-local in the quantum sense.</strong> Local hidden variable theories are experimentally ruled out.</p>
+<hr />
+<h2>How Entanglement Is Created</h2>
+<p>In practice, entangled photon pairs are routinely generated via <strong>Spontaneous Parametric Down-Conversion (SPDC)</strong>: a high-energy photon passes through a nonlinear crystal (e.g., BBO — beta barium borate) and splits into two lower-energy photons with correlated polarisations. These photon pairs are the workhorses of quantum optics labs worldwide.</p>
+<p>Entanglement can also be created between:
+- <strong>Trapped ions</strong> (via shared phonon modes)
+- <strong>Superconducting qubits</strong> (via microwave coupling)
+- <strong>Electron spins</strong> in nitrogen-vacancy centres in diamond
+- <strong>Atomic ensembles</strong> via quantum memory protocols</p>
+<hr />
+<h2>Why It Matters</h2>
+<h3>1. Quantum Computing</h3>
+<p>Entanglement is not just a curiosity — it is a <strong>computational resource</strong>. A quantum computer with $n$ entangled qubits can represent $2^n$ states simultaneously. Algorithms like <strong>Shor's</strong> (integer factorisation) and <strong>Grover's</strong> (database search) derive their power directly from entanglement and interference. Without entanglement, a quantum computer collapses to a classical one.</p>
+<h3>2. Quantum Cryptography</h3>
+<p><strong>Quantum Key Distribution (QKD)</strong> — particularly the <strong>E91 protocol</strong> designed by Artur Ekert in 1991 — uses entangled pairs to distribute cryptographic keys. Any eavesdropper disturbs the entanglement in a detectable way. Security is guaranteed by the laws of physics, not computational hardness. This is already deployed in commercial systems and satellite links (China's Micius satellite demonstrated entanglement-based QKD over 1,200 km in 2017).</p>
+<h3>3. Quantum Teleportation</h3>
+<p>Using entanglement plus a classical channel, the <strong>complete quantum state</strong> of a particle can be transferred to a distant location — without the particle itself travelling. The original state is destroyed in the process (no cloning theorem). This has been demonstrated over distances exceeding 100 km and is a key primitive in quantum networking.</p>
+<h3>4. Quantum Networks and the Quantum Internet</h3>
+<p>Entanglement is the backbone of proposed <strong>quantum repeater</strong> architectures that would allow a global quantum internet — enabling distributed quantum computing and provably secure communication at scale.</p>
+<hr />
+<h2>The Deeper Mystery</h2>
+<p>Even after a century, entanglement forces a profound question: <strong>what does it mean for two particles to share a state across arbitrary distances with no physical connection between them?</strong></p>
+<p>The correlations are real. They're measured. They violate Bell inequalities. But the <em>mechanism</em> — if there even is one — remains philosophically unresolved:</p>
+<ul>
+<li><strong>Copenhagen interpretation</strong>: Don't ask what's "really happening." The wavefunction is a calculational tool; measurement outcomes are all that's real.</li>
+<li><strong>Many-worlds</strong>: Both outcomes happen; the universe branches. Correlations are preserved across branches.</li>
+<li><strong>Pilot wave / Bohmian mechanics</strong>: Non-local hidden variables <em>do</em> exist, but they're explicitly non-local — Bell's theorem is satisfied because locality is abandoned from the start.</li>
+<li><strong>Relational QM</strong>: Quantum states are relative to observers; there is no observer-independent reality.</li>
+</ul>
+<p>None of these interpretations is experimentally distinguishable from the others. The mathematics is settled. The meaning is not.</p>
+<hr />
+<h2>Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>What it is</strong></td>
+<td>Two particles sharing a single inseparable quantum state</td>
+</tr>
+<tr>
+<td><strong>Key feature</strong></td>
+<td>Measurement of one instantly determines the correlated outcome of the other</td>
+</tr>
+<tr>
+<td><strong>Non-locality</strong></td>
+<td>Correlations exceed what any local hidden variable theory allows</td>
+</tr>
+<tr>
+<td><strong>FTL communication</strong></td>
+<td>Impossible — no-communication theorem</td>
+</tr>
+<tr>
+<td><strong>Experimental proof</strong></td>
+<td>Bell inequality violations, confirmed loophole-free since 2015</td>
+</tr>
+<tr>
+<td><strong>Nobel Prize</strong></td>
+<td>2022 — Aspect, Clauser, Zeilinger</td>
+</tr>
+<tr>
+<td><strong>Applications</strong></td>
+<td>Quantum computing, QKD, teleportation, quantum networks</td>
+</tr>
+<tr>
+<td><strong>Open question</strong></td>
+<td>What it <em>means</em> for reality — still contested</td>
+</tr>
+</tbody>
+</table>
+<p>Entanglement is the feature of quantum mechanics that most sharply distinguishes it from every classical theory ever devised. It's not a bug, not an approximation, and not a metaphor. It is how the universe actually behaves at small scales — and we're only just beginning to put it to work.</p></body></html>

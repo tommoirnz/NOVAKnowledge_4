@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Response - 2/04/2026, 9:37:13 am</title>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+            * { margin: 0; padding: 0; box-sizing: border-box; }
+            body {
+                background: linear-gradient(135deg, #080B14 0%, #06090F 100%);
+                color: #C8D8F0;
+                font-family: 'Inter', 'Exo 2', -apple-system, BlinkMacSystemFont, sans-serif;
+                line-height: 1.7;
+                padding: 40px 20px;
+                min-height: 100vh;
+            }
+            .container {
+                max-width: 900px;
+                margin: 0 auto;
+                background: rgba(10, 13, 22, 0.6);
+                backdrop-filter: blur(10px);
+                border-radius: 20px;
+                padding: 30px;
+                border: 1px solid rgba(61, 142, 255, 0.2);
+            }
+            .header {
+                border-bottom: 2px solid #3D8EFF;
+                margin-bottom: 30px;
+                padding-bottom: 15px;
+                position: relative;
+            }
+            .header::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 100px;
+                height: 2px;
+                background: linear-gradient(90deg, #00E5FF, #3D8EFF);
+            }
+            h1 {
+                font-family: 'Exo 2', sans-serif;
+                font-size: 28px;
+                background: linear-gradient(135deg, #00E5FF, #3D8EFF);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                margin-bottom: 8px;
+            }
+            .timestamp {
+                color: #3A4A6B;
+                font-size: 12px;
+                margin-top: 8px;
+            }
+            pre {
+                background: #06090F;
+                padding: 15px;
+                border-radius: 8px;
+                overflow-x: auto;
+                margin: 15px 0;
+                border: 1px solid rgba(61, 142, 255, 0.2);
+                font-family: 'Courier New', monospace;
+                font-size: 13px;
+            }
+            code {
+                background: rgba(61, 142, 255, 0.1);
+                padding: 2px 6px;
+                border-radius: 4px;
+                font-family: 'Courier New', monospace;
+                font-size: 0.9em;
+                color: #00E5FF;
+            }
+            .code-block-wrapper {
+                margin: 12px 0;
+                border-radius: 10px;
+                overflow: hidden;
+                border: 1px solid rgba(0,229,255,0.15);
+                background: #0A0D16;
+            }
+            .code-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 8px 14px;
+                background: rgba(0,0,0,0.3);
+                border-bottom: 1px solid rgba(0,229,255,0.1);
+            }
+            .traffic-lights {
+                display: flex;
+                gap: 6px;
+            }
+            .tl { width: 11px; height: 11px; border-radius: 50%; }
+            .tl-red { background: #FF5F57; }
+            .tl-yellow { background: #FEBC2E; }
+            .tl-green { background: #28C840; }
+            .image-container, .diagram-container {
+                margin: 20px 0;
+                text-align: center;
+            }
+            .image-container img, .diagram-container img {
+                max-width: 100%;
+                border-radius: 12px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+                cursor: pointer;
+            }
+            .image-caption, .diagram-caption {
+                color: #6272A4;
+                font-size: 12px;
+                margin-top: 8px;
+            }
+            blockquote {
+                border-left: 3px solid #00E5FF;
+                padding-left: 20px;
+                margin: 15px 0;
+                color: #6B8EBB;
+            }
+            a {
+                color: #3D8EFF;
+                text-decoration: none;
+            }
+            a:hover {
+                color: #00E5FF;
+                text-decoration: underline;
+            }
+            hr {
+                border: none;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, #3D8EFF, transparent);
+                margin: 20px 0;
+            }
+            .print-btn {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 10px 20px;
+                background: linear-gradient(135deg, #1A4A99, #0099CC);
+                border: none;
+                border-radius: 8px;
+                color: white;
+                cursor: pointer;
+                font-family: 'Inter', sans-serif;
+                font-weight: 600;
+                z-index: 1000;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+                transition: transform 0.2s;
+            }
+            .print-btn:hover {
+                transform: scale(1.05);
+            }
+            @media print {
+                .print-btn { display: none; }
+                body { background: white; color: black; }
+                .container { background: white; backdrop-filter: none; border: 1px solid #ddd; }
+            }
+</style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']]
+      },
+      startup: {
+        pageReady: () => {
+          return MathJax.startup.defaultPageReady();
+        }
+      }
+    };
+  </script>
+</head>
+<body>
+  <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+  <div class="container">
+    <div class="header">
+      <h1>⚡ NOVA — Deep Knowledge Observatory</h1>
+      <div class="timestamp">Generated: 2/04/2026, 9:37:13 am</div>
+    </div>
+    <div class="content">
+      <h1>🔍 How <code>file_explorer</code> Works — Full Breakdown</h1>
+<p>Based on a live self-inspection of Nova's source code, here's a comprehensive breakdown of how <code>file_explorer</code> actually works under the hood.</p>
+<hr>
+<h2>Overview</h2>
+<p><code>file_explorer</code> is a <strong>single multipurpose function</strong> that handles all file system interactions — listing, reading, searching, copying, moving, saving, deleting, and opening files. Rather than requiring strict command syntax, it uses <strong>natural language parsing</strong> as its primary interface, making it genuinely conversational.</p>
+<hr>
+<h2>Step 1 — Entry Point &amp; Path Normalisation</h2>
+<div class="code-block-wrapper"><div class="code-header"><div class="traffic-lights"><div class="tl tl-red"></div><div class="tl tl-yellow"></div><div class="tl tl-green"></div></div><span class="code-lang">code</span></div><pre><code class="language-python">query = query.replace("\\", "/").strip()
+query = re.sub(r"C:/Users/[^/]+", HOME.replace("\\", "/"), query, flags=re.IGNORECASE)
+</code></pre></div>
+<p>The very first thing it does is <strong>normalise slashes</strong> and <strong>rewrite Windows user paths</strong> to the correct home directory — regardless of what username was typed in. Solid defensive coding that prevents the most common path-related failures.</p>
+<hr>
+<h2>Step 2 — Natural Language Detection (Media Files)</h2>
+<p>Before any command parsing occurs, it checks for <strong>natural language media queries</strong>:</p>
+<h3>🎵 MP3 / Music</h3>
+<div class="code-block-wrapper"><div class="code-header"><div class="traffic-lights"><div class="tl tl-red"></div><div class="tl tl-yellow"></div><div class="tl tl-green"></div></div><span class="code-lang">code</span></div><pre><code class="language-python">if "mp3" in query_lower and ("list" in query_lower or "all" in query_lower):
+    return _find_files(music_dir, "*.mp3")
+</code></pre></div>
+<h3>🎬 Video Files</h3>
+<p>Detects words like <code>"video"</code>, <code>"mp4"</code>, <code>"mkv"</code>, <code>"videos"</code> combined with intent words like <code>"what"</code>, <code>"list"</code>, <code>"find"</code>, <code>"show"</code>, <code>"have"</code>, <code>"all"</code>, <code>"can"</code>. It then <strong>strips stop words</strong> (do, i, have, show, me, list…) to extract the meaningful search keyword, then calls <code>_search_files()</code>.</p>
+<h3>🎶 Music / Songs</h3>
+<p>Same pattern — strips stop words, extracts keyword, searches the <code>music_dir</code>.</p>
+<p>This means queries like <em>"what Star Trek video files do I have?"</em> work naturally, without any special syntax.</p>
+<hr>
+<h2>Step 3 — Directory Shortcuts</h2>
+<div class="code-block-wrapper"><div class="code-header"><div class="traffic-lights"><div class="tl tl-red"></div><div class="tl tl-yellow"></div><div class="tl tl-green"></div></div><span class="code-lang">code</span></div><pre><code class="language-python">for name, full_path in sorted(SHORTCUTS.items(), key=lambda x: len(x[0]), reverse=True):
+</code></pre></div>
+<p>It iterates a <code>SHORTCUTS</code> dictionary — <strong>sorted longest-match first</strong> to avoid partial word collisions — replacing shorthand names like <code>"desktop"</code> or <code>"nova"</code> with their full resolved paths. Boundary checks ensure it doesn't accidentally match inside longer words.</p>
+<hr>
+<h2>Step 4 — Command Dispatch (Prefix Matching)</h2>
+<p>After natural language checks, it falls through to <strong>explicit command prefixes</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Prefix</th>
+<th>Action</th>
+<th>Helper</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>read </code></td>
+<td>Reads and returns file contents</td>
+<td><code>_read_file()</code></td>
+</tr>
+<tr>
+<td><code>list </code></td>
+<td>Lists directory contents</td>
+<td><code>_list_directory()</code></td>
+</tr>
+<tr>
+<td><code>find *.ext in path</code></td>
+<td>Glob-pattern file search</td>
+<td><code>_find_files()</code></td>
+</tr>
+<tr>
+<td><code>search keyword in path</code></td>
+<td>Filename keyword search</td>
+<td><code>_search_files()</code></td>
+</tr>
+<tr>
+<td><code>tree </code></td>
+<td>Directory tree (max depth 3)</td>
+<td><code>_tree()</code></td>
+</tr>
+<tr>
+<td><code>copy src to dst</code></td>
+<td>Copies a file</td>
+<td><code>_copy_file()</code></td>
+</tr>
+<tr>
+<td><code>save path content</code></td>
+<td>Writes text to a file</td>
+<td><code>_save_text()</code></td>
+</tr>
+<tr>
+<td><code>delete </code></td>
+<td>Deletes a file</td>
+<td><code>_delete_file()</code></td>
+</tr>
+<tr>
+<td><code>move src to dst</code></td>
+<td>Moves a file</td>
+<td><code>shutil.move()</code> directly</td>
+</tr>
+<tr>
+<td><code>open </code></td>
+<td>Opens file with OS default app</td>
+<td><code>os.startfile()</code></td>
+</tr>
+</tbody></table>
+<p>The <code>open</code> command also includes <strong>fuzzy fallback</strong> — if the exact path isn't found, it attempts a partial filename match before giving up.</p>
+<hr>
+<h2>Step 5 — Path Resolution</h2>
+<p>All paths — regardless of how they arrived — pass through <code>_resolve_path()</code>, which handles:</p>
+<ul>
+<li>Relative paths</li>
+<li>Shortcut expansion</li>
+<li>Home directory (<code>~</code>) expansion</li>
+</ul>
+<p>...before any actual file operation is attempted.</p>
+<hr>
+<h2>Key Design Patterns</h2>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Natural language first</strong></td>
+<td>Handles conversational queries before strict commands</td>
+</tr>
+<tr>
+<td><strong>Longest-match shortcuts</strong></td>
+<td>Prevents partial word collisions in path substitution</td>
+</tr>
+<tr>
+<td><strong>Stop word stripping</strong></td>
+<td>Extracts meaningful search terms from natural sentences</td>
+</tr>
+<tr>
+<td><strong>Fallback fuzzy matching</strong></td>
+<td><code>open</code> tries partial filename if exact path fails</td>
+</tr>
+<tr>
+<td><strong>Unified entry point</strong></td>
+<td>One function for all file ops — clean for tool dispatch</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Summary</h2>
+<p><code>file_explorer</code> is essentially a <strong>mini command interpreter with NLP preprocessing</strong>. It handles both structured commands (<code>"find *.py in nova"</code>) and natural language (<code>"what Star Trek video files do I have?"</code>), resolves paths intelligently, and dispatches to focused helper functions for each operation type.</p>
+<p>The design philosophy is clear: <strong>work conversationally first, fall back to explicit syntax second</strong>. Whoever wrote it wanted it to feel like talking to a file system, not programming one. 🎯</p>
+<hr>
+<p><em>Sources: Live self-inspection of Nova's source code via <code>self_inspect</code> tool. No external URLs.</em></p>
+
+    </div>
+    <hr>
+    <div style="text-align: center; color: #3A4A6B; font-size: 11px; margin-top: 30px;">
+      Generated by Nova AI • Deep Knowledge Observatory
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('img').forEach(img => {
+      img.onclick = () => window.open(img.src);
+    });
+  </script>
+</body>
+</html>

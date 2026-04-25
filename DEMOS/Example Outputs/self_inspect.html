@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Response - 1/04/2026, 5:01:36 pm</title>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+            * { margin: 0; padding: 0; box-sizing: border-box; }
+            body {
+                background: linear-gradient(135deg, #080B14 0%, #06090F 100%);
+                color: #C8D8F0;
+                font-family: 'Inter', 'Exo 2', -apple-system, BlinkMacSystemFont, sans-serif;
+                line-height: 1.7;
+                padding: 40px 20px;
+                min-height: 100vh;
+            }
+            .container {
+                max-width: 900px;
+                margin: 0 auto;
+                background: rgba(10, 13, 22, 0.6);
+                backdrop-filter: blur(10px);
+                border-radius: 20px;
+                padding: 30px;
+                border: 1px solid rgba(61, 142, 255, 0.2);
+            }
+            .header {
+                border-bottom: 2px solid #3D8EFF;
+                margin-bottom: 30px;
+                padding-bottom: 15px;
+                position: relative;
+            }
+            .header::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 100px;
+                height: 2px;
+                background: linear-gradient(90deg, #00E5FF, #3D8EFF);
+            }
+            h1 {
+                font-family: 'Exo 2', sans-serif;
+                font-size: 28px;
+                background: linear-gradient(135deg, #00E5FF, #3D8EFF);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                margin-bottom: 8px;
+            }
+            .timestamp {
+                color: #3A4A6B;
+                font-size: 12px;
+                margin-top: 8px;
+            }
+            pre {
+                background: #06090F;
+                padding: 15px;
+                border-radius: 8px;
+                overflow-x: auto;
+                margin: 15px 0;
+                border: 1px solid rgba(61, 142, 255, 0.2);
+                font-family: 'Courier New', monospace;
+                font-size: 13px;
+            }
+            code {
+                background: rgba(61, 142, 255, 0.1);
+                padding: 2px 6px;
+                border-radius: 4px;
+                font-family: 'Courier New', monospace;
+                font-size: 0.9em;
+                color: #00E5FF;
+            }
+            .code-block-wrapper {
+                margin: 12px 0;
+                border-radius: 10px;
+                overflow: hidden;
+                border: 1px solid rgba(0,229,255,0.15);
+                background: #0A0D16;
+            }
+            .code-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 8px 14px;
+                background: rgba(0,0,0,0.3);
+                border-bottom: 1px solid rgba(0,229,255,0.1);
+            }
+            .traffic-lights {
+                display: flex;
+                gap: 6px;
+            }
+            .tl { width: 11px; height: 11px; border-radius: 50%; }
+            .tl-red { background: #FF5F57; }
+            .tl-yellow { background: #FEBC2E; }
+            .tl-green { background: #28C840; }
+            .image-container, .diagram-container {
+                margin: 20px 0;
+                text-align: center;
+            }
+            .image-container img, .diagram-container img {
+                max-width: 100%;
+                border-radius: 12px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+                cursor: pointer;
+            }
+            .image-caption, .diagram-caption {
+                color: #6272A4;
+                font-size: 12px;
+                margin-top: 8px;
+            }
+            blockquote {
+                border-left: 3px solid #00E5FF;
+                padding-left: 20px;
+                margin: 15px 0;
+                color: #6B8EBB;
+            }
+            a {
+                color: #3D8EFF;
+                text-decoration: none;
+            }
+            a:hover {
+                color: #00E5FF;
+                text-decoration: underline;
+            }
+            hr {
+                border: none;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, #3D8EFF, transparent);
+                margin: 20px 0;
+            }
+            .print-btn {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 10px 20px;
+                background: linear-gradient(135deg, #1A4A99, #0099CC);
+                border: none;
+                border-radius: 8px;
+                color: white;
+                cursor: pointer;
+                font-family: 'Inter', sans-serif;
+                font-weight: 600;
+                z-index: 1000;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+                transition: transform 0.2s;
+            }
+            .print-btn:hover {
+                transform: scale(1.05);
+            }
+            @media print {
+                .print-btn { display: none; }
+                body { background: white; color: black; }
+                .container { background: white; backdrop-filter: none; border: 1px solid #ddd; }
+            }
+</style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']]
+      },
+      startup: {
+        pageReady: () => {
+          return MathJax.startup.defaultPageReady();
+        }
+      }
+    };
+  </script>
+</head>
+<body>
+  <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+  <div class="container">
+    <div class="header">
+      <h1>⚡ NOVA — Deep Knowledge Observatory</h1>
+      <div class="timestamp">Generated: 1/04/2026, 5:01:36 pm</div>
+    </div>
+    <div class="content">
+      <h1>🎬 Why the Video Wouldn't Play (Correctly) — Full Diagnosis</h1>
+<p>The self-inspection revealed that the video playback system has a <strong>search and matching problem</strong>, not a playback problem per se. The wrong video was selected and played. Here's the complete breakdown:</p>
+<hr>
+<h2>🐛 Root Causes</h2>
+<h3>1. 🔴 "star" Matches Everything — Stop Words Too Narrow</h3>
+<p>The stop words list filters out common query terms, but <strong>franchise-level words like <code>"star"</code> and <code>"trek"</code> are missing</strong>:</p>
+<div class="code-block-wrapper"><div class="code-header"><div class="traffic-lights"><div class="tl tl-red"></div><div class="tl tl-yellow"></div><div class="tl tl-green"></div></div><span class="code-lang">code</span></div><pre><code class="language-python">stop = {"mp4", "mkv", ".avi", "play", "the", "a", "an", "some",
+        "video", "film", "movie", "clip", "watch"}
+</code></pre></div>
+<p>This means searching for <em>"Star Trek Return to Earth"</em> causes <code>"star"</code> to match <strong>every single Star Trek file in the library</strong> — giving them all equal scores.</p>
+<hr>
+<h3>2. 🔴 Weak Scoring — All Terms Weighted Equally</h3>
+<p>The scoring treats every matched term as worth exactly 1 point, regardless of how specific or unique it is. A short generic word like <code>"star"</code> scores the same as a specific word like <code>"archons"</code>. There's no semantic understanding — just substring hits.</p>
+<hr>
+<h3>3. 🟠 Random Tie-Breaking Picks the Wrong Episode</h3>
+<p>When multiple files share the same top score (which happens constantly due to issues 1 &amp; 2), the code picks <strong>at random</strong>:</p>
+<div class="code-block-wrapper"><div class="code-header"><div class="traffic-lights"><div class="tl tl-red"></div><div class="tl tl-yellow"></div><div class="tl tl-green"></div></div><span class="code-lang">code</span></div><pre><code class="language-python">matches = [f for s, f in scored if s == top_score]
+chosen = random.choice(matches)
+</code></pre></div>
+<p>This is exactly why <em>"Return to Earth"</em> played <em>"Return of the Archons"</em> — the word <code>"return"</code> matched both, scores tied across many files, and luck (badly) decided.</p>
+<hr>
+<h3>4. 🟡 No Fuzzy / Partial Matching</h3>
+<p>If the user slightly misspells a title or uses a synonym, the score drops to zero and nothing matches. There's no <code>difflib</code> or fuzzy logic fallback at all.</p>
+<hr>
+<h3>5. 🟡 No Confidence Feedback</h3>
+<p>The tool plays whatever it picks with no confidence indicator and no <em>"did you mean...?"</em> mechanism — so you only find out it was wrong when the wrong thing starts playing.</p>
+<hr>
+<h3>6. ⚠️ Stop Words Applied to Query, Not Filenames</h3>
+<p>File extensions (<code>"mkv"</code>, <code>"avi"</code>) appear in the stop list, but they're checked against <strong>query terms</strong> — so they'd only be filtered if <em>you typed</em> <code>"mkv"</code> in your request. Pointless where they currently sit.</p>
+<hr>
+<h2>✅ Suggested Fixes</h2>
+<h3>Fix 1 — Weight Scores by Term Length (Specificity)</h3>
+<div class="code-block-wrapper"><div class="code-header"><div class="traffic-lights"><div class="tl tl-red"></div><div class="tl tl-yellow"></div><div class="tl tl-green"></div></div><span class="code-lang">code</span></div><pre><code class="language-python">score = sum(len(t) for t in terms if t in name)
+</code></pre></div>
+<p><code>"archons"</code> (7 chars) now beats <code>"star"</code> (4 chars). Specific terms win over generic ones.</p>
+<hr>
+<h3>Fix 2 — Expand Stop Words to Include Franchise Terms</h3>
+<div class="code-block-wrapper"><div class="code-header"><div class="traffic-lights"><div class="tl tl-red"></div><div class="tl tl-yellow"></div><div class="tl tl-green"></div></div><span class="code-lang">code</span></div><pre><code class="language-python">stop = {"mp4", "mkv", "avi", "play", "the", "a", "an", "some",
+        "video", "film", "movie", "clip", "watch", "star", "trek",
+        "of", "to", "and", "in", "from", "with", "for"}
+</code></pre></div>
+<p>Filtering <code>"star"</code> and <code>"trek"</code> stops them from polluting scores across an entire franchise library.</p>
+<hr>
+<h3>Fix 3 — Add Fuzzy Matching Fallback</h3>
+<div class="code-block-wrapper"><div class="code-header"><div class="traffic-lights"><div class="tl tl-red"></div><div class="tl tl-yellow"></div><div class="tl tl-green"></div></div><span class="code-lang">code</span></div><pre><code class="language-python">from difflib import SequenceMatcher
+
+def fuzzy_score(term, name):
+    return SequenceMatcher(None, term, name).ratio()
+</code></pre></div>
+<p>Use this when exact substring matching returns no results, to handle typos and near-misses.</p>
+<hr>
+<h3>Fix 4 — Replace Random Selection With Smarter Tie-Breaking</h3>
+<p>Instead of <code>random.choice()</code>, prefer the <strong>shortest filename</strong> (more specific titles tend to be shorter), or better yet, prompt the user:</p>
+<div class="code-block-wrapper"><div class="code-header"><div class="traffic-lights"><div class="tl tl-red"></div><div class="tl tl-yellow"></div><div class="tl tl-green"></div></div><span class="code-lang">code</span></div><pre><code class="language-python">if len(matches) &gt; 1:
+    return "Multiple matches found:\n" + "\n".join(os.path.basename(m) for m in matches[:5])
+</code></pre></div>
+<hr>
+<h3>Fix 5 — Add a Confidence Threshold Warning</h3>
+<div class="code-block-wrapper"><div class="code-header"><div class="traffic-lights"><div class="tl tl-red"></div><div class="tl tl-yellow"></div><div class="tl tl-green"></div></div><span class="code-lang">code</span></div><pre><code class="language-python">if top_score == 1 and len(terms) &gt; 2:
+    return f"Low confidence match — playing: {os.path.basename(chosen)}\nDid you mean something else?"
+</code></pre></div>
+<hr>
+<h2>📊 Issue Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Severity</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>"star"</code> matches every Star Trek file</td>
+<td>🔴 High</td>
+<td>Add franchise words to stop list</td>
+</tr>
+<tr>
+<td>All terms scored equally regardless of specificity</td>
+<td>🔴 High</td>
+<td>Weight score by term length</td>
+</tr>
+<tr>
+<td>Random tie-breaking selects wrong episode</td>
+<td>🟠 Medium</td>
+<td>Pick shortest filename or prompt user</td>
+</tr>
+<tr>
+<td>No fuzzy/partial matching</td>
+<td>🟡 Low</td>
+<td>Add <code>difflib</code> fallback</td>
+</tr>
+<tr>
+<td>No confidence feedback to user</td>
+<td>🟡 Low</td>
+<td>Add threshold warning</td>
+</tr>
+<tr>
+<td>Stop words applied to query not filenames</td>
+<td>⚠️ Minor</td>
+<td>Restructure stop word logic</td>
+</tr>
+</tbody></table>
+<hr>
+<p><strong>Bottom line:</strong> The <em>"Return to Earth"</em> → <em>"Return of the Archons"</em> misfire is issues 1, 2, and 3 combining perfectly badly. One weak term match + equal scoring + random selection = wrong episode every time. All of these are straightforward fixes. 🖖</p>
+
+    </div>
+    <hr>
+    <div style="text-align: center; color: #3A4A6B; font-size: 11px; margin-top: 30px;">
+      Generated by Nova AI • Deep Knowledge Observatory
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('img').forEach(img => {
+      img.onclick = () => window.open(img.src);
+    });
+  </script>
+</body>
+</html>

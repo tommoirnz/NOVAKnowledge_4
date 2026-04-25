@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Response - 5/04/2026, 4:53:08 pm</title>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+            * { margin: 0; padding: 0; box-sizing: border-box; }
+            body {
+                background: linear-gradient(135deg, #080B14 0%, #06090F 100%);
+                color: #C8D8F0;
+                font-family: 'Inter', 'Exo 2', -apple-system, BlinkMacSystemFont, sans-serif;
+                line-height: 1.7;
+                padding: 40px 20px;
+                min-height: 100vh;
+            }
+            .container {
+                max-width: 900px;
+                margin: 0 auto;
+                background: rgba(10, 13, 22, 0.6);
+                backdrop-filter: blur(10px);
+                border-radius: 20px;
+                padding: 30px;
+                border: 1px solid rgba(61, 142, 255, 0.2);
+            }
+            .header {
+                border-bottom: 2px solid #3D8EFF;
+                margin-bottom: 30px;
+                padding-bottom: 15px;
+                position: relative;
+            }
+            .header::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 100px;
+                height: 2px;
+                background: linear-gradient(90deg, #00E5FF, #3D8EFF);
+            }
+            h1 {
+                font-family: 'Exo 2', sans-serif;
+                font-size: 28px;
+                background: linear-gradient(135deg, #00E5FF, #3D8EFF);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                margin-bottom: 8px;
+            }
+            .timestamp {
+                color: #3A4A6B;
+                font-size: 12px;
+                margin-top: 8px;
+            }
+            pre {
+                background: #06090F;
+                padding: 15px;
+                border-radius: 8px;
+                overflow-x: auto;
+                margin: 15px 0;
+                border: 1px solid rgba(61, 142, 255, 0.2);
+                font-family: 'Courier New', monospace;
+                font-size: 13px;
+            }
+            code {
+                background: rgba(61, 142, 255, 0.1);
+                padding: 2px 6px;
+                border-radius: 4px;
+                font-family: 'Courier New', monospace;
+                font-size: 0.9em;
+                color: #00E5FF;
+            }
+            .code-block-wrapper {
+                margin: 12px 0;
+                border-radius: 10px;
+                overflow: hidden;
+                border: 1px solid rgba(0,229,255,0.15);
+                background: #0A0D16;
+            }
+            .code-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 8px 14px;
+                background: rgba(0,0,0,0.3);
+                border-bottom: 1px solid rgba(0,229,255,0.1);
+            }
+            .traffic-lights {
+                display: flex;
+                gap: 6px;
+            }
+            .tl { width: 11px; height: 11px; border-radius: 50%; }
+            .tl-red { background: #FF5F57; }
+            .tl-yellow { background: #FEBC2E; }
+            .tl-green { background: #28C840; }
+            .image-container, .diagram-container {
+                margin: 20px 0;
+                text-align: center;
+            }
+            .image-container img, .diagram-container img {
+                max-width: 100%;
+                border-radius: 12px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+                cursor: pointer;
+            }
+            .image-caption, .diagram-caption {
+                color: #6272A4;
+                font-size: 12px;
+                margin-top: 8px;
+            }
+            blockquote {
+                border-left: 3px solid #00E5FF;
+                padding-left: 20px;
+                margin: 15px 0;
+                color: #6B8EBB;
+            }
+            a {
+                color: #3D8EFF;
+                text-decoration: none;
+            }
+            a:hover {
+                color: #00E5FF;
+                text-decoration: underline;
+            }
+            hr {
+                border: none;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, #3D8EFF, transparent);
+                margin: 20px 0;
+            }
+            .print-btn {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 10px 20px;
+                background: linear-gradient(135deg, #1A4A99, #0099CC);
+                border: none;
+                border-radius: 8px;
+                color: white;
+                cursor: pointer;
+                font-family: 'Inter', sans-serif;
+                font-weight: 600;
+                z-index: 1000;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+                transition: transform 0.2s;
+            }
+            .print-btn:hover {
+                transform: scale(1.05);
+            }
+            @media print {
+                .print-btn { display: none; }
+                body { background: white; color: black; }
+                .container { background: white; backdrop-filter: none; border: 1px solid #ddd; }
+            }
+</style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']]
+      },
+      startup: {
+        pageReady: () => {
+          return MathJax.startup.defaultPageReady();
+        }
+      }
+    };
+  </script>
+</head>
+<body>
+  <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+  <div class="container">
+    <div class="header">
+      <h1>⚡ NOVA — Deep Knowledge Observatory</h1>
+      <div class="timestamp">Generated: 5/04/2026, 4:53:08 pm</div>
+    </div>
+    <div class="content">
+      <h1>The Bilinear Transform (Tustin's Method) — From First Principles</h1>
+<hr>
+<h2>1. The Core Idea: Approximating Integration</h2>
+<p>The Laplace-domain integrator is:</p>
+<p>$$H_{\text{int}}(s) = \frac{1}{s}$$</p>
+<p>In continuous time, integration of a signal $u(t)$ to produce $y(t)$ satisfies:</p>
+<p>$$y(t) = \int_0^t u(\tau)\,d\tau \implies \dot{y}(t) = u(t)$$</p>
+<p>To discretise this, we approximate the integral over one sample period $T$ using the <strong>trapezoidal rule</strong> (the average of the function at the current and previous sample):</p>
+<p>$$y[n] = y[n-1] + \frac{T}{2}\bigl(u[n] + u[n-1]\bigr)$$</p>
+<hr>
+<h2>2. From Trapezoidal Rule to the Z-Domain</h2>
+<p>Take the Z-transform of both sides:</p>
+<p>$$Y(z) = z^{-1}Y(z) + \frac{T}{2}\bigl(U(z) + z^{-1}U(z)\bigr)$$</p>
+<p>$$Y(z)\bigl(1 - z^{-1}\bigr) = \frac{T}{2}\bigl(1 + z^{-1}\bigr)U(z)$$</p>
+<p>The discrete-time transfer function of the integrator becomes:</p>
+<p>$$\frac{Y(z)}{U(z)} = \frac{T}{2} \cdot \frac{1 + z^{-1}}{1 - z^{-1}} = \frac{T}{2} \cdot \frac{z + 1}{z - 1}$$</p>
+<hr>
+<h2>3. The Bilinear Substitution: Solving for <em>s</em></h2>
+<p>Since the continuous integrator is $\tfrac{1}{s}$, and the discrete approximation is $\tfrac{T}{2}\cdot\tfrac{z+1}{z-1}$, we equate them:</p>
+<p>$$\frac{1}{s} \longleftrightarrow \frac{T}{2} \cdot \frac{z+1}{z-1}$$</p>
+<p>Solving for $s$:</p>
+<p>$$\boxed{s = \frac{2}{T} \cdot \frac{z - 1}{z + 1}}$$</p>
+<p>This is <strong>Tustin's substitution</strong>. To convert any $H(s)$ to $H(z)$, replace every $s$ with $\dfrac{2}{T}\cdot\dfrac{z-1}{z+1}$.</p>
+<hr>
+<h2>4. Frequency Warping</h2>
+<h3>4.1 The Mapping from z-plane to s-plane</h3>
+<p>On the unit circle in the z-plane, write $z = e^{j\omega_d T}$ where $\omega_d$ is the discrete-time frequency. Substituting:</p>
+<p>$$s = \frac{2}{T} \cdot \frac{e^{j\omega_d T} - 1}{e^{j\omega_d T} + 1} = \frac{2}{T} \cdot \frac{e^{j\omega_d T/2}\bigl(e^{j\omega_d T/2} - e^{-j\omega_d T/2}\bigr)}{e^{j\omega_d T/2}\bigl(e^{j\omega_d T/2} + e^{-j\omega_d T/2}\bigr)}$$</p>
+<p>$$s = \frac{2}{T} \cdot \frac{j\sin(\omega_d T/2)}{\cos(\omega_d T/2)} = j\,\frac{2}{T}\tan\!\left(\frac{\omega_d T}{2}\right)$$</p>
+<p>Since $s = j\omega_c$ on the imaginary axis, the <strong>continuous frequency</strong> $\omega_c$ maps to discrete frequency $\omega_d$ via:</p>
+<p>$$\boxed{\omega_c = \frac{2}{T}\tan\!\left(\frac{\omega_d T}{2}\right)}$$</p>
+<h3>4.2 The Warping Effect</h3>
+<table>
+<thead>
+<tr>
+<th align="center">Discrete $\omega_d T$</th>
+<th align="center">Continuous $\omega_c T$ (warped)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$0$</td>
+<td align="center">$0$</td>
+</tr>
+<tr>
+<td align="center">$\pi/2$</td>
+<td align="center">$2$</td>
+</tr>
+<tr>
+<td align="center">$\pi$ (Nyquist)</td>
+<td align="center">$\infty$</td>
+</tr>
+</tbody></table>
+<p>The entire continuous frequency axis $(-\infty, +\infty)$ is <strong>compressed</strong> into the finite interval $(-\pi/T, +\pi/T)$. This is not a bug — it is an inherent, predictable distortion. The remedy is <strong>pre-warping</strong>: if a critical frequency $\omega_0$ must be preserved exactly, design the analogue prototype at:</p>
+<p>$$\omega_0^* = \frac{2}{T}\tan\!\left(\frac{\omega_0 T}{2}\right)$$</p>
+<p>then apply the bilinear transform. The warping will map $\omega_0^*$ back to exactly $\omega_0$.</p>
+<hr>
+<h2>5. Applying the Bilinear Transform to a Second-Order System</h2>
+<h3>5.1 The Continuous-Time Prototype</h3>
+<p>$$H(s) = \frac{\omega_n^2}{s^2 + 2\zeta\omega_n s + \omega_n^2}$$</p>
+<h3>5.2 The Substitution</h3>
+<p>Replace $s \to \dfrac{2}{T}\cdot\dfrac{z-1}{z+1}$. Define the constant $k = \dfrac{2}{T}$ to keep the algebra clean.</p>
+<p>$$H(z) = \frac{\omega_n^2}{\left(k\dfrac{z-1}{z+1}\right)^2 + 2\zeta\omega_n\left(k\dfrac{z-1}{z+1}\right) + \omega_n^2}$$</p>
+<p>Multiply numerator and denominator by $(z+1)^2$:</p>
+<p>$$H(z) = \frac{\omega_n^2(z+1)^2}{k^2(z-1)^2 + 2\zeta\omega_n k(z-1)(z+1) + \omega_n^2(z+1)^2}$$</p>
+<h3>5.3 Expanding the Denominator</h3>
+<p><strong>Term 1:</strong> $k^2(z-1)^2 = k^2(z^2 - 2z + 1)$</p>
+<p><strong>Term 2:</strong> $2\zeta\omega_n k(z-1)(z+1) = 2\zeta\omega_n k(z^2 - 1)$</p>
+<p><strong>Term 3:</strong> $\omega_n^2(z+1)^2 = \omega_n^2(z^2 + 2z + 1)$</p>
+<p>Collecting by powers of $z$:</p>
+<p>$$D(z) = \bigl(k^2 + 2\zeta\omega_n k + \omega_n^2\bigr)z^2 + \bigl(-2k^2 + 2\omega_n^2\bigr)z + \bigl(k^2 - 2\zeta\omega_n k + \omega_n^2\bigr)$$</p>
+<h3>5.4 The Normalised Transfer Function</h3>
+<p>Dividing through by the leading coefficient $a_0 = k^2 + 2\zeta\omega_n k + \omega_n^2$:</p>
+<p>$$\boxed{H(z) = \frac{b_0 + b_1 z^{-1} + b_2 z^{-2}}{1 + a_1 z^{-1} + a_2 z^{-2}}}$$</p>
+<p>where, with $k = 2/T$:</p>
+<p>$$b_0 = b_2 = \frac{\omega_n^2}{k^2 + 2\zeta\omega_n k + \omega_n^2}, \qquad b_1 = \frac{2\omega_n^2}{k^2 + 2\zeta\omega_n k + \omega_n^2}$$</p>
+<p>$$a_1 = \frac{2(\omega_n^2 - k^2)}{k^2 + 2\zeta\omega_n k + \omega_n^2}, \qquad a_2 = \frac{k^2 - 2\zeta\omega_n k + \omega_n^2}{k^2 + 2\zeta\omega_n k + \omega_n^2}$$</p>
+<hr>
+<h2>6. Structural Observations</h2>
+<p><strong>Symmetry of numerator:</strong> $b_0 = b_2$ always — this is a hallmark of the bilinear transform applied to a lowpass prototype. The numerator zeros lie on the unit circle at $z = -1$ (i.e., $\omega = \pi/T$, the Nyquist frequency), correctly attenuating the highest discrete frequency.</p>
+<p><strong>Stability preservation:</strong> The bilinear transform maps the left half of the $s$-plane <em>exactly</em> to the interior of the unit circle in the $z$-plane. A stable $H(s)$ always yields a stable $H(z)$ — unlike forward Euler, which can destabilise systems at large $T$.</p>
+<p><strong>Frequency warping reminder:</strong> The discrete resonant peak will appear at:</p>
+<p>$$\omega_d = \frac{2}{T}\arctan\!\left(\frac{\omega_n T}{2}\right)$$</p>
+<p>not at $\omega_n$ itself. Pre-warp $\omega_n$ if exact frequency placement is required.</p>
+
+    </div>
+    <hr>
+    <div style="text-align: center; color: #3A4A6B; font-size: 11px; margin-top: 30px;">
+      Generated by Nova AI • Deep Knowledge Observatory
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('img').forEach(img => {
+      img.onclick = () => window.open(img.src);
+    });
+  </script>
+</body>
+</html>

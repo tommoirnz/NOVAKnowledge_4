@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auckland - City of Sails</title>
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a1a;
+            color: #e8e8f0;
+            min-height: 100vh;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.45) saturate(1.2);
+            transform: scale(1.05);
+            animation: slowZoom 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes slowZoom {
+            from { transform: scale(1.05); }
+            to   { transform: scale(1.15); }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(0,0,0,0.1) 0%,
+                rgba(10,10,40,0.6) 60%,
+                rgba(10,10,40,1) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: 900;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #ffffff;
+            text-shadow: 0 0 40px rgba(100, 180, 255, 0.8),
+                         0 4px 20px rgba(0,0,0,0.8);
+            animation: fadeInDown 1.2s ease forwards;
+        }
+
+        .hero-content .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.6rem);
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: #a0c8ff;
+            margin-top: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1.2s ease 0.5s forwards;
+        }
+
+        .hero-content .tagline {
+            font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+            color: #c8d8f0;
+            margin-top: 1.5rem;
+            font-style: italic;
+            opacity: 0;
+            animation: fadeInUp 1.2s ease 0.9s forwards;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: #a0c8ff;
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .scroll-indicator::after {
+            content: '';
+            display: block;
+            width: 2px;
+            height: 40px;
+            background: linear-gradient(to bottom, #a0c8ff, transparent);
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50%       { transform: translateX(-50%) translateY(8px); }
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 5rem 2rem 3rem;
+            text-align: center;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+            color: #5090d0;
+            margin-bottom: 1rem;
+        }
+
+        .about-section h2 {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 700;
+            color: #d0e8ff;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-section p {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: #b0c0d8;
+            max-width: 700px;
+            margin: 0 auto 1rem;
+        }
+
+        .divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, #3060a0, #60a0e0, #3060a0);
+            margin: 2.5rem auto;
+            border-radius: 2px;
+        }
+
+        /* ===== STATS BAR ===== */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 2rem;
+            background: rgba(255,255,255,0.03);
+            border-top: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            margin: 2rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #60b0ff;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #7090b0;
+            margin-top: 0.3rem;
+        }
+
+        /* ===== GALLERY SECTION ===== */
+        .gallery-section {
+            padding: 4rem 2rem 6rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .gallery-header h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            color: #d0e8ff;
+        }
+
+        .gallery-header p {
+            color: #7090b0;
+            margin-top: 0.8rem;
+            font-size: 1rem;
+        }
+
+        /* ===== MASONRY GRID ===== */
+        .gallery-grid {
+            columns: 1;
+            column-gap: 1.2rem;
+        }
+
+        @media (min-width: 600px)  { .gallery-grid { columns: 2; } }
+        @media (min-width: 900px)  { .gallery-grid { columns: 3; } }
+        @media (min-width: 1200px) { .gallery-grid { columns: 4; } }
+
+        .card {
+            break-inside: avoid;
+            margin-bottom: 1.2rem;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #111128;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            cursor: pointer;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(60, 120, 220, 0.35);
+        }
+
+        .card-img-wrapper {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease, filter 0.5s ease;
+            filter: brightness(0.9) saturate(1.1);
+        }
+
+        .card:hover img {
+            transform: scale(1.08);
+            filter: brightness(1.05) saturate(1.3);
+        }
+
+        .card-caption {
+            padding: 0.8rem 1rem;
+            font-size: 0.85rem;
+            color: #90aac8;
+            letter-spacing: 0.03em;
+            background: linear-gradient(to top, #0d0d22, #111128);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* ===== LIGHTBOX ===== */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.92);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            backdrop-filter: blur(8px);
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-inner {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            text-align: center;
+        }
+
+        .lightbox-inner img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 8px;
+            box-shadow: 0 0 60px rgba(60,120,220,0.4);
+            object-fit: contain;
+        }
+
+        .lightbox-caption {
+            margin-top: 1rem;
+            color: #a0c0e0;
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -2.5rem;
+            right: 0;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+            transition: color 0.2s;
+        }
+
+        .lightbox-close:hover { color: #60b0ff; }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            font-size: 1.8rem;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .lightbox-nav:hover { background: rgba(60,120,220,0.5); }
+        .lightbox-prev { left: -4rem; }
+        .lightbox-next { right: -4rem; }
+
+        @media (max-width: 600px) {
+            .lightbox-prev { left: 0.5rem; }
+            .lightbox-next { right: 0.5rem; }
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: #060612;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: #405070;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+
+        footer span {
+            color: #3060a0;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0a0a1a; }
+        ::-webkit-scrollbar-thumb { background: #2040a0; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #4070d0; }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Auckland</h1>
+            <p class="subtitle">City of Sails &mdash; New Zealand</p>
+            <p class="tagline">"Where the harbour meets the sky, and adventure begins."</p>
+        </div>
+        <div class="scroll-indicator">Scroll</div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about-section">
+        <p class="section-label">About the City</p>
+        <h2>New Zealand's Largest City</h2>
+        <p>
+            Auckland is a vibrant metropolis nestled between two harbours on the North Island of
+            New Zealand. Known as the "City of Sails," it boasts a stunning skyline dominated by
+            the iconic Sky Tower, world-class dining, and a rich Maori cultural heritage.
+        </p>
+        <p>
+            With over 50 volcanic cones, pristine beaches, lush rainforests, and a thriving arts
+            scene, Auckland offers an extraordinary blend of urban sophistication and natural beauty
+            that captivates visitors from around the globe.
+        </p>
+    </section>
+
+    <!-- STATS -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="stat-number">1.7M+</div>
+            <div class="stat-label">Population</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">328m</div>
+            <div class="stat-label">Sky Tower Height</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Volcanic Cones</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">1840</div>
+            <div class="stat-label">Year Founded</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Harbours</div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- GALLERY -->
+    <section class="gallery-section">
+        <div class="gallery-header">
+            <p class="section-label">Photo Gallery</p>
+            <h2>Discover Auckland</h2>
+            <p>Click any image to view it in full screen</p>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+
+        </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-inner">
+            <button class="lightbox-close" id="lightboxClose">&times;</button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&#8249;</button>
+            <img src="" alt="" id="lightboxImg" />
+            <button class="lightbox-nav lightbox-next" id="lightboxNext">&#8250;</button>
+            <p class="lightbox-caption" id="lightboxCaption"></p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Auckland Photo Gallery &mdash; Created on <span>09 March 2026</span></p>
+        <p style="margin-top:0.5rem;">Images sourced from free stock photo libraries. All rights belong to their respective owners.</p>
+    </footer>
+
+    <script>
+        // ===== LIGHTBOX LOGIC =====
+        const cards = document.querySelectorAll('.card');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+
+        let currentIndex = 0;
+        const imageData = [];
+
+        cards.forEach((card, index) => {
+            const img = card.querySelector('img');
+            const caption = card.querySelector('.card-caption');
+            imageData.push({
+                src: img.src,
+                alt: img.alt,
+                caption: caption ? caption.textContent : ''
+            });
+
+            card.addEventListener('click', () => {
+                openLightbox(index);
+            });
+        });
+
+        function openLightbox(index) {
+            currentIndex = index;
+            updateLightbox();
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightbox() {
+            const data = imageData[currentIndex];
+            lightboxImg.src = data.src;
+            lightboxImg.alt = data.alt;
+            lightboxCaption.textContent = data.caption;
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+
+        lightboxPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex - 1 + imageData.length) % imageData.length;
+            updateLightbox();
+        });
+
+        lightboxNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex + 1) % imageData.length;
+            updateLightbox();
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') {
+                currentIndex = (currentIndex - 1 + imageData.length) % imageData.length;
+                updateLightbox();
+            }
+            if (e.key === 'ArrowRight') {
+                currentIndex = (currentIndex + 1) % imageData.length;
+                updateLightbox();
+            }
+        });
+
+        // ===== SCROLL REVEAL =====
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease, box-shadow 0.35s ease';
+            observer.observe(card);
+        });
+    </script>
+
+</body>
+</html>

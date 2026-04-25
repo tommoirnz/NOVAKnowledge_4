@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Response - 4/04/2026, 10:16:14 am</title>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+            * { margin: 0; padding: 0; box-sizing: border-box; }
+            body {
+                background: linear-gradient(135deg, #080B14 0%, #06090F 100%);
+                color: #C8D8F0;
+                font-family: 'Inter', 'Exo 2', -apple-system, BlinkMacSystemFont, sans-serif;
+                line-height: 1.7;
+                padding: 40px 20px;
+                min-height: 100vh;
+            }
+            .container {
+                max-width: 900px;
+                margin: 0 auto;
+                background: rgba(10, 13, 22, 0.6);
+                backdrop-filter: blur(10px);
+                border-radius: 20px;
+                padding: 30px;
+                border: 1px solid rgba(61, 142, 255, 0.2);
+            }
+            .header {
+                border-bottom: 2px solid #3D8EFF;
+                margin-bottom: 30px;
+                padding-bottom: 15px;
+                position: relative;
+            }
+            .header::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 100px;
+                height: 2px;
+                background: linear-gradient(90deg, #00E5FF, #3D8EFF);
+            }
+            h1 {
+                font-family: 'Exo 2', sans-serif;
+                font-size: 28px;
+                background: linear-gradient(135deg, #00E5FF, #3D8EFF);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                margin-bottom: 8px;
+            }
+            .timestamp {
+                color: #3A4A6B;
+                font-size: 12px;
+                margin-top: 8px;
+            }
+            pre {
+                background: #06090F;
+                padding: 15px;
+                border-radius: 8px;
+                overflow-x: auto;
+                margin: 15px 0;
+                border: 1px solid rgba(61, 142, 255, 0.2);
+                font-family: 'Courier New', monospace;
+                font-size: 13px;
+            }
+            code {
+                background: rgba(61, 142, 255, 0.1);
+                padding: 2px 6px;
+                border-radius: 4px;
+                font-family: 'Courier New', monospace;
+                font-size: 0.9em;
+                color: #00E5FF;
+            }
+            .code-block-wrapper {
+                margin: 12px 0;
+                border-radius: 10px;
+                overflow: hidden;
+                border: 1px solid rgba(0,229,255,0.15);
+                background: #0A0D16;
+            }
+            .code-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 8px 14px;
+                background: rgba(0,0,0,0.3);
+                border-bottom: 1px solid rgba(0,229,255,0.1);
+            }
+            .traffic-lights {
+                display: flex;
+                gap: 6px;
+            }
+            .tl { width: 11px; height: 11px; border-radius: 50%; }
+            .tl-red { background: #FF5F57; }
+            .tl-yellow { background: #FEBC2E; }
+            .tl-green { background: #28C840; }
+            .image-container, .diagram-container {
+                margin: 20px 0;
+                text-align: center;
+            }
+            .image-container img, .diagram-container img {
+                max-width: 100%;
+                border-radius: 12px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+                cursor: pointer;
+            }
+            .image-caption, .diagram-caption {
+                color: #6272A4;
+                font-size: 12px;
+                margin-top: 8px;
+            }
+            blockquote {
+                border-left: 3px solid #00E5FF;
+                padding-left: 20px;
+                margin: 15px 0;
+                color: #6B8EBB;
+            }
+            a {
+                color: #3D8EFF;
+                text-decoration: none;
+            }
+            a:hover {
+                color: #00E5FF;
+                text-decoration: underline;
+            }
+            hr {
+                border: none;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, #3D8EFF, transparent);
+                margin: 20px 0;
+            }
+            .print-btn {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 10px 20px;
+                background: linear-gradient(135deg, #1A4A99, #0099CC);
+                border: none;
+                border-radius: 8px;
+                color: white;
+                cursor: pointer;
+                font-family: 'Inter', sans-serif;
+                font-weight: 600;
+                z-index: 1000;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+                transition: transform 0.2s;
+            }
+            .print-btn:hover {
+                transform: scale(1.05);
+            }
+            @media print {
+                .print-btn { display: none; }
+                body { background: white; color: black; }
+                .container { background: white; backdrop-filter: none; border: 1px solid #ddd; }
+            }
+</style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']]
+      },
+      startup: {
+        pageReady: () => {
+          return MathJax.startup.defaultPageReady();
+        }
+      }
+    };
+  </script>
+</head>
+<body>
+  <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+  <div class="container">
+    <div class="header">
+      <h1>⚡ NOVA — Deep Knowledge Observatory</h1>
+      <div class="timestamp">Generated: 4/04/2026, 10:16:14 am</div>
+    </div>
+    <div class="content">
+      <h1>🖖 Star Trek: Voyager — Local Library</h1>
+<p>All 7 seasons present and accounted for, including DVD extras. Here's the complete manifest:</p>
+<hr>
+<h2>Season 1</h2>
+<table>
+<thead>
+<tr>
+<th>Ep</th>
+<th>Title</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>S01E01E02</td>
+<td>Caretaker</td>
+<td>497.2 MB</td>
+</tr>
+<tr>
+<td>S01E03</td>
+<td>Parallax</td>
+<td>249.6 MB</td>
+</tr>
+<tr>
+<td>S01E04</td>
+<td>Time and Again</td>
+<td>247.9 MB</td>
+</tr>
+<tr>
+<td>S01E05</td>
+<td>Phage</td>
+<td>248.3 MB</td>
+</tr>
+<tr>
+<td>S01E06</td>
+<td>The Cloud</td>
+<td>249.7 MB</td>
+</tr>
+<tr>
+<td>S01E07</td>
+<td>Eye of the Needle</td>
+<td>249.3 MB</td>
+</tr>
+<tr>
+<td>S01E08</td>
+<td>Ex Post Facto</td>
+<td>249.3 MB</td>
+</tr>
+<tr>
+<td>S01E09</td>
+<td>Emanations</td>
+<td>247.9 MB</td>
+</tr>
+<tr>
+<td>S01E10</td>
+<td>Prime Factors</td>
+<td>248.4 MB</td>
+</tr>
+<tr>
+<td>S01E11</td>
+<td>State of Flux</td>
+<td>248.7 MB</td>
+</tr>
+<tr>
+<td>S01E12</td>
+<td>Heroes and Demons</td>
+<td>248.4 MB</td>
+</tr>
+<tr>
+<td>S01E13</td>
+<td>Cathexis</td>
+<td>249.0 MB</td>
+</tr>
+<tr>
+<td>S01E14</td>
+<td>Faces</td>
+<td>246.6 MB</td>
+</tr>
+<tr>
+<td>S01E15</td>
+<td>Jetrel</td>
+<td>247.9 MB</td>
+</tr>
+<tr>
+<td>S01E16</td>
+<td>Learning Curve</td>
+<td>249.0 MB</td>
+</tr>
+</tbody></table>
+<p><strong>📀 Season 1 Extras</strong></p>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Launching Voyager on the Web</td>
+<td>30.0 MB</td>
+</tr>
+<tr>
+<td>Voyager Time Capsule — Kathryn Janeway</td>
+<td>75.5 MB</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Season 2</h2>
+<table>
+<thead>
+<tr>
+<th>Ep</th>
+<th>Title</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>S02E01</td>
+<td>The 37's</td>
+<td>248.1 MB</td>
+</tr>
+<tr>
+<td>S02E02</td>
+<td>Initiations</td>
+<td>248.0 MB</td>
+</tr>
+<tr>
+<td>S02E03</td>
+<td>Projections</td>
+<td>248.7 MB</td>
+</tr>
+<tr>
+<td>S02E04</td>
+<td>Elogium</td>
+<td>248.3 MB</td>
+</tr>
+<tr>
+<td>S02E05</td>
+<td>Non Sequitur</td>
+<td>248.3 MB</td>
+</tr>
+<tr>
+<td>S02E06</td>
+<td>Twisted</td>
+<td>248.0 MB</td>
+</tr>
+<tr>
+<td>S02E07</td>
+<td>Parturition</td>
+<td>249.0 MB</td>
+</tr>
+<tr>
+<td>S02E08</td>
+<td>Persistence of Vision</td>
+<td>248.5 MB</td>
+</tr>
+<tr>
+<td>S02E09</td>
+<td>Tattoo</td>
+<td>247.3 MB</td>
+</tr>
+<tr>
+<td>S02E10</td>
+<td>Cold Fire</td>
+<td>247.8 MB</td>
+</tr>
+<tr>
+<td>S02E11</td>
+<td>Maneuvers</td>
+<td>250.0 MB</td>
+</tr>
+<tr>
+<td>S02E12</td>
+<td>Resistance</td>
+<td>246.6 MB</td>
+</tr>
+<tr>
+<td>S02E13</td>
+<td>Prototype</td>
+<td>249.7 MB</td>
+</tr>
+<tr>
+<td>S02E14</td>
+<td>Alliances</td>
+<td>249.9 MB</td>
+</tr>
+<tr>
+<td>S02E15</td>
+<td>Threshold</td>
+<td>248.2 MB</td>
+</tr>
+<tr>
+<td>S02E16</td>
+<td>Meld</td>
+<td>248.2 MB</td>
+</tr>
+<tr>
+<td>S02E17</td>
+<td>Dreadnought</td>
+<td>249.5 MB</td>
+</tr>
+<tr>
+<td>S02E18</td>
+<td>Death Wish</td>
+<td>250.3 MB</td>
+</tr>
+<tr>
+<td>S02E19</td>
+<td>Lifesigns</td>
+<td>248.4 MB</td>
+</tr>
+<tr>
+<td>S02E20</td>
+<td>Investigations</td>
+<td>249.9 MB</td>
+</tr>
+<tr>
+<td>S02E21</td>
+<td>Deadlock</td>
+<td>249.6 MB</td>
+</tr>
+<tr>
+<td>S02E22</td>
+<td>Innocence</td>
+<td>249.3 MB</td>
+</tr>
+<tr>
+<td>S02E23</td>
+<td>The Thaw</td>
+<td>249.3 MB</td>
+</tr>
+<tr>
+<td>S02E24</td>
+<td>Tuvix</td>
+<td>248.0 MB</td>
+</tr>
+<tr>
+<td>S02E25</td>
+<td>Resolutions</td>
+<td>248.4 MB</td>
+</tr>
+<tr>
+<td>S02E26</td>
+<td>Basics (1)</td>
+<td>248.2 MB</td>
+</tr>
+</tbody></table>
+<p><strong>📀 Season 2 Extras</strong></p>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Designing The U.S.S. Voyager</td>
+<td>59.2 MB</td>
+</tr>
+<tr>
+<td>Voyager Time Capsule — Tuvok</td>
+<td>78.3 MB</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Season 3</h2>
+<table>
+<thead>
+<tr>
+<th>Ep</th>
+<th>Title</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>S03E01</td>
+<td>Basics (2)</td>
+<td>279.2 MB</td>
+</tr>
+<tr>
+<td>S03E02</td>
+<td>Flashback</td>
+<td>248.7 MB</td>
+</tr>
+<tr>
+<td>S03E03</td>
+<td>The Chute</td>
+<td>247.0 MB</td>
+</tr>
+<tr>
+<td>S03E04</td>
+<td>The Swarm</td>
+<td>248.5 MB</td>
+</tr>
+<tr>
+<td>S03E05</td>
+<td>False Profits</td>
+<td>247.8 MB</td>
+</tr>
+<tr>
+<td>S03E06</td>
+<td>Remember</td>
+<td>247.2 MB</td>
+</tr>
+<tr>
+<td>S03E07</td>
+<td>Sacred Ground</td>
+<td>247.8 MB</td>
+</tr>
+<tr>
+<td>S03E08</td>
+<td>Future's End (1)</td>
+<td>248.2 MB</td>
+</tr>
+<tr>
+<td>S03E09</td>
+<td>Future's End (2)</td>
+<td>247.5 MB</td>
+</tr>
+<tr>
+<td>S03E10</td>
+<td>Warlord</td>
+<td>249.0 MB</td>
+</tr>
+<tr>
+<td>S03E11</td>
+<td>The Q and the Grey</td>
+<td>248.1 MB</td>
+</tr>
+<tr>
+<td>S03E12</td>
+<td>Macrocosm</td>
+<td>246.0 MB</td>
+</tr>
+<tr>
+<td>S03E13</td>
+<td>Fair Trade</td>
+<td>247.8 MB</td>
+</tr>
+<tr>
+<td>S03E14</td>
+<td>Alter Ego</td>
+<td>247.5 MB</td>
+</tr>
+<tr>
+<td>S03E15</td>
+<td>Coda</td>
+<td>247.9 MB</td>
+</tr>
+<tr>
+<td>S03E16</td>
+<td>Blood Fever</td>
+<td>247.3 MB</td>
+</tr>
+<tr>
+<td>S03E17</td>
+<td>Unity</td>
+<td>247.3 MB</td>
+</tr>
+<tr>
+<td>S03E18</td>
+<td>Darkling</td>
+<td>248.0 MB</td>
+</tr>
+<tr>
+<td>S03E19</td>
+<td>Rise</td>
+<td>247.1 MB</td>
+</tr>
+<tr>
+<td>S03E20</td>
+<td>Favorite Son</td>
+<td>247.5 MB</td>
+</tr>
+<tr>
+<td>S03E21</td>
+<td>Before and After</td>
+<td>247.5 MB</td>
+</tr>
+<tr>
+<td>S03E22</td>
+<td>Real Life</td>
+<td>248.1 MB</td>
+</tr>
+<tr>
+<td>S03E23</td>
+<td>Distant Origin</td>
+<td>248.5 MB</td>
+</tr>
+<tr>
+<td>S03E24</td>
+<td>Displaced</td>
+<td>247.4 MB</td>
+</tr>
+<tr>
+<td>S03E25</td>
+<td>Worst Case Scenario</td>
+<td>249.2 MB</td>
+</tr>
+<tr>
+<td>S03E26</td>
+<td>Scorpion (1)</td>
+<td>248.0 MB</td>
+</tr>
+</tbody></table>
+<p><strong>📀 Season 3 Extras</strong></p>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Creating The Voyager Crew</td>
+<td>81.4 MB</td>
+</tr>
+<tr>
+<td>Voyager Time Capsule — Kes</td>
+<td>58.5 MB</td>
+</tr>
+<tr>
+<td>Voyager Time Capsule — Neelix</td>
+<td>59.2 MB</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Season 4</h2>
+<table>
+<thead>
+<tr>
+<th>Ep</th>
+<th>Title</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>S04E01</td>
+<td>Scorpion (2)</td>
+<td>281.7 MB</td>
+</tr>
+<tr>
+<td>S04E02</td>
+<td>The Gift</td>
+<td>281.9 MB</td>
+</tr>
+<tr>
+<td>S04E03</td>
+<td>Day of Honor</td>
+<td>282.5 MB</td>
+</tr>
+<tr>
+<td>S04E04</td>
+<td>Nemesis</td>
+<td>281.5 MB</td>
+</tr>
+<tr>
+<td>S04E05</td>
+<td>Revulsion</td>
+<td>282.4 MB</td>
+</tr>
+<tr>
+<td>S04E06</td>
+<td>The Raven</td>
+<td>281.8 MB</td>
+</tr>
+<tr>
+<td>S04E07</td>
+<td>Scientific Method</td>
+<td>282.8 MB</td>
+</tr>
+<tr>
+<td>S04E08</td>
+<td>Year of Hell (1)</td>
+<td>283.7 MB</td>
+</tr>
+<tr>
+<td>S04E09</td>
+<td>Year of Hell (2)</td>
+<td>283.0 MB</td>
+</tr>
+<tr>
+<td>S04E10</td>
+<td>Random Thoughts</td>
+<td>283.5 MB</td>
+</tr>
+<tr>
+<td>S04E11</td>
+<td>Concerning Flight</td>
+<td>283.0 MB</td>
+</tr>
+<tr>
+<td>S04E12</td>
+<td>Mortal Coil</td>
+<td>283.1 MB</td>
+</tr>
+<tr>
+<td>S04E13</td>
+<td>Waking Moments</td>
+<td>282.0 MB</td>
+</tr>
+<tr>
+<td>S04E14</td>
+<td>Message in a Bottle</td>
+<td>283.8 MB</td>
+</tr>
+<tr>
+<td>S04E15</td>
+<td>Hunters</td>
+<td>283.8 MB</td>
+</tr>
+<tr>
+<td>S04E16</td>
+<td>Prey</td>
+<td>282.3 MB</td>
+</tr>
+<tr>
+<td>S04E17</td>
+<td>Retrospect</td>
+<td>284.0 MB</td>
+</tr>
+<tr>
+<td>S04E18</td>
+<td>The Killing Game (1)</td>
+<td>282.4 MB</td>
+</tr>
+<tr>
+<td>S04E19</td>
+<td>The Killing Game (2)</td>
+<td>281.3 MB</td>
+</tr>
+<tr>
+<td>S04E20</td>
+<td>Vis à Vis</td>
+<td>282.8 MB</td>
+</tr>
+<tr>
+<td>S04E21</td>
+<td>The Omega Directive</td>
+<td>284.0 MB</td>
+</tr>
+<tr>
+<td>S04E22</td>
+<td>Unforgettable</td>
+<td>282.3 MB</td>
+</tr>
+<tr>
+<td>S04E23</td>
+<td>Living Witness</td>
+<td>283.0 MB</td>
+</tr>
+<tr>
+<td>S04E24</td>
+<td>Demon</td>
+<td>282.8 MB</td>
+</tr>
+<tr>
+<td>S04E25</td>
+<td>One</td>
+<td>282.5 MB</td>
+</tr>
+<tr>
+<td>S04E26</td>
+<td>Hope and Fear</td>
+<td>283.2 MB</td>
+</tr>
+</tbody></table>
+<p><strong>📀 Season 4 Extras</strong></p>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Voyager Release Party</td>
+<td>26.4 MB</td>
+</tr>
+<tr>
+<td>Voyager Time Capsule — Harry Kim</td>
+<td>70.6 MB</td>
+</tr>
+<tr>
+<td>Voyager Time Capsule — Seven of Nine</td>
+<td>68.7 MB</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Season 5</h2>
+<table>
+<thead>
+<tr>
+<th>Ep</th>
+<th>Title</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>S05E01</td>
+<td>Night</td>
+<td>249.1 MB</td>
+</tr>
+<tr>
+<td>S05E02</td>
+<td>Drone</td>
+<td>248.5 MB</td>
+</tr>
+<tr>
+<td>S05E03</td>
+<td>Extreme Risk</td>
+<td>248.1 MB</td>
+</tr>
+<tr>
+<td>S05E04</td>
+<td>In the Flesh</td>
+<td>250.5 MB</td>
+</tr>
+<tr>
+<td>S05E05</td>
+<td>Once Upon a Time</td>
+<td>248.9 MB</td>
+</tr>
+<tr>
+<td>S05E06</td>
+<td>Timeless</td>
+<td>249.0 MB</td>
+</tr>
+<tr>
+<td>S05E07</td>
+<td>Infinite Regress</td>
+<td>249.4 MB</td>
+</tr>
+<tr>
+<td>S05E08</td>
+<td>Nothing Human</td>
+<td>251.1 MB</td>
+</tr>
+<tr>
+<td>S05E09</td>
+<td>Thirty Days</td>
+<td>249.2 MB</td>
+</tr>
+<tr>
+<td>S05E10</td>
+<td>Counterpoint</td>
+<td>250.0 MB</td>
+</tr>
+<tr>
+<td>S05E11</td>
+<td>Latent Image</td>
+<td>248.3 MB</td>
+</tr>
+<tr>
+<td>S05E12</td>
+<td>Bride of Chaotica!</td>
+<td>249.0 MB</td>
+</tr>
+<tr>
+<td>S05E13</td>
+<td>Gravity</td>
+<td>246.6 MB</td>
+</tr>
+<tr>
+<td>S05E14</td>
+<td>Bliss</td>
+<td>248.4 MB</td>
+</tr>
+<tr>
+<td>S05E15E16</td>
+<td>Dark Frontier</td>
+<td>496.0 MB</td>
+</tr>
+<tr>
+<td>S05E17</td>
+<td>The Disease</td>
+<td>249.8 MB</td>
+</tr>
+<tr>
+<td>S05E18</td>
+<td>Course Oblivion</td>
+<td>248.3 MB</td>
+</tr>
+<tr>
+<td>S05E19</td>
+<td>The Fight</td>
+<td>248.9 MB</td>
+</tr>
+<tr>
+<td>S05E20</td>
+<td>Think Tank</td>
+<td>249.5 MB</td>
+</tr>
+<tr>
+<td>S05E21</td>
+<td>Juggernaut</td>
+<td>248.2 MB</td>
+</tr>
+<tr>
+<td>S05E22</td>
+<td>Someone to Watch Over Me</td>
+<td>249.4 MB</td>
+</tr>
+<tr>
+<td>S05E23</td>
+<td>11:59</td>
+<td>249.4 MB</td>
+</tr>
+<tr>
+<td>S05E24</td>
+<td>Relativity</td>
+<td>248.3 MB</td>
+</tr>
+<tr>
+<td>S05E25</td>
+<td>Warhead</td>
+<td>250.4 MB</td>
+</tr>
+<tr>
+<td>S05E26</td>
+<td>Equinox (1)</td>
+<td>249.5 MB</td>
+</tr>
+</tbody></table>
+<p><strong>📀 Season 5 Extras</strong></p>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Voyager Time Capsule — B'Elanna Torres</td>
+<td>88.9 MB</td>
+</tr>
+<tr>
+<td>Voyager Time Capsule — Tom Paris</td>
+<td>79.6 MB</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Season 6</h2>
+<table>
+<thead>
+<tr>
+<th>Ep</th>
+<th>Title</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>S06E01</td>
+<td>Equinox (2)</td>
+<td>237.1 MB</td>
+</tr>
+<tr>
+<td>S06E02</td>
+<td>Survival Instinct</td>
+<td>236.9 MB</td>
+</tr>
+<tr>
+<td>S06E03</td>
+<td>Barge of the Dead</td>
+<td>236.5 MB</td>
+</tr>
+<tr>
+<td>S06E04</td>
+<td>Tinker Tenor Doctor Spy</td>
+<td>237.8 MB</td>
+</tr>
+<tr>
+<td>S06E05</td>
+<td>Alice</td>
+<td>238.3 MB</td>
+</tr>
+<tr>
+<td>S06E06</td>
+<td>Riddles</td>
+<td>237.7 MB</td>
+</tr>
+<tr>
+<td>S06E07</td>
+<td>Dragon's Teeth</td>
+<td>238.5 MB</td>
+</tr>
+<tr>
+<td>S06E08</td>
+<td>One Small Step</td>
+<td>237.6 MB</td>
+</tr>
+<tr>
+<td>S06E09</td>
+<td>The Voyager Conspiracy</td>
+<td>239.6 MB</td>
+</tr>
+<tr>
+<td>S06E10</td>
+<td>Pathfinder</td>
+<td>238.1 MB</td>
+</tr>
+<tr>
+<td>S06E11</td>
+<td>Fair Haven</td>
+<td>238.0 MB</td>
+</tr>
+<tr>
+<td>S06E12</td>
+<td>Blink of an Eye</td>
+<td>238.2 MB</td>
+</tr>
+<tr>
+<td>S06E13</td>
+<td>Virtuoso</td>
+<td>237.3 MB</td>
+</tr>
+<tr>
+<td>S06E14</td>
+<td>Memorial</td>
+<td>235.8 MB</td>
+</tr>
+<tr>
+<td>S06E15</td>
+<td>Tsunkatse</td>
+<td>236.0 MB</td>
+</tr>
+<tr>
+<td>S06E16</td>
+<td>Collective</td>
+<td>237.0 MB</td>
+</tr>
+<tr>
+<td>S06E17</td>
+<td>Spirit Folk</td>
+<td>238.9 MB</td>
+</tr>
+<tr>
+<td>S06E18</td>
+<td>Ashes to Ashes</td>
+<td>237.3 MB</td>
+</tr>
+<tr>
+<td>S06E19</td>
+<td>Child's Play</td>
+<td>237.1 MB</td>
+</tr>
+<tr>
+<td>S06E20</td>
+<td>Good Shepherd</td>
+<td>238.3 MB</td>
+</tr>
+<tr>
+<td>S06E21</td>
+<td>Live Fast and Prosper</td>
+<td>237.9 MB</td>
+</tr>
+<tr>
+<td>S06E22</td>
+<td>Muse</td>
+<td>236.1 MB</td>
+</tr>
+<tr>
+<td>S06E23</td>
+<td>Fury</td>
+<td>236.2 MB</td>
+</tr>
+<tr>
+<td>S06E24</td>
+<td>Life Line</td>
+<td>238.3 MB</td>
+</tr>
+<tr>
+<td>S06E25</td>
+<td>The Haunting of Deck Twelve</td>
+<td>239.1 MB</td>
+</tr>
+<tr>
+<td>S06E26</td>
+<td>Unimatrix Zero (1)</td>
+<td>236.0 MB</td>
+</tr>
+</tbody></table>
+<p><em>(No DVD extras folder found for Season 6)</em></p>
+<hr>
+<h2>Season 7</h2>
+<table>
+<thead>
+<tr>
+<th>Ep</th>
+<th>Title</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>S07E01</td>
+<td>Unimatrix Zero (2)</td>
+<td>235.5 MB</td>
+</tr>
+<tr>
+<td>S07E02</td>
+<td>Imperfection</td>
+<td>236.6 MB</td>
+</tr>
+<tr>
+<td>S07E03</td>
+<td>Drive</td>
+<td>238.3 MB</td>
+</tr>
+<tr>
+<td>S07E04</td>
+<td>Repression</td>
+<td>236.8 MB</td>
+</tr>
+<tr>
+<td>S07E05</td>
+<td>Critical Care</td>
+<td>238.4 MB</td>
+</tr>
+<tr>
+<td>S07E06</td>
+<td>Inside Man</td>
+<td>239.2 MB</td>
+</tr>
+<tr>
+<td>S07E07</td>
+<td>Body and Soul</td>
+<td>238.1 MB</td>
+</tr>
+<tr>
+<td>S07E08</td>
+<td>Nightingale</td>
+<td>238.4 MB</td>
+</tr>
+<tr>
+<td>S07E09E10</td>
+<td>Flesh and Blood</td>
+<td>459.6 MB</td>
+</tr>
+<tr>
+<td>S07E11</td>
+<td>Shattered</td>
+<td>238.1 MB</td>
+</tr>
+<tr>
+<td>S07E12</td>
+<td>Lineage</td>
+<td>237.9 MB</td>
+</tr>
+<tr>
+<td>S07E13</td>
+<td>Repentance</td>
+<td>236.8 MB</td>
+</tr>
+<tr>
+<td>S07E14</td>
+<td>Prophecy</td>
+<td>237.2 MB</td>
+</tr>
+<tr>
+<td>S07E15</td>
+<td>The Void</td>
+<td>237.7 MB</td>
+</tr>
+<tr>
+<td>S07E16</td>
+<td>Workforce (1)</td>
+<td>237.2 MB</td>
+</tr>
+<tr>
+<td>S07E17</td>
+<td>Workforce (2)</td>
+<td>236.8 MB</td>
+</tr>
+<tr>
+<td>S07E18</td>
+<td>Human Error</td>
+<td>237.1 MB</td>
+</tr>
+<tr>
+<td>S07E19</td>
+<td>Q²</td>
+<td>238.4 MB</td>
+</tr>
+<tr>
+<td>S07E20</td>
+<td>Author Author</td>
+<td>239.6 MB</td>
+</tr>
+<tr>
+<td>S07E21</td>
+<td>Friendship One</td>
+<td>237.0 MB</td>
+</tr>
+<tr>
+<td>S07E22</td>
+<td>Natural Law</td>
+<td>235.2 MB</td>
+</tr>
+<tr>
+<td>S07E23</td>
+<td>Homestead</td>
+<td>236.7 MB</td>
+</tr>
+<tr>
+<td>S07E24</td>
+<td>Renaissance Man</td>
+<td>237.4 MB</td>
+</tr>
+<tr>
+<td>S07E25E26</td>
+<td>Endgame</td>
+<td>470.4 MB</td>
+</tr>
+</tbody></table>
+<p><strong>📀 Season 7 Extras</strong></p>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Inside Voyager's Scenic Art Department</td>
+<td>62.2 MB</td>
+</tr>
+<tr>
+<td>Voyager Time Capsule — The Doctor</td>
+<td>75.5 MB</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>📊 Library Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Season</th>
+<th>Episodes</th>
+<th>Extras</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Season 1</td>
+<td>15</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Season 2</td>
+<td>26</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Season 3</td>
+<td>26</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Season 4</td>
+<td>26</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Season 5</td>
+<td>25</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Season 6</td>
+<td>26</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Season 7</td>
+<td>24</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>168 episodes</strong></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Complete collection — all 7 seasons, all 168 episodes. Notable multi-part files include the pilot <em>Caretaker</em> (497 MB), <em>Dark Frontier</em> (496 MB), <em>Flesh and Blood</em> (460 MB), and the series finale <em>Endgame</em> (470 MB). 🖖 <em>Set a course for the Alpha Quadrant — warp factor 9.</em></p>
+
+    </div>
+    <hr>
+    <div style="text-align: center; color: #3A4A6B; font-size: 11px; margin-top: 30px;">
+      Generated by Nova AI • Deep Knowledge Observatory
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('img').forEach(img => {
+      img.onclick = () => window.open(img.src);
+    });
+  </script>
+</body>
+</html>

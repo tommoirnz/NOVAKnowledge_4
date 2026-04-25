@@ -1,0 +1,152 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>Nova Response — 7/04/2026, 9:21:56 pm</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style>
+*{box-sizing:border-box;}
+body{background:#04080F;color:#D0E8FF;font-family:'Share Tech Mono',monospace;padding:40px 20px;line-height:1.75;}
+.c{max-width:960px;margin:0 auto;background:rgba(10,20,40,.75);border:1px solid rgba(0,212,170,.25);border-radius:10px;padding:32px;}
+h1,h2,h3,h4{font-family:'Orbitron',monospace;color:#FFB300;margin:1em 0 .4em;}
+h1{font-size:1.5em;} h2{font-size:1.2em;} h3{font-size:1em;}
+h1:first-child,h2:first-child{margin-top:0;}
+.ts{color:#3C64A0;font-size:10px;margin-bottom:24px;}
+p{margin-bottom:.75em;}
+hr{border:none;height:1px;background:linear-gradient(90deg,transparent,#FFB300,transparent);margin:1.2em 0;}
+pre{background:#060C18;padding:14px;border-radius:6px;overflow-x:auto;border:1px solid rgba(0,212,170,.2);margin:.75em 0;}
+code{background:rgba(0,212,170,.12);color:#00D4AA;padding:1px 5px;border-radius:3px;font-size:.9em;}
+blockquote{border-left:3px solid #00D4AA;padding-left:12px;margin:.75em 0;color:#008C6E;}
+a{color:#7EB8FF;}
+ul,ol{margin:.5em 0 .75em 1.4em;}
+li{margin-bottom:.25em;}
+strong{color:#fff;}
+table{border-collapse:collapse;width:100%;margin:.85em 0;font-size:13px;overflow-x:auto;display:block;}
+thead tr{background:rgba(255,179,0,.12);}
+th{padding:7px 11px;border:1px solid rgba(126,184,255,.25);color:#FFB300;font-weight:bold;text-align:left;}
+td{padding:6px 11px;border:1px solid rgba(126,184,255,.18);text-align:left;}
+tbody tr:nth-child(even){background:rgba(255,255,255,.03);}
+img{max-width:100%;border-radius:6px;}
+.pb{position:fixed;top:14px;right:14px;padding:8px 18px;
+background:linear-gradient(135deg,#FF6B35,#CC4422);border:none;border-radius:4px;
+color:#fff;cursor:pointer;font-family:'Orbitron',monospace;font-weight:bold;font-size:11px;z-index:999;}
+@media print{.pb{display:none;}body{background:#fff;color:#000;}.c{background:#fff;border:none;}}
+</style></head><body>
+<button class="pb" onclick="window.print()">🖨 PRINT / PDF</button>
+<div class="c">
+<h1>⚡ NOVA — KNOWLEDGE COMPUTER</h1>
+<div class="ts">Generated: 7/04/2026, 9:21:56 pm</div>
+<h1>Linear Quadratic Gaussian (LQG) Control Design</h1>
+<h2>A Second-Order Position-Velocity System</h2>
+<hr>
+<h2>1. State-Space Model</h2>
+<p>For a mass subject to force input with process noise:</p>
+<p>$$\dot{\mathbf{x}} = A\mathbf{x} + Bu + \mathbf{w}$$
+$$\mathbf{y} = C\mathbf{x} + \mathbf{v}$$</p>
+<p><strong>States:</strong> $\mathbf{x} = \begin{bmatrix} p \\ v \end{bmatrix}$ — position and velocity</p>
+<p><strong>System matrices:</strong></p>
+<p>$$A = \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix}, \quad B = \begin{bmatrix} 0 \\ \frac{1}{m} \end{bmatrix}, \quad C = \begin{bmatrix} 1 & 0 \end{bmatrix}$$</p>
+<blockquote>
+<p>A double integrator: velocity integrates to position, force integrates to velocity.</p>
+</blockquote>
+<hr>
+<h2>2. LQR Cost Function</h2>
+<p>Minimise the infinite-horizon quadratic cost:</p>
+<p>$$J = \int_0^\infty \left( \mathbf{x}^T Q \mathbf{x} + u^T R\, u \right) dt$$</p>
+<p><strong>Tuning matrices:</strong></p>
+<p>$$Q = \begin{bmatrix} q_p & 0 \\ 0 & q_v \end{bmatrix}, \quad R = [r]$$</p>
+<ul>
+<li>$Q$ penalises <strong>state deviation</strong> (position error, velocity error)</li>
+<li>$R$ penalises <strong>control effort</strong> (force applied)</li>
+<li>Large $q_p$ → tighter position tracking</li>
+<li>Large $r$ → gentler, energy-conservative control</li>
+</ul>
+<hr>
+<h2>3. Algebraic Riccati Equation (ARE) — LQR</h2>
+<p>The optimal gain $K$ is found by solving the <strong>continuous-time ARE</strong>:</p>
+<p>$$A^T P + P A - P B R^{-1} B^T P + Q = 0$$</p>
+<p>where $P = P^T \succ 0$ is the unique positive-definite solution.</p>
+<p><strong>Optimal state feedback gain:</strong></p>
+<p>$$\boxed{K = R^{-1} B^T P}$$</p>
+<p><strong>Closed-loop dynamics (full state feedback):</strong></p>
+<p>$$\dot{\mathbf{x}} = (A - BK)\mathbf{x} + BK\mathbf{x}_{\text{ref}}$$</p>
+<p>The eigenvalues of $(A - BK)$ are placed optimally in the left-half plane.</p>
+<hr>
+<h2>4. Kalman Filter (LQE) — Observer Design</h2>
+<p>Since full state is not directly measured, we estimate $\hat{\mathbf{x}}$ from noisy output $\mathbf{y}$.</p>
+<p><strong>Noise assumptions:</strong></p>
+<p>$$\mathbf{w} \sim \mathcal{N}(0,\, Q_n), \quad \mathbf{v} \sim \mathcal{N}(0,\, R_n)$$</p>
+<ul>
+<li>$Q_n$ — <strong>process noise covariance</strong> (model uncertainty, disturbances)</li>
+<li>$R_n$ — <strong>measurement noise covariance</strong> (sensor noise)</li>
+</ul>
+<p><strong>Observer (Kalman filter) dynamics:</strong></p>
+<p>$$\dot{\hat{\mathbf{x}}} = A\hat{\mathbf{x}} + Bu + L\left(\mathbf{y} - C\hat{\mathbf{x}}\right)$$</p>
+<p><strong>Kalman gain</strong> $L$ is found by solving the <strong>dual ARE</strong>:</p>
+<p>$$A\Sigma + \Sigma A^T - \Sigma C^T R_n^{-1} C \Sigma + Q_n = 0$$</p>
+<p>$$\boxed{L = \Sigma C^T R_n^{-1}}$$</p>
+<p>where $\Sigma = \Sigma^T \succ 0$ is the steady-state error covariance.</p>
+<blockquote>
+<p>The Kalman filter is the <strong>LQR of the dual problem</strong> — elegant symmetry.</p>
+</blockquote>
+<hr>
+<h2>5. LQG: The Combined Controller</h2>
+<p>The LQG controller <strong>separates</strong> by the <strong>Separation Principle</strong>:</p>
+<p>$$\underbrace{\dot{\hat{\mathbf{x}}} = (A - LC)\hat{\mathbf{x}} + Bu + L\mathbf{y}}_{\text{Kalman Filter (Observer)}}$$</p>
+<p>$$\underbrace{u = -K\hat{\mathbf{x}} + K\mathbf{x}_{\text{ref}}}_{\text{LQR State Feedback}}$$</p>
+<p><strong>Full closed-loop augmented system:</strong></p>
+<p>$$\frac{d}{dt}\begin{bmatrix} \mathbf{x} \\ \mathbf{e} \end{bmatrix} = \begin{bmatrix} A - BK & BK \\ 0 & A - LC \end{bmatrix} \begin{bmatrix} \mathbf{x} \\ \mathbf{e} \end{bmatrix} + \begin{bmatrix} BK \\ 0 \end{bmatrix}\mathbf{x}_{\text{ref}}$$</p>
+<p>where $\mathbf{e} = \mathbf{x} - \hat{\mathbf{x}}$ is the estimation error.</p>
+<p><strong>Key result — Separation Principle:</strong></p>
+<p>$$\sigma(A - BK) \cup \sigma(A - LC)$$</p>
+<p>The eigenvalues of the full system are <strong>exactly</strong> the union of the LQR poles and the Kalman filter poles — they do not interact. Design them independently.</p>
+<hr>
+<h2>6. Setpoint Tracking</h2>
+<p>For reference tracking to $\mathbf{x}_{\text{ref}} = \begin{bmatrix} p_{\text{ref}} \\ 0 \end{bmatrix}$:</p>
+<p><strong>Error state:</strong> $\tilde{\mathbf{x}} = \mathbf{x} - \mathbf{x}_{\text{ref}}$</p>
+<p><strong>Control law:</strong></p>
+<p>$$u = -K(\hat{\mathbf{x}} - \mathbf{x}_{\text{ref}}) = -K\hat{\tilde{\mathbf{x}}}$$</p>
+<p>For zero steady-state error with a constant reference, an <strong>integrator</strong> on position error may be augmented:</p>
+<p>$$\dot{\xi} = p_{\text{ref}} - p, \quad u = -K\hat{\mathbf{x}} + k_i \xi$$</p>
+<p>This extends the state vector to $\begin{bmatrix} p & v & \xi \end{bmatrix}^T$ and the ARE is solved on the augmented system.</p>
+<hr>
+<h2>7. Design Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Equation</th>
+<th>Tunes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>LQR cost</td>
+<td>$J = \int(\mathbf{x}^TQ\mathbf{x} + u^TRu)\,dt$</td>
+<td>$Q, R$</td>
+</tr>
+<tr>
+<td>LQR gain</td>
+<td>$K = R^{-1}B^TP$</td>
+<td>Closed-loop speed</td>
+</tr>
+<tr>
+<td>Kalman gain</td>
+<td>$L = \Sigma C^T R_n^{-1}$</td>
+<td>Observer bandwidth</td>
+</tr>
+<tr>
+<td>LQG control</td>
+<td>$u = -K\hat{\mathbf{x}} + K\mathbf{x}_{\text{ref}}$</td>
+<td>Full system</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>8. Intuition</h2>
+<p>$$\underbrace{Q \uparrow}_{\text{track harder}} \Rightarrow K \uparrow \Rightarrow \text{faster, more aggressive control}$$</p>
+<p>$$\underbrace{R \uparrow}_{\text{save energy}} \Rightarrow K \downarrow \Rightarrow \text{slower, gentler control}$$</p>
+<p>$$\underbrace{Q_n \uparrow}_{\text{trust model less}} \Rightarrow L \uparrow \Rightarrow \text{trust measurements more}$$</p>
+<p>$$\underbrace{R_n \uparrow}_{\text{noisy sensor}} \Rightarrow L \downarrow \Rightarrow \text{trust model more}$$</p>
+<blockquote>
+<p>LQG is the <strong>optimal observer-based controller</strong> for linear systems with Gaussian noise — the gold standard before robust $\mathcal{H}_\infty$ methods entered the picture.</p>
+</blockquote>
+
+</div></body></html>
